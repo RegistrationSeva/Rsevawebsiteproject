@@ -1,0 +1,127 @@
+"use client";
+
+import Link from "next/link";
+import React from "react";
+import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const Footer = () => {
+  return (
+    <footer className="px-7 grid md:grid-cols-3 py-10 gap-6 bg-[white]">
+      {/* Services Card */}
+      <div className="p-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
+        <h2 className="text-2xl font-bold text-black mb-6">Services</h2>
+        <div className="flex flex-col">
+          {services.map((service, index) => (
+            <React.Fragment key={index}>
+              <Link
+                href="/"
+                className="hover:underline text-gray-700 leading-relaxed"
+              >
+                {service.name}
+              </Link>
+              {index < services.length - 1 && (
+                <div className="w-full bg-gray-300 h-px my-3"></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
+      {/* Registration Seva Card */}
+      <div className="p-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
+        <h2 className="text-2xl font-bold text-black mb-6">
+          REGISTRATION SEVA
+        </h2>
+        <div className="flex flex-col">
+          {rSevaServices.map((service, index) => (
+            <React.Fragment key={index}>
+              <Link
+                href="/"
+                className="hover:underline text-gray-700 leading-relaxed"
+              >
+                {service.name}
+              </Link>
+              {index < rSevaServices.length - 1 && (
+                <div className="w-full bg-gray-300 h-px my-3"></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+        <div className="flex justify-center gap-5 mt-8">
+          <FaFacebook className="text-primary cursor-pointer" size={23} />
+          <FaTwitter className="text-primary cursor-pointer" size={23} />
+          <RiWhatsappFill className="text-primary cursor-pointer" size={23} />
+          <FaYoutube className="text-primary cursor-pointer" size={23} />
+          <FaLinkedin className="text-primary cursor-pointer" size={23} />
+        </div>
+      </div>
+
+      {/* Contact Us Card */}
+      <div className="p-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
+        <h2 className="text-2xl font-bold text-black mb-6 text-center">
+          Contact Us
+        </h2>
+        <form className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile"
+            className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
+          />
+          <textarea
+            name="message"
+            placeholder="Enter Your Message"
+            rows={4}
+            className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
+          ></textarea>
+          <ReCAPTCHA
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            theme="light"
+          />
+          <Link
+            href="/"
+            className="bg-primary px-7 py-3 rounded-lg text-[white] text-center mt-4 transition-transform transform hover:scale-105"
+          >
+            Submit
+          </Link>
+        </form>
+      </div>
+    </footer>
+  );
+};
+
+const services = [
+  { name: "Private Limited Company", link: "/" },
+  { name: "One Person Company", link: "/" },
+  { name: "LLP Registration", link: "/" },
+  { name: "Section 8 Company", link: "/" },
+  { name: "MSME/Udyam Registrations", link: "/" },
+  { name: "GST Registration", link: "/" },
+  { name: "Startup India Registration", link: "/" },
+];
+
+// Data for Registration Seva services
+const rSevaServices = [
+  { name: "About Us", link: "/" },
+  { name: "Privacy Policy", link: "/" },
+  { name: "Refund Policy", link: "/" },
+  { name: "Satisfaction Guarantee", link: "/" },
+  { name: "Terms & Conditions", link: "/" },
+  { name: "Contact Us", link: "/" },
+];
+
+export default Footer;
