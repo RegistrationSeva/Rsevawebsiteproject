@@ -72,7 +72,7 @@ interface ServiceDetailProps {
 }
 
 const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
-  const [serviceItem, setServiceItem] = useState<Service | null>(null);
+  const [serviceItem, setServiceItem] = useState<Service | null | any>(null);
 
   useEffect(() => {
     if (params && services) {
