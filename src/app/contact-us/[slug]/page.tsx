@@ -11,10 +11,10 @@ interface Service {
   slug: string;
   image: string;
   title: string;
-  subtitle: string;
+  subtitle: string; // Added this property
   description: string;
   longDescription: string[];
-  conclusion: string;
+  conclusion: string; // Added this property
 }
 
 interface ContactUsProps {
@@ -24,7 +24,7 @@ interface ContactUsProps {
 }
 
 const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
-  const [serviceItem, setServiceItem] = useState<Service | null>(null);
+  const [serviceItem, setServiceItem] = useState<Service | null | any>(null);
   const [state, handleSubmit] = useForm("manwjalw");
   const formRef = useRef<HTMLFormElement>(null);
   const [inputItem, setInputItem] = useState({
@@ -37,9 +37,12 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
 
   useEffect(() => {
     if (params && services) {
-      const item = services.find((service) => service.slug === params.slug);
-      setServiceItem(item ?? null);
-      setInputItem((prev) => ({ ...prev, subject: item?.title || "" }));
+      const item =
+        services.find((service) => service.slug === params.slug) ?? null;
+      setServiceItem(item);
+      if (item) {
+        setInputItem((prev) => ({ ...prev, subject: item.title }));
+      }
     }
   }, [params]);
 
@@ -52,7 +55,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
   }
 
   if (state.succeeded) {
-    toast("Message Send Successfully", {
+    toast("Message Sent Successfully", {
       description: "Thank you for your message. We'll get back to you shortly.",
       action: {
         label: "Close",
@@ -105,7 +108,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
             />
             <Input
               name="service"
-              placeholder="Enter Phone Number"
+              placeholder="Service"
               id="services"
               value={serviceItem?.title}
               className="hidden"
