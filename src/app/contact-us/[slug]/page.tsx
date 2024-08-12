@@ -51,7 +51,6 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
     );
   }
 
-  // useEffect(() => {
   if (state.succeeded) {
     toast("Message Send Successfully", {
       description: "Thank you for your message. We'll get back to you shortly.",
@@ -62,7 +61,6 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
     });
     formRef.current?.reset();
   }
-  // }, [state.succeeded]);
 
   return (
     <div className="container py-14">

@@ -17,7 +17,7 @@ function SatisfactionGuarantee() {
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4 md:mb-6">
             We understand that choosing a service provider can be a difficult
             decision, and we want you to be confident in your choice to use our
-            services. That's why we offer a satisfaction guarantee on our
+            services. That&apos;s why we offer a satisfaction guarantee on our
             services.
           </p>
 

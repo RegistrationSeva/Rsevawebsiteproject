@@ -140,11 +140,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               </h2>
             </div>
             {serviceItem.eligibility?.data?.map((item: any, index: number) => (
-              <div className="p-4 shadow-lg rounded-sm">
-                <li
-                  key={index}
-                  className="text-lg md:text-xl text-black font-semibold"
-                >
+              <div className="p-4 shadow-lg rounded-sm" key={index}>
+                <li className="text-lg md:text-xl text-black font-semibold">
                   {item?.title}:
                 </li>
                 <p className="text-sm md:text-lg text-gray-700 text-justify">
@@ -169,11 +166,11 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             </div>
             <div className="grid md:grid-cols-3 md:space-x-4 md:space-y-4">
               {serviceItem.benefits?.data?.map((item: any, index: number) => (
-                <div className="p-7 shadow-lg rounded-sm cursor-pointer hover:shadow-2xl space-y-4">
-                  <li
-                    key={index}
-                    className="text-lg md:text-xl text-black font-semibold"
-                  >
+                <div
+                  className="p-7 shadow-lg rounded-sm cursor-pointer hover:shadow-2xl space-y-4"
+                  key={index}
+                >
+                  <li className="text-lg md:text-xl text-black font-semibold">
                     {item?.title}:
                   </li>
                   <p className="text-sm md:text-lg text-gray-700 text-justify">
@@ -206,12 +203,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
 
                   {serviceItem.requirement[0]?.data?.map(
                     (item: any, index: number) => (
-                      <div>
+                      <div key={index}>
                         <div className="p-4 shadow-lg rounded-sm">
-                          <li
-                            key={index}
-                            className="text-lg md:text-xl text-black font-semibold"
-                          >
+                          <li className="text-lg md:text-xl text-black font-semibold">
                             {item?.title}:
                           </li>
                           <p className="text-sm md:text-lg text-gray-700 text-justify">
@@ -234,12 +228,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
 
                   {serviceItem.requirement[1]?.data?.map(
                     (item: any, index: number) => (
-                      <div>
+                      <div key={index}>
                         <div className="p-4 shadow-lg rounded-sm">
-                          <li
-                            key={index}
-                            className="text-lg md:text-xl text-black font-semibold"
-                          >
+                          <li className="text-lg md:text-xl text-black font-semibold">
                             {item?.title}:
                           </li>
                           <p className="text-sm md:text-lg text-gray-700 text-justify">
@@ -269,11 +260,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             </div>
             {serviceItem.registration_process?.data?.map(
               (item: any, index: number) => (
-                <div className="p-4 shadow-lg rounded-sm">
-                  <li
-                    key={index}
-                    className="text-lg md:text-xl text-black font-semibold"
-                  >
+                <div className="p-4 shadow-lg rounded-sm" key={index}>
+                  <li className="text-lg md:text-xl text-black font-semibold">
                     {item?.title}:
                   </li>
                   <p className="text-sm md:text-lg text-gray-700 text-justify">
