@@ -38,7 +38,7 @@ const Footer = () => {
           {rSevaServices.map((service, index) => (
             <React.Fragment key={index}>
               <Link
-                href="/"
+                href={service?.link}
                 className="hover:underline text-gray-700 leading-relaxed"
               >
                 {service.name}
@@ -117,11 +117,11 @@ const services = [
 // Data for Registration Seva services
 const rSevaServices = [
   { name: "About Us", link: "/" },
-  { name: "Privacy Policy", link: "/" },
-  { name: "Refund Policy", link: "/" },
-  { name: "Satisfaction Guarantee", link: "/" },
-  { name: "Terms & Conditions", link: "/" },
-  { name: "Contact Us", link: "/" },
+  { name: "Privacy Policy", link: "/privacy-policy" },
+  { name: "Refund Policy", link: "/refund-policy" },
+  { name: "Satisfaction Guarantee", link: "/satisfaction-guarantee" },
+  { name: "Terms & Conditions", link: "/terms-condition" },
+  { name: "Contact Us", link: "/contact-us" },
 ];
 
 export default Footer;
