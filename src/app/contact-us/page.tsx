@@ -100,7 +100,6 @@ const ContactUs: React.FC<ContactUsProps> = () => {
             />
             <Select
               name="service"
-              id="service"
               onValueChange={(e) =>
                 setInputItem((prev) => ({ ...prev, subject: e || "" }))
               }
