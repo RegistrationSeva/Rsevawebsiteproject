@@ -1,9 +1,11 @@
 "use client";
 import { services } from "@/app/our-services/servicesData";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useForm, ValidationError } from "@formspree/react";
+import { toast } from "sonner";
 
 interface Service {
   slug: string;
@@ -23,6 +25,8 @@ interface ContactUsProps {
 
 const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
   const [serviceItem, setServiceItem] = useState<Service | null>(null);
+  const [state, handleSubmit] = useForm("manwjalw");
+  const formRef = useRef<HTMLFormElement>(null);
   const [inputItem, setInputItem] = useState({
     name: "",
     email: "",
@@ -47,27 +51,18 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
     );
   }
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setInputItem((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(inputItem);
-    setInputItem({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      subject: "",
+  // useEffect(() => {
+  if (state.succeeded) {
+    toast("Message Send Successfully", {
+      description: "Thank you for your message. We'll get back to you shortly.",
+      action: {
+        label: "Close",
+        onClick: () => console.log("Close"),
+      },
     });
-  };
+    formRef.current?.reset();
+  }
+  // }, [state.succeeded]);
 
   return (
     <div className="container py-14">
@@ -81,37 +76,62 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-800 mb-4">
             Contact Us
           </h1>
-          <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+          <form
+            className="flex flex-col gap-5"
+            onSubmit={handleSubmit}
+            ref={formRef}
+          >
             <Input
               name="name"
               placeholder="Enter Your Full Name"
-              value={inputItem.name}
-              onChange={handleChange}
+              id="name"
               required
             />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
             <Input
               name="email"
               placeholder="Enter Your Email"
-              value={inputItem.email}
-              onChange={handleChange}
+              id="email"
               required
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
+            <Input name="phone" placeholder="Enter Phone Number" id="phone" />
+            <ValidationError
+              prefix="Phone"
+              field="phone"
+              errors={state.errors}
+            />
             <Input
-              name="phone"
+              name="service"
               placeholder="Enter Phone Number"
-              value={inputItem.phone}
-              onChange={handleChange}
+              id="services"
+              value={serviceItem?.title}
+              className="hidden"
+            />
+            <ValidationError
+              prefix="Service"
+              field="service"
+              errors={state.errors}
             />
             <Textarea
               name="message"
               placeholder="Enter Your Message"
+              id="message"
               rows={7}
-              value={inputItem.message}
-              onChange={handleChange}
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
             />
             <button
               type="submit"
               className="bg-blue-700 py-3 font-bold text-white rounded-lg text-lg"
+              disabled={state.submitting}
             >
               Send
             </button>
