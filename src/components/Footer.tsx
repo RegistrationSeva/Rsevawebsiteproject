@@ -1,12 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useForm, ValidationError } from "@formspree/react";
+import { toast } from "sonner";
 
 const Footer = () => {
+  const [state, handleSubmit] = useForm("manwjalw");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast("Message Send Successfully", {
+        description:
+          "Thank you for your message. We'll get back to you shortly.",
+        action: {
+          label: "Close",
+          onClick: () => console.log("Close"),
+        },
+      });
+      formRef.current?.reset();
+    }
+  }, [state.succeeded]);
   return (
     <footer className="px-7 grid md:grid-cols-3 py-10 gap-6 bg-[white]">
       {/* Services Card */}
@@ -63,41 +81,62 @@ const Footer = () => {
         <h2 className="text-2xl font-bold text-black mb-6 text-center">
           Contact Us
         </h2>
-        <form className="flex flex-col gap-4">
+        <form
+          className="flex flex-col gap-4"
+          ref={formRef}
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             name="name"
             placeholder="Name"
+            id="name"
+            required
             className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
           />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
           <input
             type="email"
             name="email"
+            id="email"
+            required
             placeholder="Email"
             className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
           <input
             type="tel"
             name="phone"
+            id="phone"
+            required
             placeholder="Mobile"
             className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
           />
+          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
           <textarea
             name="message"
+            id="message"
+            required
             placeholder="Enter Your Message"
             rows={4}
             className="border-2 py-2 rounded-md px-3 border-gray-300 focus:border-primary transition-colors"
           ></textarea>
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
           <ReCAPTCHA
             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
             theme="light"
           />
-          <Link
-            href="/"
+          <button
+            type="submit"
             className="bg-primary px-7 py-3 rounded-lg text-[white] text-center mt-4 transition-transform transform hover:scale-105"
+            disabled={state.submitting}
           >
             Submit
-          </Link>
+          </button>
         </form>
       </div>
     </footer>
