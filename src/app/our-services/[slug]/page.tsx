@@ -120,14 +120,16 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
           {/* Overview */}
           <ul className="flex flex-col gap-4">
             <h1 className="text-xl md:text-2xl font-bold">Overview</h1>
-            {serviceItem.longDescription.map((description, index) => (
-              <li
-                key={index}
-                className="text-sm md:text-lg text-gray-700 text-justify"
-              >
-                {description}
-              </li>
-            ))}
+            {serviceItem.longDescription.map(
+              (description: string, index: number) => (
+                <li
+                  key={index}
+                  className="text-sm md:text-lg text-gray-700 text-justify"
+                >
+                  {description}
+                </li>
+              )
+            )}
           </ul>
           {/* Eligibility */}
           <ul className="flex flex-col gap-4">
@@ -288,7 +290,13 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
 
             <Accordion type="single" collapsible className="w-ful">
               {serviceItem.compliances?.data.map(
-                ({ title, description }, index) => (
+                (
+                  {
+                    title,
+                    description,
+                  }: { title: string; description: string },
+                  index: number
+                ) => (
                   <AccordionItem
                     value={`item-${index + 1}`}
                     key={index}
@@ -335,21 +343,29 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             </div>
 
             <Accordion type="single" collapsible className="w-ful">
-              {serviceItem.faq?.data.map(({ title, description }, index) => (
-                <AccordionItem
-                  value={`item-${index + 1}`}
-                  key={index}
-                  className="overflow-hidden border mb-4  rounded-lg shadow-lg"
-                >
-                  <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
-                    {title}
-                    <FaPlus />
-                  </AccordionTrigger>
-                  <AccordionContent className="p-4">
-                    {description}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              {serviceItem.faq?.data.map(
+                (
+                  {
+                    title,
+                    description,
+                  }: { title: string; description: string },
+                  index: number
+                ) => (
+                  <AccordionItem
+                    value={`item-${index + 1}`}
+                    key={index}
+                    className="overflow-hidden border mb-4  rounded-lg shadow-lg"
+                  >
+                    <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
+                      {title}
+                      <FaPlus />
+                    </AccordionTrigger>
+                    <AccordionContent className="p-4">
+                      {description}
+                    </AccordionContent>
+                  </AccordionItem>
+                )
+              )}
             </Accordion>
 
             <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-start">
