@@ -187,7 +187,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             {serviceItem?.overview?.data?.map(
               (item: NestedData, index: number) => {
                 return (
-                  <div className="">
+                  <div className="" key={index}>
                     {item?.title && <p className="title">{item?.title}</p>}
                     {item?.description && (
                       <p className="description">{item?.description}</p>
@@ -196,7 +196,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                       {item?.data?.length > 0 &&
                         item?.data?.map((item: Data, index: number) => {
                           return (
-                            <ul className="list-disc px-7">
+                            <ul className="list-disc px-7" key={index}>
                               {item?.title && (
                                 <li className="paragraph text-sm ">
                                   {item?.title}
@@ -228,7 +228,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             {serviceItem?.eligibility?.data?.map(
               (item: NestedData, index: number) => {
                 return (
-                  <div className="px-7 items-center shadow-lg py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2">
+                  <div
+                    key={index}
+                    className="px-7 items-center shadow-lg py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
+                  >
                     {item?.title && (
                       <p className="title text-center">{item?.title}</p>
                     )}
@@ -241,7 +244,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                       {item?.data?.length > 0 &&
                         item?.data?.map((item: Data, index: number) => {
                           return (
-                            <ul className="list-disc px-7">
+                            <ul className="list-disc px-7" key={index}>
                               {item?.title && (
                                 <li className="paragraph text-sm ">
                                   {item?.title}
@@ -275,7 +278,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               {serviceItem?.benefits?.data?.map(
                 (item: NestedData, index: number) => {
                   return (
-                    <div className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2">
+                    <div
+                      className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
+                      key={index}
+                    >
                       {item?.title && (
                         <p className="title text-center">{item?.title}</p>
                       )}
@@ -288,7 +294,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                         {item?.data?.length > 0 &&
                           item?.data?.map((item: Data, index: number) => {
                             return (
-                              <ul className="list-disc px-7">
+                              <ul className="list-disc px-7" key={index}>
                                 {item?.title && (
                                   <li className="paragraph text-sm ">
                                     {item?.title}
@@ -321,7 +327,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               {serviceItem?.requirement?.data?.map(
                 (item: NestedData, index: number) => {
                   return (
-                    <div className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2">
+                    <div
+                      key={index}
+                      className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
+                    >
                       {item?.title && (
                         <p className="title text-center">{item?.title}</p>
                       )}
@@ -334,7 +343,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                         {item?.data?.length > 0 &&
                           item?.data?.map((item: Data, index: number) => {
                             return (
-                              <div className="space-y-4">
+                              <div className="space-y-4" key={index}>
                                 {item?.title && (
                                   <p className="title">{item?.title}</p>
                                 )}
@@ -379,7 +388,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               {serviceItem?.registration_process?.data?.map(
                 (item: NestedData, index: number) => {
                   return (
-                    <div className="px-7 items-center shadow-xl py-4 rounded-xl border border-primary  space-y-2">
+                    <div
+                      className="px-7 items-center shadow-xl py-4 rounded-xl border border-primary  space-y-2"
+                      key={index}
+                    >
                       {item?.title && (
                         <p className="title text-center">{item?.title}</p>
                       )}
@@ -392,7 +404,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                         {item?.data?.length > 0 &&
                           item?.data?.map((item: Data, index: number) => {
                             return (
-                              <div className="space-y-4">
+                              <div className="space-y-4" key={index}>
                                 {item?.title && (
                                   <p className="title">{item?.title}</p>
                                 )}
@@ -433,7 +445,10 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               {serviceItem?.compliances?.data?.map(
                 (item: NestedData, index: number) => {
                   return (
-                    <div className="px-7 items-center shadow-xl py-4 rounded-xl border border-primary  space-y-2">
+                    <div
+                      className="px-7 items-center shadow-xl py-4 rounded-xl border border-primary  space-y-2"
+                      key={index}
+                    >
                       {item?.title && (
                         <p className="title text-center">{item?.title}</p>
                       )}
@@ -446,7 +461,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                         {item?.data?.length > 0 &&
                           item?.data?.map((item: Data, index: number) => {
                             return (
-                              <div className="space-y-4">
+                              <div className="space-y-4" key={index}>
                                 {item?.title && (
                                   <p className="title">{item?.title}</p>
                                 )}
@@ -487,7 +502,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             {serviceItem?.why_us?.data?.map(
               (item: NestedData, index: number) => {
                 return (
-                  <div className="">
+                  <div className="" key={index}>
                     {item?.title && <p className="title">{item?.title}</p>}
                     {item?.description && (
                       <p className="description">{item?.description}</p>
@@ -496,7 +511,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                       {item?.data?.length > 0 &&
                         item?.data?.map((item: Data, index: number) => {
                           return (
-                            <ul className="list-disc px-7">
+                            <ul className="list-disc px-7" key={index}>
                               {item?.title && (
                                 <li className="paragraph text-sm ">
                                   {item?.title}
@@ -555,263 +570,6 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               <p className="conclusion">{serviceItem?.faq?.conclusion}</p>
             )}
           </div>
-
-          {/* Old Design */}
-          {/* Overview */}
-          {/* <ul className="flex flex-col gap-4">
-            <h1 className="text-xl md:text-2xl font-bold">Overview</h1>
-            {serviceItem.longDescription.map(
-              (description: string, index: number) => (
-                <li
-                  key={index}
-                  className="text-sm md:text-lg text-gray-700 text-justify"
-                >
-                  {description}
-                </li>
-              )
-            )}
-          </ul> */}
-          {/* Eligibility */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Eligibility
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.eligibility?.title}
-              </h2>
-            </div>
-            {serviceItem.eligibility?.data?.map((item: any, index: number) => (
-              <div className="p-4 shadow-lg rounded-sm" key={index}>
-                <li className="text-lg md:text-xl text-black font-semibold">
-                  {item?.title}:
-                </li>
-                <p className="text-sm md:text-lg text-gray-700 text-justify">
-                  {item?.description}
-                </p>
-              </div>
-            ))}
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-              {serviceItem?.eligibility?.conclusion}
-            </h2>
-          </ul> */}
-
-          {/* Benefits */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Benefits
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.benefits?.title}
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-3 md:space-x-4 md:space-y-4">
-              {serviceItem.benefits?.data?.map((item: any, index: number) => (
-                <div
-                  className="p-7 shadow-lg rounded-sm cursor-pointer hover:shadow-2xl space-y-4"
-                  key={index}
-                >
-                  <li className="text-lg md:text-xl text-black font-semibold">
-                    {item?.title}:
-                  </li>
-                  <p className="text-sm md:text-lg text-gray-700 text-justify">
-                    {item?.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-              {serviceItem?.benefits?.conclusion}
-            </h2>
-          </ul> */}
-
-          {/* Requirement */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5 space-y-7">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Requirement
-              </h1>
-              <div className="grid md:grid-cols-2 md:space-x-3">
-                <div>
-                  <div className="mb-4">
-                    <h2 className="text-lg md:text-xl font-semibold text-black text-start ">
-                      {serviceItem.requirement[0]?.title}
-                    </h2>
-                    <h2 className="text-sm font-normal text-gray-600 mb-2 italic text-start">
-                      {serviceItem.requirement[0]?.description}
-                    </h2>
-                  </div>
-
-                  {serviceItem.requirement[0]?.data?.map(
-                    (item: any, index: number) => (
-                      <div key={index}>
-                        <div className="p-4 shadow-lg rounded-sm">
-                          <li className="text-lg md:text-xl text-black font-semibold">
-                            {item?.title}:
-                          </li>
-                          <p className="text-sm md:text-lg text-gray-700 text-justify">
-                            {item?.description}
-                          </p>
-                        </div>
-                      </div>
-                    )
-                  )}
-                </div>
-                <div>
-                  <div className="mb-4">
-                    <h2 className="text-lg md:text-xl font-semibold text-black text-start ">
-                      {serviceItem.requirement[1]?.title}
-                    </h2>
-                    <h2 className="text-sm font-normal text-gray-600 mb-2 italic text-start">
-                      {serviceItem.requirement[1]?.description}
-                    </h2>
-                  </div>
-
-                  {serviceItem.requirement[1]?.data?.map(
-                    (item: any, index: number) => (
-                      <div key={index}>
-                        <div className="p-4 shadow-lg rounded-sm">
-                          <li className="text-lg md:text-xl text-black font-semibold">
-                            {item?.title}:
-                          </li>
-                          <p className="text-sm md:text-lg text-gray-700 text-justify">
-                            {item?.description}
-                          </p>
-                        </div>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-              {serviceItem?.benefits?.conclusion}
-            </h2>
-          </ul> */}
-
-          {/* Registration Process */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Registration Process
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.registration_process?.title}
-              </h2>
-            </div>
-            {serviceItem.registration_process?.data?.map(
-              (item: any, index: number) => (
-                <div className="p-4 shadow-lg rounded-sm" key={index}>
-                  <li className="text-lg md:text-xl text-black font-semibold">
-                    {item?.title}:
-                  </li>
-                  <p className="text-sm md:text-lg text-gray-700 text-justify">
-                    {item?.description}
-                  </p>
-                </div>
-              )
-            )}
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-start">
-              {serviceItem?.registration_process?.conclusion}
-            </h2>
-          </ul> */}
-
-          {/* Compliances */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Compliances
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.compliances?.title}
-              </h2>
-            </div>
-
-            <Accordion type="single" collapsible className="w-ful">
-              {serviceItem.compliances?.data.map(
-                (
-                  {
-                    title,
-                    description,
-                  }: { title: string; description: string },
-                  index: number
-                ) => (
-                  <AccordionItem
-                    value={`item-${index + 1}`}
-                    key={index}
-                    className="overflow-hidden border mb-4  rounded-lg shadow-lg"
-                  >
-                    <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
-                      {title}
-                      <FaAngleDown />
-                    </AccordionTrigger>
-                    <AccordionContent className="p-4">
-                      {description}
-                    </AccordionContent>
-                  </AccordionItem>
-                )
-              )}
-            </Accordion>
-
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-start">
-              {serviceItem?.compliances?.conclusion}
-            </h2>
-          </ul> */}
-
-          {/* Why Us */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5 space-y-4">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                {serviceItem?.whyUs?.title}
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.whyUs?.description}
-              </h2>
-            </div>
-          </ul> */}
-
-          {/* FAQ */}
-          {/* <ul className="flex flex-col gap-4">
-            <div className="mt-5">
-              <h1 className="text-xl md:text-3xl font-bold text-center">
-                Frequently Asked Questions
-              </h1>
-              <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-center">
-                {serviceItem?.faq?.title}
-              </h2>
-            </div>
-
-            <Accordion type="single" collapsible className="w-ful">
-              {serviceItem.faq?.data.map(
-                (
-                  {
-                    title,
-                    description,
-                  }: { title: string; description: string },
-                  index: number
-                ) => (
-                  <AccordionItem
-                    value={`item-${index + 1}`}
-                    key={index}
-                    className="overflow-hidden border mb-4  rounded-lg shadow-lg"
-                  >
-                    <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
-                      {title}
-                      <FaPlus />
-                    </AccordionTrigger>
-                    <AccordionContent className="p-4">
-                      {description}
-                    </AccordionContent>
-                  </AccordionItem>
-                )
-              )}
-            </Accordion>
-
-            <h2 className="text-sm md:text-lg font-medium text-gray-600 mb-2 italic text-start">
-              {serviceItem?.faq?.conclusion}
-            </h2>
-          </ul> */}
         </div>
       </div>
     </div>
