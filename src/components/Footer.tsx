@@ -68,11 +68,30 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex justify-center gap-5 mt-8">
-          <FaFacebook className="text-primary cursor-pointer" size={23} />
-          <FaTwitter className="text-primary cursor-pointer" size={23} />
-          <RiWhatsappFill className="text-primary cursor-pointer" size={23} />
-          <FaYoutube className="text-primary cursor-pointer" size={23} />
-          <FaLinkedin className="text-primary cursor-pointer" size={23} />
+          <Link
+            href="https://www.facebook.com/registrationseva"
+            target="_black"
+          >
+            <FaFacebook className="text-primary cursor-pointer" size={23} />
+          </Link>
+          <Link href="https://x.com/registrationsev" target="_black">
+            <FaTwitter className="text-primary cursor-pointer" size={23} />
+          </Link>
+          <Link href="https://wa.me/+919999395031" target="_black">
+            <RiWhatsappFill className="text-primary cursor-pointer" size={23} />
+          </Link>
+          <Link
+            href="https://www.youtube.com/channel/UC9dedVjp6QRn95lGGhduQxQ"
+            target="_black"
+          >
+            <FaYoutube className="text-primary cursor-pointer" size={23} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/registrationseva"
+            target="_black"
+          >
+            <FaLinkedin className="text-primary cursor-pointer" size={23} />
+          </Link>
         </div>
       </div>
 
