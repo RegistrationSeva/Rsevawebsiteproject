@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const config = {
   darkMode: ["class"],
@@ -68,7 +69,38 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function (api: PluginAPI) {
+      const { addUtilities } = api;
+      addUtilities({
+        ".name": {
+          "@apply text-xl md:text-3xl font-bold text-[black] text-center underline":
+            {},
+        },
+        ".heading": {
+          "@apply text-lg md:text-xl font-bold text-[black]": {},
+        },
+        ".conclusion": {
+          "@apply text-sm md:text-lg font-medium text-gray-600 mb-2 italic": {},
+        },
+        ".title": {
+          "@apply text-lg md:text-xl font-semibold text-[black] underline text-gray-700":
+            {},
+        },
+        ".description": {
+          "@apply text-sm md:text-lg text-gray-700 text-justify": {},
+        },
+        ".italicHeading": {
+          "@apply text-sm md:text-lg font-medium text-gray-600 mb-2 italic": {},
+        },
+        ".paragraph": {
+          "@apply text-[13px] sm:leading-5 md:text-sm font-medium text-gray-600 mb-2":
+            {},
+        },
+      });
+    },
+  ],
 } satisfies Config;
 
 export default config;
