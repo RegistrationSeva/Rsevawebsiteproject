@@ -155,7 +155,7 @@ const services = [
 
 // Data for Registration Seva services
 const rSevaServices = [
-  { name: "About Us", link: "/" },
+  { name: "About Us", link: "/about-us" },
   { name: "Privacy Policy", link: "/privacy-policy" },
   { name: "Refund Policy", link: "/refund-policy" },
   { name: "Satisfaction Guarantee", link: "/satisfaction-guarantee" },

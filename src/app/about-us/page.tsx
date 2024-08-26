@@ -5,10 +5,10 @@ function AboutUs() {
     <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4 lg:px-20">
         <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg">
-          <h1 className="text-4xl md:text-6xl font-bold text-center text-primary mb-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-primary mb-8">
             About Us
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-6">
             Registration Seva is a leading consultancy firm dedicated to
             providing a comprehensive, one-stop solution for all your business
             registration, trademark, and compliance needs. Established on
@@ -18,7 +18,7 @@ function AboutUs() {
             core business activities.
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4">
             Our Mission
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -33,7 +33,7 @@ function AboutUs() {
             tasks.
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4">
             Our Services
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -42,9 +42,9 @@ function AboutUs() {
             Our services include:
           </p>
 
-          <ul className="list-disc list-inside space-y-4 text-gray-700">
+          <ul className="list-inside space-y-4 text-gray-700 text-sm md:text-lg">
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Company Incorporation:
               </strong>
               Incorporating a company is a crucial step in establishing a legal
@@ -59,7 +59,7 @@ function AboutUs() {
               laws.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Trademark Registration:
               </strong>
               Protecting your brand’s identity is essential in today’s
@@ -73,7 +73,7 @@ function AboutUs() {
               possible advice and support.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Other Business Registrations:
               </strong>
               In addition to company incorporation and trademark registration,
@@ -85,7 +85,7 @@ function AboutUs() {
               legal requirements and operate smoothly.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Compliance and Advisory Services:
               </strong>
               Staying compliant with the ever-evolving regulatory landscape can
@@ -99,12 +99,12 @@ function AboutUs() {
             </li>
           </ul>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mt-8 mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mt-8 mb-4">
             Why Choose Us?
           </h2>
-          <ul className="list-disc list-inside space-y-4 text-gray-700">
+          <ul className="list-disc list-inside space-y-4 text-gray-700 text-sm md:text-lg">
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Expertise and Experience:
               </strong>
               With a team of seasoned professionals, Registration Seva brings
@@ -115,7 +115,7 @@ function AboutUs() {
               ensuring that your business remains compliant and protected.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Customer-Centric Approach:
               </strong>
               At Registration Seva, the client comes first. We understand that
@@ -126,7 +126,7 @@ function AboutUs() {
               to the completion of your services.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Transparency and Integrity:
               </strong>
               Transparency is a cornerstone of our service philosophy. We
@@ -137,7 +137,7 @@ function AboutUs() {
               dealings.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Affordability:
               </strong>
               Quality services should be accessible to all businesses,
@@ -147,7 +147,7 @@ function AboutUs() {
               receive top-notch services without breaking the bank.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Nationwide Reach:
               </strong>
               Although headquartered in East Delhi, Registration Seva serves
@@ -158,7 +158,7 @@ function AboutUs() {
               and reliable service.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Commitment to Excellence:
               </strong>
               Our commitment to excellence drives everything we do. Registration
@@ -170,12 +170,12 @@ function AboutUs() {
             </li>
           </ul>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mt-8 mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mt-8 mb-4">
             Our Values
           </h2>
-          <ul className="list-disc list-inside space-y-4 text-gray-700">
+          <ul className="list-disc list-inside space-y-4 text-gray-700 text-sm md:text-lg">
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Professionalism:
               </strong>
               We maintain a high level of professionalism in all our dealings,
@@ -183,14 +183,14 @@ function AboutUs() {
               service.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Responsiveness:
               </strong>
               We are committed to being responsive and accessible, addressing
               client queries and concerns promptly and effectively.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Reliability:
               </strong>
               Our clients can rely on us for accurate information, timely
@@ -198,7 +198,7 @@ function AboutUs() {
               business journey.
             </li>
             <li>
-              <strong className="text-xl md:text-2xl text-primary">
+              <strong className="text-sm md:text-lg underline text-primary">
                 Innovation:
               </strong>
               We embrace innovation and continuously seek ways to improve our
@@ -207,10 +207,10 @@ function AboutUs() {
             </li>
           </ul>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary mt-8 mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-primary mt-8 mb-4">
             Our Vision for the Future
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <p className=" text-gray-700 leading-relaxed mb-6 text-sm md:text-lg">
             Registration Seva envisions becoming the leading provider of
             business registration and compliance services in India. Our goal is
             to expand our service offerings, enhance our technological
@@ -219,7 +219,7 @@ function AboutUs() {
             simplifying regulatory processes and supporting their growth and
             success.
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <p className=" text-gray-700 leading-relaxed mb-6 text-sm md:text-lg">
             Whether you are an entrepreneur starting a new venture or an
             established business looking to streamline your operations,
             Registration Seva is here to support you. We invite you to partner
