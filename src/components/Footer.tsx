@@ -7,6 +7,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, ValidationError } from "@formspree/react";
 import { toast } from "sonner";
+import { services } from "@/app/our-services/servicesData";
 
 const Footer = () => {
   const [state, handleSubmit] = useForm("manwjalw");
@@ -31,13 +32,13 @@ const Footer = () => {
       <div className="p-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
         <h2 className="text-2xl font-bold text-black mb-6">Services</h2>
         <div className="flex flex-col">
-          {services.map((service, index) => (
+          {services?.slice(0, 7)?.map((service, index) => (
             <React.Fragment key={index}>
               <Link
-                href="/"
+                href={`/our-services/${service?.slug}`}
                 className="hover:underline text-gray-700 leading-relaxed"
               >
-                {service.name}
+                {service.title}
               </Link>
               {index < services.length - 1 && (
                 <div className="w-full bg-gray-300 h-px my-3"></div>
@@ -146,7 +147,7 @@ const Footer = () => {
             errors={state.errors}
           />
           <ReCAPTCHA
-            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            sitekey="6LdhlTAqAAAAAOqiHsftET4aURk1e3kRZuGqBREW"
             theme="light"
           />
           <button
@@ -162,15 +163,15 @@ const Footer = () => {
   );
 };
 
-const services = [
-  { name: "Private Limited Company", link: "/" },
-  { name: "One Person Company", link: "/" },
-  { name: "LLP Registration", link: "/" },
-  { name: "Section 8 Company", link: "/" },
-  { name: "MSME/Udyam Registrations", link: "/" },
-  { name: "GST Registration", link: "/" },
-  { name: "Startup India Registration", link: "/" },
-];
+// const services = [
+//   { name: "Private Limited Company", link: "/" },
+//   { name: "One Person Company", link: "/" },
+//   { name: "LLP Registration", link: "/" },
+//   { name: "Section 8 Company", link: "/" },
+//   { name: "MSME/Udyam Registrations", link: "/" },
+//   { name: "GST Registration", link: "/" },
+//   { name: "Startup India Registration", link: "/" },
+// ];
 
 // Data for Registration Seva services
 const rSevaServices = [
