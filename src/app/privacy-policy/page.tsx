@@ -24,15 +24,13 @@ function PrivacyPolicy() {
             1. Information We Collect
           </h2>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
-              Personal Information:
-            </strong>
+            <strong className="text-primary ">Personal Information:</strong>
             We may collect personal information that you voluntarily provide to
             us, such as your name, email address, phone number, and business
             details.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">Usage Data:</strong> We
+            <strong className="text-primary ">Usage Data:</strong> We
             automatically collect information about your interactions with our
             Site, such as your IP address, browser type, pages visited, and the
             time and date of your visit.
@@ -42,21 +40,17 @@ function PrivacyPolicy() {
             2. How We Use Your Information
           </h2>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
-              To Provide Services:
-            </strong>
+            <strong className="text-primary ">To Provide Services:</strong>
             We use your information to process your requests, provide our
             services, and communicate with you.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
-              To Improve Our Services:
-            </strong>
+            <strong className="text-primary ">To Improve Our Services:</strong>
             We analyze usage data to improve the functionality and user
             experience of our Site.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
+            <strong className="text-primary ">
               To Send Marketing Communications:
             </strong>
             With your consent, we may send you promotional emails about our
@@ -67,16 +61,12 @@ function PrivacyPolicy() {
             3. How We Share Your Information
           </h2>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
-              With Service Providers:
-            </strong>
+            <strong className="text-primary ">With Service Providers:</strong>
             We may share your information with third-party service providers who
             assist us in providing our services.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
-            <strong className="text-primary underline">
-              For Legal Reasons:
-            </strong>
+            <strong className="text-primary ">For Legal Reasons:</strong>
             We may disclose your information if required by law or to protect
             our legal rights.
           </p>
