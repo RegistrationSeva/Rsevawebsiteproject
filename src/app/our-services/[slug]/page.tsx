@@ -13,6 +13,7 @@ import { FaAngleDown, FaPlus } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
+import ServiceBannerCard from "@/components/ServiceBannerCard";
 
 interface Data {
   title: string;
@@ -165,6 +166,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               <p className="text-sm md:text-md text-gray-700 rounded-lg text-justify">
                 {serviceItem.description}
               </p>
+              <ServiceBannerCard />
             </div>
             <Link
               href={`/contact-us/${serviceItem.slug}`}
