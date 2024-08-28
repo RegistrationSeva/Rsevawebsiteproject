@@ -75,17 +75,16 @@ const config = {
       const { addUtilities } = api;
       addUtilities({
         ".name": {
-          "@apply text-xl md:text-3xl font-bold text-[black] text-center underline":
-            {},
+          "@apply text-xl md:text-3xl font-bold text-[black] text-center": {},
         },
         ".heading": {
-          "@apply text-lg md:text-xl font-bold text-[black]": {},
+          "@apply text-lg md:text-lg font-semibold text-[black]": {},
         },
         ".conclusion": {
           "@apply text-sm md:text-lg font-medium text-gray-600 mb-2 italic": {},
         },
         ".title": {
-          "@apply text-lg md:text-xl font-semibold text-[black] underline text-gray-700":
+          "@apply text-lg md:text-xl font-semibold text-[black] text-gray-700":
             {},
         },
         ".description": {

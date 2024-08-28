@@ -159,7 +159,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
         <div className="grid grid-cols-1 md:grid-cols-[70%_30%] bg-[#F5F5F5] p-4">
           <div className="flex flex-col justify-center p-6 md:p-10 space-y-7 md:items-start px-7 items-center">
             <div>
-              <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+              <h1 className="text-2xl md:text-3xl font-semibold mb-2 text-primary">
                 {serviceItem.title}
               </h1>
               <p className="text-sm md:text-md text-gray-700 rounded-lg text-justify">
@@ -180,7 +180,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
           {!serviceItem?.overview?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.overview?.name && (
-                <h1 className="name">{serviceItem?.overview?.name}</h1>
+                <h1 className="name text-primary" style={{ color: "#0F4A89" }}>
+                  {serviceItem?.overview?.name}
+                </h1>
               )}
               {serviceItem?.overview?.heading && (
                 <p className="heading">{serviceItem?.overview?.heading}</p>

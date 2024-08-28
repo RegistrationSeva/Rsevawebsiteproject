@@ -89,27 +89,27 @@ function TermsOfService() {
             7. Contact Us
           </h2>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-6">
-            If you have any questions about these Terms, please contact us at
+            If you have any questions about these Terms, please contact us at{" "}
             <a
               href="mailto:info@registrationseva.com"
               className="text-primary hover:underline"
             >
               info@registrationseva.com
-            </a>
-            or call us at
+            </a>{" "}
+            or call us at{" "}
             <a
               href="tel:+919999395031"
               className="text-primary hover:underline"
             >
               +91 9999395031
-            </a>
-            or
+            </a>{" "}
+            or{" "}
             <a
               href="tel:+918076412030"
               className="text-primary hover:underline"
             >
               +91 8076412030
-            </a>
+            </a>{" "}
             You can also write to us at FIRST FLOOR, OFFICE NO 102, SHREE SHYAM
             COMPLEX, VIKAS MARG, LAXMI NAGAR, East Delhi, Delhi, 110092.
           </p>

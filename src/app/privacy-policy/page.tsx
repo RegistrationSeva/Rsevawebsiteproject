@@ -26,7 +26,7 @@ function PrivacyPolicy() {
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               Personal Information:
-            </strong>{" "}
+            </strong>
             We may collect personal information that you voluntarily provide to
             us, such as your name, email address, phone number, and business
             details.
@@ -44,21 +44,21 @@ function PrivacyPolicy() {
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               To Provide Services:
-            </strong>{" "}
+            </strong>
             We use your information to process your requests, provide our
             services, and communicate with you.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               To Improve Our Services:
-            </strong>{" "}
+            </strong>
             We analyze usage data to improve the functionality and user
             experience of our Site.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               To Send Marketing Communications:
-            </strong>{" "}
+            </strong>
             With your consent, we may send you promotional emails about our
             services. You can opt-out at any time.
           </p>
@@ -69,14 +69,14 @@ function PrivacyPolicy() {
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               With Service Providers:
-            </strong>{" "}
+            </strong>
             We may share your information with third-party service providers who
             assist us in providing our services.
           </p>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-4">
             <strong className="text-primary underline">
               For Legal Reasons:
-            </strong>{" "}
+            </strong>
             We may disclose your information if required by law or to protect
             our legal rights.
           </p>
@@ -111,26 +111,26 @@ function PrivacyPolicy() {
           </h2>
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed mb-6">
             If you have any questions about this Privacy Policy, please contact
-            us at
+            us at{" "}
             <a
               href="mailto:info@registrationseva.com"
               className="text-primary hover:underline"
             >
               info@registrationseva.com
-            </a>
-            or call us at
+            </a>{" "}
+            or call us at{" "}
             <a
               href="tel:+919999395031"
               className="text-primary hover:underline"
             >
               +91 9999395031
-            </a>
-            or
+            </a>{" "}
+            or{" "}
             <a
               href="tel:+918076412030"
               className="text-primary hover:underline"
             >
-              +91 8076412030
+              +91 8076412030{" "}
             </a>
             You can also write to us at FIRST FLOOR, OFFICE NO 102, SHREE SHYAM
             COMPLEX, VIKAS MARG, LAXMI NAGAR, East Delhi, Delhi, 110092.
