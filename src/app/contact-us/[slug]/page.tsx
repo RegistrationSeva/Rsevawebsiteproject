@@ -50,7 +50,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
   if (!serviceItem) {
     return (
       <div className="flex justify-center items-center h-[80vh]">
-        <p className="text-4xl">Not Found..</p>
+        <p className="text-4xl">Loading...</p>
       </div>
     );
   }

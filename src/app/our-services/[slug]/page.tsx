@@ -86,7 +86,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
   if (!serviceItem) {
     return (
       <div className="flex justify-center items-center h-[80vh]">
-        <p className="text-4xl">Not Found..</p>
+        <p className="text-4xl">Loading...</p>
       </div>
     );
   }
