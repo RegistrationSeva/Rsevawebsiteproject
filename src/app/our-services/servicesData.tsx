@@ -378,7 +378,7 @@ export const services = [
   //       },
   //     ],
   //   },
-  //   image: images.appDev,
+  //
   // },
 
   // New Documentation
@@ -389,7 +389,7 @@ export const services = [
     slug: "private-limited-company",
     description:
       "It is simple and quick to register a Private Limited Company online. Our packages include all the necessary documents such as DIN, DSC, Name Approval, MOA, AOA and Company Registration Certificate, along with PAN and TAN Numbers. You can start your own company today.",
-    image: images.appDev,
+
     overview: {
       name: "Overview",
       heading: "",
@@ -781,7 +781,7 @@ export const services = [
     slug: "section-8-company",
     description:
       "Registering an NGO as a Section 8 Company is a hassle-free, online, and speedy process. We offer a complete package that includes everything you need for registration, such as DIN, DSC, name approval, MOA, AOA, PAN and TAN numbers and the Section 8 Company Registration Certificate.",
-    image: images.appDev,
+
     overview: {
       name: "Overview",
       heading: "",
@@ -1168,7 +1168,7 @@ export const services = [
     slug: "msme-or-udyam-registration",
     description:
       "We offer assistance in obtaining Udyam Registration for your MSME quickly and easily. Our services include filing for MSME Registration with the Ministry of Micro, Small & Medium Enterprises, enabling you to avail numerous incentives, benefits, and concessions as a registered MSME.",
-    image: images.appDev,
+
     overview: {
       name: "Overview",
       heading: "",
@@ -1582,7 +1582,7 @@ export const services = [
     slug: "gst-registration-india",
     description:
       "We assist with all aspects of GST registration, from advising on the appropriate type of registration to drafting documents and filing online applications. Let us take care of the process for you and ensure a hassle-free registration experience. Choose Registrationseva.com for all your GST registration needs.",
-    image: images.appDev,
+
     overview: {
       name: "Overview",
       heading: "",
@@ -2073,7 +2073,7 @@ export const services = [
     slug: "startup-india-registration",
     description:
       "We offer assistance in obtaining recognition under the Startup India Scheme by the Department for Promotion of Industry and Internal Trade (DPIIT). This recognition provides startups with various benefits and concessions in Intellectual Property (IP) filing. Our services include drafting the necessary documents and filing the application with DPIIT (Government of India) on behalf of the startup.",
-    image: images.appDev,
+
     overview: {
       name: "Overview",
       heading: "",

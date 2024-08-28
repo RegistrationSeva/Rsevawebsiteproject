@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm, ValidationError } from "@formspree/react";
 import { toast } from "sonner";
+import images from "@/assets/images";
 
 interface Service {
   slug: string;
@@ -69,7 +70,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
     <div className="container py-14">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <Image
-          src={serviceItem.image}
+          src={images.contactUs}
           alt={serviceItem.title}
           className="w-full h-[500px] object-cover transition-transform duration-500 ease-in-out transform rounded-lg"
         />
