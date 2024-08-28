@@ -168,12 +168,12 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               </p>
               <ServiceBannerCard />
             </div>
-            <Link
+            {/* <Link
               href={`/contact-us/${serviceItem.slug}`}
               className="px-7 py-2 bg-blue-700 mt-4 rounded-lg text-xl text-white font-semibold hover:bg-blue-500 text-center"
             >
               Get Quote
-            </Link>
+            </Link> */}
           </div>
           <ContactForm />
         </div>
