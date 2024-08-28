@@ -75,7 +75,8 @@ const config = {
       const { addUtilities } = api;
       addUtilities({
         ".name": {
-          "@apply text-xl md:text-3xl font-bold text-[black] text-center": {},
+          "@apply text-xl md:text-3xl font-bold text-[black] text-center text-primary":
+            {},
         },
         ".heading": {
           "@apply text-lg md:text-lg font-semibold text-[black]": {},
@@ -84,7 +85,7 @@ const config = {
           "@apply text-sm md:text-lg font-medium text-gray-600 mb-2 italic": {},
         },
         ".title": {
-          "@apply text-lg md:text-xl font-semibold text-[black] text-gray-700":
+          "@apply text-lg md:text-xl font-semibold text-gray-700 text-primary":
             {},
         },
         ".description": {
