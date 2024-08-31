@@ -63,7 +63,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
         <Image
           src={images.contactUs}
           alt={"Contact Us Image"}
-          className="w-full h-[500px] object-cover transition-transform duration-500 ease-in-out transform rounded-lg"
+          className="w-full h-[500px] object-contain md:object-cover  transition-transform duration-500 ease-in-out transform rounded-lg"
         />
         <div className="flex flex-col justify-center p-6 md:p-10">
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-800 mb-4">
