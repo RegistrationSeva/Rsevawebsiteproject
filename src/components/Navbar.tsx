@@ -328,7 +328,7 @@ function Navbar() {
                   className="hover:text-secondary"
                   onClick={toggleMenu}
                 >
-                  services
+                  Our Services
                 </Link>
               </li>
               <li>
