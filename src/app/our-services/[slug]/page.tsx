@@ -204,9 +204,12 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                             return (
                               <ul className="list-disc px-7" key={index}>
                                 {item?.title && (
-                                  <li className="paragraph text-sm ">
-                                    {item?.title}
-                                  </li>
+                                  <>
+                                    <li className="paragraph text-sm ">
+                                      {item?.title}
+                                    </li>
+                                    <p>{item?.description}</p>
+                                  </>
                                 )}
                               </ul>
                             );
@@ -226,70 +229,21 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
           )}
 
           {/* Eligibility */}
-          <div className="space-y-4">
-            {serviceItem?.eligibility?.name && (
-              <h1 className="name">{serviceItem?.eligibility?.name}</h1>
-            )}
-            {serviceItem?.eligibility?.heading && (
-              <p className="heading">{serviceItem?.eligibility?.heading}</p>
-            )}
+          {!serviceItem?.eligibility?.isEmpty && (
+            <div className="space-y-4">
+              {serviceItem?.eligibility?.name && (
+                <h1 className="name">{serviceItem?.eligibility?.name}</h1>
+              )}
+              {serviceItem?.eligibility?.heading && (
+                <p className="heading">{serviceItem?.eligibility?.heading}</p>
+              )}
 
-            {serviceItem?.eligibility?.data?.map(
-              (item: NestedData, index: number) => {
-                return (
-                  <div
-                    key={index}
-                    className="px-7 items-center shadow-lg py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
-                  >
-                    {item?.title && (
-                      <p className="title text-center">{item?.title}</p>
-                    )}
-                    {item?.description && (
-                      <p className="description text-center">
-                        {item?.description}
-                      </p>
-                    )}
-                    <div className="mt-4">
-                      {item?.data?.length > 0 &&
-                        item?.data?.map((item: Data, index: number) => {
-                          return (
-                            <ul className="list-disc px-7" key={index}>
-                              {item?.title && (
-                                <li className="paragraph text-sm ">
-                                  {item?.title}
-                                </li>
-                              )}
-                            </ul>
-                          );
-                        })}
-                    </div>
-                  </div>
-                );
-              }
-            )}
-
-            {serviceItem?.eligibility?.conclusion && (
-              <p className="conclusion">
-                {serviceItem?.eligibility?.conclusion}
-              </p>
-            )}
-          </div>
-
-          {/* Benefits */}
-          <div className="space-y-4">
-            {serviceItem?.benefits?.name && (
-              <h1 className="name">{serviceItem?.benefits?.name}</h1>
-            )}
-            {serviceItem?.benefits?.heading && (
-              <p className="heading">{serviceItem?.benefits?.heading}</p>
-            )}
-            <div className="grid md:grid-cols-3 gap-4 mt-5">
-              {serviceItem?.benefits?.data?.map(
+              {serviceItem?.eligibility?.data?.map(
                 (item: NestedData, index: number) => {
                   return (
                     <div
-                      className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
                       key={index}
+                      className="px-7 items-center shadow-lg py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
                     >
                       {item?.title && (
                         <p className="title text-center">{item?.title}</p>
@@ -299,7 +253,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                           {item?.description}
                         </p>
                       )}
-                      <div className="mt-4 ">
+                      <div className="mt-4">
                         {item?.data?.length > 0 &&
                           item?.data?.map((item: Data, index: number) => {
                             return (
@@ -317,12 +271,67 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                   );
                 }
               )}
-            </div>
 
-            {serviceItem?.benefits?.conclusion && (
-              <p className="conclusion">{serviceItem?.benefits?.conclusion}</p>
-            )}
-          </div>
+              {serviceItem?.eligibility?.conclusion && (
+                <p className="conclusion">
+                  {serviceItem?.eligibility?.conclusion}
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Benefits */}
+          {!serviceItem?.benefits?.isEmpty && (
+            <div className="space-y-4">
+              {serviceItem?.benefits?.name && (
+                <h1 className="name">{serviceItem?.benefits?.name}</h1>
+              )}
+              {serviceItem?.benefits?.heading && (
+                <p className="heading">{serviceItem?.benefits?.heading}</p>
+              )}
+              <div className="grid md:grid-cols-3 gap-4 mt-5">
+                {serviceItem?.benefits?.data?.map(
+                  (item: NestedData, index: number) => {
+                    return (
+                      <div
+                        className="px-7 items-center shadow-xl py-4 rounded-xl border border-white border-l-primary border-r-primary space-y-2"
+                        key={index}
+                      >
+                        {item?.title && (
+                          <p className="title text-center">{item?.title}</p>
+                        )}
+                        {item?.description && (
+                          <p className="description text-center">
+                            {item?.description}
+                          </p>
+                        )}
+                        <div className="mt-4 ">
+                          {item?.data?.length > 0 &&
+                            item?.data?.map((item: Data, index: number) => {
+                              return (
+                                <ul className="list-disc px-7" key={index}>
+                                  {item?.title && (
+                                    <li className="paragraph text-sm ">
+                                      {item?.title}
+                                    </li>
+                                  )}
+                                </ul>
+                              );
+                            })}
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+
+              {serviceItem?.benefits?.conclusion && (
+                <p className="conclusion">
+                  {serviceItem?.benefits?.conclusion}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* requirement */}
           {!serviceItem?.requirement?.isEmpty && (
@@ -509,86 +518,90 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
           )}
 
           {/* why_us */}
-          <div className="space-y-4">
-            {serviceItem?.why_us?.name && (
-              <h1 className="name">{serviceItem?.why_us?.name}</h1>
-            )}
-            {serviceItem?.why_us?.heading && (
-              <p className="heading">{serviceItem?.why_us?.heading}</p>
-            )}
+          {!serviceItem?.why_us?.isEmpty && (
+            <div className="space-y-4">
+              {serviceItem?.why_us?.name && (
+                <h1 className="name">{serviceItem?.why_us?.name}</h1>
+              )}
+              {serviceItem?.why_us?.heading && (
+                <p className="heading">{serviceItem?.why_us?.heading}</p>
+              )}
 
-            {serviceItem?.why_us?.data?.map(
-              (item: NestedData, index: number) => {
-                return (
-                  <div className="" key={index}>
-                    {item?.title && <p className="title">{item?.title}</p>}
-                    {item?.description && (
-                      <p className="description">{item?.description}</p>
-                    )}
-                    <div className="mt-4">
-                      {item?.data?.length > 0 &&
-                        item?.data?.map((item: Data, index: number) => {
-                          return (
-                            <ul className="list-disc px-7" key={index}>
-                              {item?.title && (
-                                <li className="paragraph text-sm ">
-                                  {item?.title}
-                                </li>
-                              )}
-                            </ul>
-                          );
-                        })}
+              {serviceItem?.why_us?.data?.map(
+                (item: NestedData, index: number) => {
+                  return (
+                    <div className="" key={index}>
+                      {item?.title && <p className="title">{item?.title}</p>}
+                      {item?.description && (
+                        <p className="description">{item?.description}</p>
+                      )}
+                      <div className="mt-4">
+                        {item?.data?.length > 0 &&
+                          item?.data?.map((item: Data, index: number) => {
+                            return (
+                              <ul className="list-disc px-7" key={index}>
+                                {item?.title && (
+                                  <li className="paragraph text-sm ">
+                                    {item?.title}
+                                  </li>
+                                )}
+                              </ul>
+                            );
+                          })}
+                      </div>
                     </div>
-                  </div>
-                );
-              }
-            )}
+                  );
+                }
+              )}
 
-            {serviceItem?.why_us?.conclusion && (
-              <p className="conclusion">{serviceItem?.why_us?.conclusion}</p>
-            )}
-          </div>
+              {serviceItem?.why_us?.conclusion && (
+                <p className="conclusion">{serviceItem?.why_us?.conclusion}</p>
+              )}
+            </div>
+          )}
 
           {/* faq */}
-          <div className="space-y-4">
-            {serviceItem?.faq?.name && (
-              <h1 className="name">{serviceItem?.faq?.name}</h1>
-            )}
-            {serviceItem?.faq?.heading && (
-              <p className="heading">{serviceItem?.faq?.heading}</p>
-            )}
-            {serviceItem.faq?.data?.length > 0 && (
-              <Accordion type="single" collapsible className="w-ful">
-                {serviceItem.faq?.data.map(
-                  (
-                    {
-                      title,
-                      description,
-                    }: { title: string; description: string },
-                    index: number
-                  ) => (
-                    <AccordionItem
-                      value={`item-${index + 1}`}
-                      key={index}
-                      className="overflow-hidden border mb-4  rounded-lg shadow-lg"
-                    >
-                      <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
-                        {title}
-                        <FaPlus />
-                      </AccordionTrigger>
-                      <AccordionContent className="p-4">
-                        {description}
-                      </AccordionContent>
-                    </AccordionItem>
-                  )
-                )}
-              </Accordion>
-            )}
+          {!serviceItem?.faq?.isEmpty && (
+            <div className="space-y-4">
+              {serviceItem?.faq?.name && (
+                <h1 className="name">{serviceItem?.faq?.name}</h1>
+              )}
+              {serviceItem?.faq?.heading && (
+                <p className="heading">{serviceItem?.faq?.heading}</p>
+              )}
+              {serviceItem.faq?.data?.length > 0 && (
+                <Accordion type="single" collapsible className="w-ful">
+                  {serviceItem.faq?.data.map(
+                    (
+                      {
+                        title,
+                        description,
+                      }: { title: string; description: string },
+                      index: number
+                    ) => (
+                      <AccordionItem
+                        value={`item-${index + 1}`}
+                        key={index}
+                        className="overflow-hidden border mb-4  rounded-lg shadow-lg"
+                      >
+                        <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
+                          {title}
+                          <FaPlus />
+                        </AccordionTrigger>
+                        <AccordionContent className="p-4">
+                          {description}
+                        </AccordionContent>
+                      </AccordionItem>
+                    )
+                  )}
+                </Accordion>
+              )}
 
-            {serviceItem?.faq?.conclusion && (
-              <p className="conclusion">{serviceItem?.faq?.conclusion}</p>
-            )}
-          </div>
+              {serviceItem?.faq?.conclusion && (
+                <p className="conclusion">{serviceItem?.faq?.conclusion}</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@
     "title": "",
     "slug": "",
     "description": "",
-    "image": "",
     "overview": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -22,6 +22,7 @@
       ]
     },
     "eligibility": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -39,6 +40,7 @@
       ]
     },
     "benefits": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -56,6 +58,7 @@
       ]
     },
     "requirement": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -73,6 +76,7 @@
       ]
     },
     "registration_process": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -90,6 +94,7 @@
       ]
     },
     "compliances": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -107,6 +112,7 @@
       ]
     },
     "why_us": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",
@@ -124,6 +130,7 @@
       ]
     },
     "faq": {
+      "isEmpty": true,
       "name": "",
       "heading": "",
       "conclusion": "",

@@ -204,8 +204,20 @@ function Navbar() {
                   </MenubarItem>
                   <MenubarItem disabled>Trademark Opposition</MenubarItem>
 
-                  <MenubarItem disabled>Trademark Transfer</MenubarItem>
-                  <MenubarItem disabled>Trademark Renewal</MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/trademark-transfer")
+                    }
+                  >
+                    Trademark Transfer
+                  </MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/trademark-renewal")
+                    }
+                  >
+                    Trademark Renewal
+                  </MenubarItem>
                   <MenubarItem disabled>Trademark Hearing</MenubarItem>
 
                   <MenubarItem disabled>Trademark Rectification</MenubarItem>
