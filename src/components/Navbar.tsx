@@ -84,12 +84,19 @@ function Navbar() {
                   <MenubarSub>
                     <MenubarSubTrigger>Company</MenubarSubTrigger>
                     <MenubarSubContent>
+                      <MenubarItem
+                        onClick={() =>
+                          route.push("/our-services/private-limited-company")
+                        }
+                      >
+                        Private Limited Company
+                      </MenubarItem>
                       <MenubarItem disabled>
                         One Person Company (OPC)
                       </MenubarItem>
                       <MenubarItem
                         onClick={() =>
-                          route.push("/our-services/private-limited-company")
+                          route.push("/our-services/section-8-company")
                         }
                       >
                         Section 8 Company
@@ -111,7 +118,7 @@ function Navbar() {
                     <MenubarSubContent>
                       <MenubarItem
                         onClick={() =>
-                          route.push("/our-services/gst-registration")
+                          route.push("/our-services/gst-registration-india")
                         }
                       >
                         GST Registration
@@ -213,6 +220,7 @@ function Navbar() {
                     <MenubarSubTrigger>Annual Compliance</MenubarSubTrigger>
                     <MenubarSubContent>
                       <MenubarItem
+                        disabled
                         onClick={() =>
                           route.push("/our-services/private-limited-company")
                         }
