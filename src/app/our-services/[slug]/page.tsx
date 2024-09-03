@@ -1,15 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { services } from "../servicesData";
-import Image from "next/image";
-import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
-import { FaAngleDown, FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
@@ -572,14 +570,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
               {serviceItem.faq?.data?.length > 0 && (
                 <Accordion type="single" collapsible className="w-ful">
                   {serviceItem.faq?.data.map(
-                    (
-                      {
-                        title,
-                        description,
-                        data,
-                      }: { title: string; description: string },
-                      index: number
-                    ) => (
+                    ({ title, description, data }, index: number) => (
                       <AccordionItem
                         value={`item-${index + 1}`}
                         key={index}
@@ -595,7 +586,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                           {data?.length > 0 && (
                             <ul className="list-disc px-7 py-4">
                               {data?.map((item: any, index: number) => (
-                                <li className="paragraph text-sm">
+                                <li className="paragraph text-sm" key={index}>
                                   {item?.description}
                                 </li>
                               ))}
