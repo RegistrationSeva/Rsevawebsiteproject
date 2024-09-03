@@ -200,7 +200,13 @@ function Navbar() {
               <MenubarMenu>
                 <MenubarTrigger>Trademark</MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem disabled>Trademark Registration</MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/trademark-registration")
+                    }
+                  >
+                    Trademark Registration
+                  </MenubarItem>
                   <MenubarItem
                     onClick={() =>
                       route.push("/our-services/trademark-objection")
