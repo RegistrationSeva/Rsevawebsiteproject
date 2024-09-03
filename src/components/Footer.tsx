@@ -27,7 +27,7 @@ const Footer = () => {
     }
   }, [state.succeeded]);
   return (
-    <footer className="px-7 grid md:grid-cols-3 py-10 gap-6 bg-[white]">
+    <footer className="md:px-7 grid md:grid-cols-3 py-10 gap-6 bg-[white]">
       {/* Services Card */}
       <div className="p-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg">
         <h2 className="text-2xl font-bold text-black mb-6">Services</h2>
@@ -163,17 +163,6 @@ const Footer = () => {
   );
 };
 
-// const services = [
-//   { name: "Private Limited Company", link: "/" },
-//   { name: "One Person Company", link: "/" },
-//   { name: "LLP Registration", link: "/" },
-//   { name: "Section 8 Company", link: "/" },
-//   { name: "MSME/Udyam Registrations", link: "/" },
-//   { name: "GST Registration", link: "/" },
-//   { name: "Startup India Registration", link: "/" },
-// ];
-
-// Data for Registration Seva services
 const rSevaServices = [
   { name: "About Us", link: "/about-us" },
   { name: "Privacy Policy", link: "/privacy-policy" },
