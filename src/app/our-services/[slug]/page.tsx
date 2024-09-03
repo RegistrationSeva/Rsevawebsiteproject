@@ -576,6 +576,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                       {
                         title,
                         description,
+                        data,
                       }: { title: string; description: string },
                       index: number
                     ) => (
@@ -584,12 +585,22 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                         key={index}
                         className="overflow-hidden border mb-4  rounded-lg shadow-lg"
                       >
-                        <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-4 flex-row flex justify-between items-center">
+                        <AccordionTrigger className="w-full p-4 text-lg font-semibold mb-2 flex-row flex justify-between items-center">
                           {title}
                           <FaPlus />
                         </AccordionTrigger>
                         <AccordionContent className="p-4">
                           {description}
+
+                          {data?.length > 0 && (
+                            <ul className="list-disc px-7 py-4">
+                              {data?.map((item: any, index: number) => (
+                                <li className="paragraph text-sm">
+                                  {item?.description}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </AccordionContent>
                       </AccordionItem>
                     )

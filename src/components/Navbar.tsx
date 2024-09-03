@@ -178,7 +178,13 @@ function Navbar() {
                   </MenubarItem>
 
                   <MenubarItem disabled>LEI Registration in India</MenubarItem>
-                  <MenubarItem disabled>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push(
+                        "/our-services/functional-certificate-with-noida-authority"
+                      )
+                    }
+                  >
                     Functional Certificate with Noida Authority
                   </MenubarItem>
                   <MenubarItem disabled>
