@@ -580,9 +580,14 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                           {data?.length > 0 && (
                             <ul className="list-disc px-7 py-4">
                               {data?.map((item: any, index: number) => (
-                                <li className="paragraph text-sm" key={index}>
-                                  {item?.description}
-                                </li>
+                                <div>
+                                  <p className="paragraph text-sm text-black font-bold">
+                                    {item?.title}
+                                  </p>
+                                  <li className="paragraph text-sm" key={index}>
+                                    {item?.description}
+                                  </li>
+                                </div>
                               ))}
                             </ul>
                           )}

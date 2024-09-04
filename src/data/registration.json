@@ -1133,5 +1133,549 @@
         }
       ]
     }
+  },
+  {
+    "title": "FSSAI Registration",
+    "slug": "fssai-registration",
+    "description": "FSSAI registration is a compulsory requirement for all food business operators (FBOs) in India, regardless of the size or scope of their operations. The FSSAI issues a 14-digit registration or license number, which must be printed on all food packages along with the FSSAI logo. This number signifies that the food product complies with the safety and quality standards set by the FSSAI. The type of registration or license needed depends on the size and nature of the business.",
+
+    "overview": {
+      "isEmpty": false,
+      "name": "The FSSAI registration or license is categorized into three types",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Basic Registration",
+          "description": "For small scale food businesses with an annual turnover of up to ₹12 lakhs.",
+          "data": []
+        },
+        {
+          "title": "State License",
+          "description": "For medium-sized food businesses with an annual turnover of more than ₹12 lakhs but less than ₹20 crores.",
+          "data": []
+        },
+        {
+          "title": "Central License",
+          "description": "For large-scale food businesses with an annual turnover exceeding ₹20 crores, or those engaged in import/export activities or operating across multiple states.",
+          "data": []
+        }
+      ]
+    },
+    "eligibility": {
+      "isEmpty": false,
+      "name": "Eligibility",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Basic Registration",
+          "description": "Small food manufacturers, petty retailers, food stalls, hawkers, small-scale cottage industries, and small food businesses with an annual turnover of up to ₹12 lakhs are eligible for basic registration.",
+          "data": []
+        },
+        {
+          "title": "State License",
+          "description": "Medium-sized food manufacturers, processors, storage units, transporters, marketers, distributors, and other food-related businesses with a turnover between ₹12 lakhs and ₹20 crores need a state license.",
+          "data": []
+        },
+        {
+          "title": "Central License",
+          "description": "Large food businesses, importers, exporters, food processing units, dairy units, and businesses with an annual turnover exceeding ₹20 crores or operating in multiple states must obtain a central license.",
+          "data": []
+        }
+      ]
+    },
+    "benefits": {
+      "isEmpty": false,
+      "name": "Benefits",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Legal Compliance",
+          "description": "FSSAI registration ensures that your food business operates legally and meets the safety standards set by the FSSAI, avoiding penalties and legal issues.",
+          "data": []
+        },
+        {
+          "title": "Consumer Trust",
+          "description": "Displaying the FSSAI logo and registration number on food products helps build consumer trust, as it assures them that the food is safe and of high quality.",
+          "data": []
+        },
+        {
+          "title": "Market Access",
+          "description": "FSSAI registration is often a important requirement for entering major markets, including retail chains, supermarkets, and online food delivery platforms.",
+          "data": []
+        },
+        {
+          "title": "Business Expansion",
+          "description": "An FSSAI license is essential for expanding your food business across state lines or internationally, as it ensures compliance with food safety regulations.",
+          "data": []
+        },
+        {
+          "title": "Government Schemes",
+          "description": "Registered FBOs can avail of various government schemes and subsidies aimed at promoting food safety and hygiene in the industry.",
+          "data": []
+        }
+      ]
+    },
+    "requirement": {
+      "isEmpty": false,
+      "name": "Documents Required",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Basic Registration",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Photo ID proof of the food business owner (Aadhar card, voter ID, passport, etc.)"
+            },
+            {
+              "title": "",
+              "description": "Address proof of the food business"
+            },
+            {
+              "title": "",
+              "description": "Business details (name, type of business, etc.)"
+            },
+            {
+              "title": "",
+              "description": "+Passport-sized photographs"
+            }
+          ]
+        },
+        {
+          "title": "State License",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Proof of identity and address of the owner(s)"
+            },
+            {
+              "title": "",
+              "description": "Proof of identity and address of the owner(s)"
+            },
+            {
+              "title": "",
+              "description": "List of food products to be manufactured or handled"
+            },
+            {
+              "title": "",
+              "description": "Food safety management plan or certificate"
+            },
+            {
+              "title": "",
+              "description": "No Objection Certificate from the local municipality"
+            },
+            {
+              "title": "",
+              "description": "Blueprint or layout of the processing unit, if applicable"
+            }
+          ]
+        },
+        {
+          "title": "Central License",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "All documents required for the state license"
+            },
+            {
+              "title": "",
+              "description": "Import Export Code (IEC), if applicable"
+            },
+            {
+              "title": "",
+              "description": "Ministry of Commerce certificate for 100% export-oriented units"
+            },
+            {
+              "title": "",
+              "description": "Nomination of a person by the company in Form IX."
+            },
+            {
+              "title": "",
+              "description": "Certificate of Incorporation (for companies)"
+            }
+          ]
+        }
+      ]
+    },
+    "registration_process": {
+      "isEmpty": false,
+      "name": "Registration Process",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Determine the Type of Registration or License",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Assess your business’s annual turnover and nature of operations to determine whether you need basic registration, a state license, or a central license."
+            }
+          ]
+        },
+        {
+          "title": "Gather the Required Documents",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Collect all the necessary documents based on the type of registration or license you require."
+            }
+          ]
+        },
+        {
+          "title": "Create an Account on FoSCoS",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Visit the official FoSCoS portal and create an account by providing your email address and phone number."
+            }
+          ]
+        },
+        {
+          "title": "Fill Out the Application Form",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Log in to your FoSCoS account and fill out the appropriate application form (Form A for basic registration, Form B for state and central licenses)."
+            },
+            {
+              "title": "",
+              "description": "Provide details about your business, such as the name, address, type of business, and product category."
+            }
+          ]
+        },
+        {
+          "title": "Upload the Documents",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Upload the scanned copies of the required documents in the specified formats."
+            }
+          ]
+        },
+        {
+          "title": "Pay the Application Fee",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Pay the application fee online based on the type of registration or license you are applying for. The fee varies depending on the size and nature of the business."
+            }
+          ]
+        },
+        {
+          "title": "Submit the Application",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Review the details and submit the application form. You will get an acknowledgment receipt with a reference number for tracking the status of your application."
+            }
+          ]
+        },
+        {
+          "title": "Inspection and Approval",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "For state and central licenses, the FSSAI may conduct an inspection of your premises to ensure compliance with safety standards. If all criteria are met, the FSSAI will issue the registration or license."
+            }
+          ]
+        },
+        {
+          "title": "Receive the FSSAI Registration/License",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Once approved, you will receive your FSSAI registration or license, which must be prominently displayed at your business premises."
+            }
+          ]
+        }
+      ]
+    },
+    "compliances": {
+      "isEmpty": false,
+      "name": "Compliances",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Display of FSSAI License/Registration Number",
+          "description": "",
+          "data": [
+            {
+              "title": "Prominent Display",
+              "description": "The 14-digit FSSAI license or registration number must be prominently displayed at the place of business. This includes the main entrance and any other locations where food is handled, stored, or sold."
+            },
+            {
+              "title": "Packaging",
+              "description": "The FSSAI number should be printed on all food product packages, labels, and promotional materials."
+            }
+          ]
+        },
+        {
+          "title": "Annual Return Filing",
+          "description": "",
+          "data": [
+            {
+              "title": "Annual Returns",
+              "description": "FBOs involved in manufacturing or processing must file an annual return (Form D1) with the FSSAI by May 31st of each year, detailing the production quantity and the types of food products manufactured."
+            },
+            {
+              "title": "Half-Yearly Returns",
+              "description": "FBOs engaged in the manufacture of milk and milk products must file half-yearly returns (Form D2) by November 30th and May 31st."
+            }
+          ]
+        },
+        {
+          "title": "Food Safety Audits",
+          "description": "",
+          "data": [
+            {
+              "title": "Internal Audits",
+              "description": "Regular internal audits should be conducted to assess compliance with food safety standards and identify areas for improvement."
+            },
+            {
+              "title": "Third-Party Audits",
+              "description": "Depending on the size and nature of the business, FSSAI may require periodic third-party audits by accredited agencies to ensure ongoing compliance."
+            }
+          ]
+        },
+        {
+          "title": "Food Safety Training and Certification",
+          "description": "",
+          "data": [
+            {
+              "title": "Training for Staff",
+              "description": "FBOs must ensure that all food handlers are adequately trained in food safety and hygiene practices. This includes regular refresher training to keep up with the latest standards."
+            },
+            {
+              "title": "FOSTAC Certification",
+              "description": "Certain FBOs may be required to obtain Food Safety Training and Certification (FoSTaC) for their staff, especially for high-risk food processing units."
+            }
+          ]
+        },
+        {
+          "title": "Renewal of FSSAI License/Registration",
+          "description": "",
+          "data": [
+            {
+              "title": "Timely Renewal",
+              "description": "The FSSAI license or registration is typically valid for 1-5 years, depending on the type of license. FBOs must apply for renewal at least 30 days before the expiry date to avoid penalties."
+            },
+            {
+              "title": "Penalties for Late Renewal",
+              "description": "Late renewal can result in a penalty of ₹100 per day until the license is renewed."
+            }
+          ]
+        },
+        {
+          "title": "Record Keeping and Documentation",
+          "description": "",
+          "data": [
+            {
+              "title": "Maintenance of Records",
+              "description": "FBOs must maintain proper records of all raw materials, ingredients, production processes, and distribution details. This includes batch-wise production logs and sales records."
+            },
+            {
+              "title": "Documentation for Inspections",
+              "description": "These records should be readily available for inspection by FSSAI officials. Proper documentation is crucial for proving compliance during audits."
+            }
+          ]
+        },
+        {
+          "title": "Labeling Compliance",
+          "description": "",
+          "data": [
+            {
+              "title": "Correct Labeling",
+              "description": "All food products must be labeled according to FSSAI guidelines, including information such as ingredients, nutritional facts, expiry date, storage instructions, and the FSSAI logo with the registration/license number."
+            },
+            {
+              "title": "Allergen Information",
+              "description": "Clearly mention any potential allergens in the product as per FSSAI labeling regulations."
+            }
+          ]
+        },
+        {
+          "title": "Hygienic Practices",
+          "description": "",
+          "data": [
+            {
+              "title": "Sanitation and Hygiene",
+              "description": "FBOs must ensure that all food handling areas are kept clean and sanitized. This includes regular cleaning of equipment, utensils, and work surfaces."
+            },
+            {
+              "title": "Pest Control",
+              "description": "Implement effective pest control measures to prevent contamination of food products."
+            }
+          ]
+        },
+        {
+          "title": "Packaging and Storage Standards",
+          "description": "",
+          "data": [
+            {
+              "title": "Food-Grade Packaging",
+              "description": "Use food-grade materials for packaging to prevent contamination and ensure product safety."
+            },
+            {
+              "title": "Proper Storage Conditions",
+              "description": "Store food products under appropriate conditions, such as temperature control, to maintain their quality and safety."
+            }
+          ]
+        },
+        {
+          "title": "Food Recall Procedures",
+          "description": "",
+          "data": [
+            {
+              "title": "Recall Plan",
+              "description": "FBOs must have a food recall plan in place to quickly and effectively remove any unsafe or non-compliant products from the market."
+            },
+            {
+              "title": "Reporting to FSSAI",
+              "description": "In case of a food recall, FBOs must promptly report to FSSAI and other relevant authorities, providing details of the recall and the actions taken."
+            }
+          ]
+        },
+        {
+          "title": "Grievance Redressal Mechanism",
+          "description": "",
+          "data": [
+            {
+              "title": "Customer Complaints",
+              "description": "Establish a system for handling consumer complaints regarding food safety or quality. All complaints should be addressed promptly and records maintained."
+            },
+            {
+              "title": "Regular Monitoring",
+              "description": "Monitor and review customer feedback regularly to identify and address any recurring issues."
+            }
+          ]
+        }
+      ]
+    },
+    "why_us": {
+      "isEmpty": false,
+      "name": "Why Registrationseva.com?",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "Registrationseva.com streamlines the FSSAI registration process by offering expert guidance and support from start to finish. They assist in determining the appropriate type of registration or license based on your business needs, help gather and verify the necessary documents, and ensure accurate and timely submission of the application. By handling all the paperwork and liaising with the FSSAI, Registrationseva.com minimizes the chances of errors or delays, making the entire process hassle-free. Additionally, they provide post-registration support to ensure ongoing compliance with FSSAI regulations.",
+          "data": []
+        }
+      ]
+    },
+    "faq": {
+      "isEmpty": false,
+      "name": "FAQ",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "What is FSSAI Registration?",
+          "description": "FSSAI Registration is a legal requirement for businesses involved in the manufacture, processing, packaging, distribution, or sale of food products in India. It is issued by the Food Safety and Standards Authority of India (FSSAI) and ensures that food products meet safety and quality standards.",
+          "data": []
+        },
+        {
+          "title": "Who needs FSSAI Registration?",
+          "description": "Any food business operator (FBO) involved in food production, processing, packaging, storage, distribution, or sale in India requires FSSAI registration or a license. The type of registration needed depends on the size and scope of the business.",
+          "data": []
+        },
+        {
+          "title": "What are the different types of FSSAI licenses?",
+          "description": "There are three types of FSSAI licenses:",
+          "data": [
+            {
+              "title": "Basic Registration",
+              "description": "For small businesses with an annual turnover up to ₹12 lakhs."
+            },
+            {
+              "title": "State License",
+              "description": "For medium-sized businesses with an annual turnover between ₹12 lakhs and ₹20 crores."
+            },
+            {
+              "title": "Central License",
+              "description": "For large businesses with an annual turnover exceeding ₹20 crores, or those involved in import/export or operating across multiple states."
+            }
+          ]
+        },
+        {
+          "title": "How do I determine which type of FSSAI registration or license I need?",
+          "description": "The type of registration or license required is based on your business's size, annual turnover, and operational scope. Small businesses generally need basic registration, while larger or multi-state operations require state or central licenses. You can consult with a professional service provider to determine the correct type for your business.",
+          "data": []
+        },
+        {
+          "title": "What documents are required for FSSAI Registration?",
+          "description": "Documents required typically include:",
+          "data": [
+            {
+              "title": "",
+              "description": "Proof of identity and address of the business owner(s)"
+            },
+            {
+              "title": "",
+              "description": "Proof of business premises (rental agreement, sale deed, etc.)"
+            },
+            {
+              "title": "",
+              "description": "Bank account details and a canceled cheque"
+            },
+            {
+              "title": "",
+              "description": "Food safety management plan or certificate"
+            },
+            {
+              "title": "",
+              "description": "No Objection Certificate (NOC) from the local municipality"
+            },
+            {
+              "title": "",
+              "description": "Layout plan of the processing unit, if applicable"
+            }
+          ]
+        },
+        {
+          "title": "How long does it take to get FSSAI Registration license?",
+          "description": "The time for processing FSSAI registration or licensing can vary. Generally, basic registration is processed within 7-10 working days, while state and central licenses may take 30-60 days, depending on the complexity of the application and any inspections required.",
+          "data": []
+        },
+        {
+          "title": "Is FSSAI Registration valid for a lifetime?",
+          "description": "FSSAI registration is typically valid for 1-5 years, depending on the type of registration or license. Businesses must apply for renewal before the expiry date to avoid penalties and ensure uninterrupted operations.",
+          "data": []
+        },
+        {
+          "title": "What are the consequences of not having FSSAI Registration?",
+          "description": "Operating without FSSAI registration can result in legal penalties, fines, and suspension of business operations. Additionally, non-compliance may damage your business reputation and lead to loss of consumer trust.",
+          "data": []
+        },
+        {
+          "title": "Can I update or modify my FSSAI Registration details?",
+          "description": "Yes, you can update details such as business address, contact information, or ownership changes by submitting an application for modification on the FSSAI portal. It is important to keep your registration details current to avoid any issues with compliance.",
+          "data": []
+        },
+        {
+          "title": "What are the compliance requirements after obtaining FSSAI Registration?",
+          "description": "Post-registration, FBOs must comply with various requirements including displaying the FSSAI license number on products and premises, filing annual returns, maintaining hygiene standards, proper record-keeping, and adhering to labeling guidelines. Regular audits and training for staff are also part of maintaining compliance.",
+          "data": []
+        }
+      ]
+    }
   }
 ]

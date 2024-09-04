@@ -171,7 +171,13 @@ function Navbar() {
                     Startup India Registration
                   </MenubarItem>
 
-                  <MenubarItem disabled>FSSAI Registration</MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/fssai-registration")
+                    }
+                  >
+                    FSSAI Registration
+                  </MenubarItem>
                   <MenubarItem disabled>FSSAI Renewal</MenubarItem>
                   <MenubarItem disabled>
                     NGO Darpan/Niti Aayog Registration
