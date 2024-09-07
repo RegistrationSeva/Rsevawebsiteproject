@@ -24,6 +24,25 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const CustomMenuItem = ({
+    title,
+    navigation,
+    disabled,
+  }: {
+    title: string;
+    navigation: string;
+    disabled: boolean;
+  }) => {
+    return (
+      <MenubarItem
+        disabled={!!disabled}
+        onClick={() => route.push(`/our-services/${navigation}`)}
+      >
+        {title}
+      </MenubarItem>
+    );
+  };
+
   return (
     <div className="sticky top-0 z-50">
       <div className="bg-primary">
@@ -74,42 +93,45 @@ function Navbar() {
                   <MenubarSub>
                     <MenubarSubTrigger>Firm</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem
-                        onClick={() =>
-                          route.push("/our-services/partnership-firm")
-                        }
-                      >
-                        Partnership Firm
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        Proprietorship Registration
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="Partnership Firm"
+                        navigation="partnership-firm"
+                        disabled={false}
+                      />
+
+                      <CustomMenuItem
+                        title="Proprietorship Registration"
+                        navigation="proprietorship-registration"
+                        disabled={false}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
 
                   <MenubarSub>
                     <MenubarSubTrigger>Company</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem
-                        onClick={() =>
-                          route.push("/our-services/private-limited-company")
-                        }
-                      >
-                        Private Limited Company
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        One Person Company (OPC)
-                      </MenubarItem>
-                      <MenubarItem
-                        onClick={() =>
-                          route.push("/our-services/section-8-company")
-                        }
-                      >
-                        Section 8 Company
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        Limited Liability Partnership (LLP)
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="Private Limited Company"
+                        navigation="private-limited-company"
+                        disabled={false}
+                      />
+                      <CustomMenuItem
+                        title="One Person Company (OPC)"
+                        navigation="one-person-company"
+                        disabled={true}
+                      />
+
+                      <CustomMenuItem
+                        title="Section 8 Company"
+                        navigation="section-8-company"
+                        disabled={false}
+                      />
+
+                      <CustomMenuItem
+                        title="Limited Liability Partnership (LLP)"
+                        navigation="limited-liability-partnership"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
                 </MenubarContent>
@@ -122,36 +144,54 @@ function Navbar() {
                   <MenubarSub>
                     <MenubarSubTrigger>GST</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem
-                        onClick={() =>
-                          route.push("/our-services/gst-registration-india")
-                        }
-                      >
-                        GST Registration
-                      </MenubarItem>
-                      <MenubarItem disabled>GST Cancellation</MenubarItem>
-                      <MenubarItem disabled>
-                        Response to GST Notices
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="GST Registration"
+                        navigation="gst-registration-india"
+                        disabled={false}
+                      />
+
+                      <CustomMenuItem
+                        title="GST Cancellation"
+                        navigation="gst-cancellation"
+                        disabled={true}
+                      />
+
+                      <CustomMenuItem
+                        title="Response to GST Notices"
+                        navigation="response-to-gst-notices"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
 
                   <MenubarSub>
                     <MenubarSubTrigger>Income Tax</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem disabled>IT Return</MenubarItem>
-                      <MenubarItem disabled>
-                        Response to Income Tax Notices
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        80G and 12A Provisional Registration
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="IT Return"
+                        navigation="it-return"
+                        disabled={true}
+                      />
+                      <CustomMenuItem
+                        title="Response to Income Tax Notices"
+                        navigation="response-to-income-tax-notices"
+                        disabled={true}
+                      />
+                      <CustomMenuItem
+                        title="80G and 12A Provisional Registration"
+                        navigation="80g-and-12a-provisional-registration"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
                   <MenubarSub>
                     <MenubarSubTrigger>TDS Filing</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem disabled>IT Return</MenubarItem>
+                      <CustomMenuItem
+                        title="IT Return"
+                        navigation="it-return"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
                 </MenubarContent>

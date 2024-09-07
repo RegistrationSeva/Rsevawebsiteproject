@@ -1,151 +1,149 @@
-[
-  {
-    "title": "",
-    "slug": "",
-    "description": "",
-    "overview": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "eligibility": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "benefits": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "requirement": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "registration_process": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "compliances": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "why_us": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    "faq": {
-      "isEmpty": true,
-      "name": "",
-      "heading": "",
-      "conclusion": "",
-      "data": [
-        {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    }
+{
+  "title": "",
+  "slug": "",
+  "description": "",
+  "overview": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "eligibility": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "requirement": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "registration_process": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "compliances": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "why_us": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "isEmpty": true,
+    "name": "",
+    "heading": "",
+    "conclusion": "",
+    "data": [
+      {
+        "title": "",
+        "description": "",
+        "data": [
+          {
+            "title": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
   }
-]
+}
