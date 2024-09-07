@@ -258,21 +258,23 @@ function Navbar() {
               <MenubarMenu>
                 <MenubarTrigger>Trademark</MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/trademark-registration")
-                    }
-                  >
-                    Trademark Registration
-                  </MenubarItem>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/trademark-objection")
-                    }
-                  >
-                    Trademark Objection
-                  </MenubarItem>
-                  <MenubarItem disabled>Trademark Opposition</MenubarItem>
+                  <CustomMenuItem
+                    title="Trademark Registration"
+                    navigation="trademark-registration"
+                    disabled={false}
+                  />
+
+                  <CustomMenuItem
+                    title="Trademark Objection"
+                    navigation="trademark-objection"
+                    disabled={false}
+                  />
+
+                  <CustomMenuItem
+                    title="Trademark Opposition"
+                    navigation="trademark-opposition"
+                    disabled={false}
+                  />
 
                   <MenubarItem
                     onClick={() =>
