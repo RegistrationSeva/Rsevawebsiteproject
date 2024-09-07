@@ -199,6 +199,13 @@ function Navbar() {
                   <MenubarItem disabled>
                     Shop and Establishment Uttar Pradesh
                   </MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/iec-code-registration")
+                    }
+                  >
+                    IEC Code Registration
+                  </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
 

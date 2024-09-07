@@ -255,6 +255,14 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                                     {item?.title}
                                   </li>
                                 )}
+
+                                {item?.description && (
+                                  <ul>
+                                    <li className="paragraph text-sm ">
+                                      {item?.description}
+                                    </li>
+                                  </ul>
+                                )}
                               </ul>
                             );
                           })}
