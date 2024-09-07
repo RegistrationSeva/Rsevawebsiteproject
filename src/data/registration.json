@@ -1679,7 +1679,7 @@
     }
   },
   {
-    "title": "IEC Code Registration",
+    "title": "Import Export Code (IEC)",
     "slug": "iec-code-registration",
     "description": "The Importer Exporter Code (IEC) is a 10-digit alphanumeric code issued by the Director General of Foreign Trade (DGFT) under the Ministry of Commerce, Government of India. It serves as a primary business identification number for individuals and companies engaging in import or export activities. Without this code, businesses cannot clear customs or receive payments from foreign clients, making it an essential requirement for international trade operations.",
     "overview": {

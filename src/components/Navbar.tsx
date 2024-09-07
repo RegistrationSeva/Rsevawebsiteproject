@@ -74,7 +74,13 @@ function Navbar() {
                   <MenubarSub>
                     <MenubarSubTrigger>Firm</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem disabled>Partnership Firm</MenubarItem>
+                      <MenubarItem
+                        onClick={() =>
+                          route.push("/our-services/partnership-firm")
+                        }
+                      >
+                        Partnership Firm
+                      </MenubarItem>
                       <MenubarItem disabled>
                         Proprietorship Registration
                       </MenubarItem>
@@ -162,7 +168,13 @@ function Navbar() {
                   >
                     MSME/UDYAM Registration
                   </MenubarItem>
-                  <MenubarItem disabled>Import Export Code (IEC)</MenubarItem>
+                  <MenubarItem
+                    onClick={() =>
+                      route.push("/our-services/iec-code-registration")
+                    }
+                  >
+                    Import Export Code (IEC)
+                  </MenubarItem>
                   <MenubarItem
                     onClick={() =>
                       route.push("/our-services/startup-india-registration")
@@ -198,13 +210,6 @@ function Navbar() {
                   </MenubarItem>
                   <MenubarItem disabled>
                     Shop and Establishment Uttar Pradesh
-                  </MenubarItem>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/iec-code-registration")
-                    }
-                  >
-                    IEC Code Registration
                   </MenubarItem>
                 </MenubarContent>
               </MenubarMenu>
