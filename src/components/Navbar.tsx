@@ -175,7 +175,7 @@ function Navbar() {
                       <CustomMenuItem
                         title="Response to Income Tax Notices"
                         navigation="response-to-income-tax-notices"
-                        disabled={true}
+                        disabled={false}
                       />
                       <CustomMenuItem
                         title="80G and 12A Provisional Registration"
