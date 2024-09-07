@@ -206,50 +206,56 @@ function Navbar() {
                     navigation="msme-or-udyam-registration"
                     disabled={false}
                   />
+                  <CustomMenuItem
+                    title="Import Export Code (IEC)"
+                    navigation="iec-code-registration"
+                    disabled={false}
+                  />
+                  <CustomMenuItem
+                    title="Startup India Registration"
+                    navigation="startup-india-registration"
+                    disabled={false}
+                  />
+                  <CustomMenuItem
+                    title="FSSAI Registration"
+                    navigation="fssai-registration"
+                    disabled={false}
+                  />
 
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/iec-code-registration")
-                    }
-                  >
-                    Import Export Code (IEC)
-                  </MenubarItem>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/startup-india-registration")
-                    }
-                  >
-                    Startup India Registration
-                  </MenubarItem>
+                  <CustomMenuItem
+                    title="FSSAI Renewal"
+                    navigation="fssai-renewal"
+                    disabled={true}
+                  />
+                  <CustomMenuItem
+                    title="NGO Darpan/Niti Aayog Registration"
+                    navigation="niti-aayog-registration"
+                    disabled={false}
+                  />
 
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/fssai-registration")
-                    }
-                  >
-                    FSSAI Registration
-                  </MenubarItem>
-                  <MenubarItem disabled>FSSAI Renewal</MenubarItem>
-                  <MenubarItem disabled>
-                    NGO Darpan/Niti Aayog Registration
-                  </MenubarItem>
+                  <CustomMenuItem
+                    title="LEI Registration in India"
+                    navigation="lei-registration-in-india"
+                    disabled={true}
+                  />
 
-                  <MenubarItem disabled>LEI Registration in India</MenubarItem>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push(
-                        "/our-services/functional-certificate-with-noida-authority"
-                      )
-                    }
-                  >
-                    Functional Certificate with Noida Authority
-                  </MenubarItem>
-                  <MenubarItem disabled>
-                    Shop and Establishment Delhi
-                  </MenubarItem>
-                  <MenubarItem disabled>
-                    Shop and Establishment Uttar Pradesh
-                  </MenubarItem>
+                  <CustomMenuItem
+                    title="Functional Certificate with Noida Authority"
+                    navigation="functional-certificate-with-noida-authority"
+                    disabled={false}
+                  />
+
+                  <CustomMenuItem
+                    title="Shop and Establishment Delhi"
+                    navigation="shop-and-establishment-delhi"
+                    disabled={true}
+                  />
+
+                  <CustomMenuItem
+                    title="Shop and Establishment Uttar Pradesh"
+                    navigation="shop-and-establishment-uttar-pradesh"
+                    disabled={true}
+                  />
                 </MenubarContent>
               </MenubarMenu>
 
