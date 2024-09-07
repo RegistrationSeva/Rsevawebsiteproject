@@ -201,13 +201,12 @@ function Navbar() {
               <MenubarMenu>
                 <MenubarTrigger>Registration</MenubarTrigger>
                 <MenubarContent>
-                  <MenubarItem
-                    onClick={() =>
-                      route.push("/our-services/msme-or-udyam-registration")
-                    }
-                  >
-                    MSME/UDYAM Registration
-                  </MenubarItem>
+                  <CustomMenuItem
+                    title="MSME/UDYAM Registration"
+                    navigation="msme-or-udyam-registration"
+                    disabled={false}
+                  />
+
                   <MenubarItem
                     onClick={() =>
                       route.push("/our-services/iec-code-registration")
@@ -303,25 +302,22 @@ function Navbar() {
                   <MenubarSub>
                     <MenubarSubTrigger>Annual Compliance</MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem
-                        disabled
-                        onClick={() =>
-                          route.push("/our-services/private-limited-company")
-                        }
-                      >
-                        Private Limited Company
-                      </MenubarItem>
-                      <MenubarItem
-                        disabled
-                        onClick={() =>
-                          route.push("/our-services/one-person-company")
-                        }
-                      >
-                        One Person Company
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        Limited Liability Partnership
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="Private Limited Company"
+                        navigation="annual-compliance-private-limited-company"
+                        disabled={false}
+                      />
+                      <CustomMenuItem
+                        title="One Person Company"
+                        navigation="annual-compliance-one-person-company"
+                        disabled={true}
+                      />
+
+                      <CustomMenuItem
+                        title="Limited Liability Partnership"
+                        navigation="limited-liability-partnership"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
 
@@ -330,7 +326,11 @@ function Navbar() {
                       Event Based Compliances
                     </MenubarSubTrigger>
                     <MenubarSubContent>
-                      <MenubarItem disabled>Change in Director</MenubarItem>
+                      <CustomMenuItem
+                        title="Change in Director"
+                        navigation="change-in-director"
+                        disabled={true}
+                      />
                       <MenubarItem disabled>
                         Change in Share Capital
                       </MenubarItem>
