@@ -337,16 +337,26 @@ function Navbar() {
                         navigation="change-in-director"
                         disabled={true}
                       />
-                      <MenubarItem disabled>
-                        Change in Share Capital
-                      </MenubarItem>
-                      <MenubarItem disabled>Change in Name</MenubarItem>
-                      <MenubarItem disabled>
-                        Change in Registered Office Address
-                      </MenubarItem>
-                      <MenubarItem disabled>
-                        Alteration in Objects of Company
-                      </MenubarItem>
+                      <CustomMenuItem
+                        title="Change in Share Capital"
+                        navigation="change-in-share-capital"
+                        disabled={false}
+                      />
+                      <CustomMenuItem
+                        title="Change in Name"
+                        navigation="change-in-name"
+                        disabled={true}
+                      />
+                      <CustomMenuItem
+                        title="Change in Registered Office Address"
+                        navigation="change-in-registered-office-address"
+                        disabled={true}
+                      />
+                      <CustomMenuItem
+                        title="Alteration in Objects of Company"
+                        navigation="alteration-in-objects-of-company"
+                        disabled={true}
+                      />
                     </MenubarSubContent>
                   </MenubarSub>
                 </MenubarContent>

@@ -1,6 +1,6 @@
 [
   {
-    "title": "Private Limited Company",
+    "title": "Annual Compliances for Private Limited Company",
     "slug": "annual-compliance-private-limited-company",
     "description": "In recent years, the process of company incorporation has been streamlined, promoting greater compliance among companies. It is essential for management to have a comprehensive understanding of post-incorporation compliance to avoid penalties or sanctions. \n The Companies Act of 2013 is a rigorous legislation that allows no room for errors. Therefore, directors and shareholders must be well-informed about the legal obligations pertaining to post-incorporation compliance for their company.",
     "overview": {
@@ -255,6 +255,259 @@
           "title": "Is compliance with post-incorporation requirements an ongoing process?",
           "description": "Yes, compliance with post-incorporation requirements is an ongoing process. The company needs to ensure continuous adherence to relevant laws, regulations, and corporate governance practices. Regular monitoring and review of compliance matters are essential to maintain legal and regulatory compliance.",
           "data": []
+        }
+      ]
+    }
+  },
+  {
+    "title": "Change in Share Capital",
+    "slug": "change-in-share-capital",
+    "description": "The share capital of a company represents the maximum amount of funds that can be raised through the issuance of shares. As businesses grow and evolve, they may need to adjust their capital structure to meet financial needs, enhance market opportunities, or optimize their corporate strategy. Changing the share capital of a company involves increasing or decreasing the authorized share capital or paid-up share capital.",
+    "overview": {
+      "isEmpty": true,
+      "name": "",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    "eligibility": {
+      "isEmpty": false,
+      "name": "Eligibility",
+      "heading": "To initiate any changes in share capital, the company must",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "Be a legally registered entity, such as a Private Limited Company, Limited Company, or any other corporate structure recognized under applicable law.",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Have provisions in its Articles of Association (AOA) that allow changes in share capital. If the AOA does not allow this, it must be amended before proceeding.",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Ensure that any decision regarding capital change is approved by the company’s shareholders and board of directors through a resolution.",
+          "data": []
+        }
+      ]
+    },
+    "benefits": {
+      "isEmpty": false,
+      "name": "Benefits",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Enhanced Funding Opportunities",
+          "description": "Increasing share capital allows the company to raise more funds by issuing additional shares.",
+          "data": [
+            {
+              "title": "Expansion Flexibility",
+              "description": "Companies planning for expansion or diversification can benefit from an increase in share capital to accommodate future investments and projects."
+            },
+            {
+              "title": "Debt Reduction",
+              "description": "Raising additional capital through equity issuance can help reduce reliance on debt, improving the company's financial health. "
+            },
+            {
+              "title": "Attracting Investors",
+              "description": "Modifying share capital can attract new investors by offering a higher stake in the company."
+            },
+            {
+              "title": "Improved Financial Structure",
+              "description": "By changing the capital structure, companies can balance equity and debt, optimizing their financial strategy. "
+            }
+          ]
+        }
+      ]
+    },
+    "requirement": {
+      "isEmpty": false,
+      "name": "Information Required for Change in Share Capital ",
+      "heading": "To begin the process of changing the share capital, the company must gather the following information",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "Current authorized and paid-up share capital details. ",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Number and classes of shares to be altered (if applicable). ",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Proposed new capital structure, including the authorized and paid-up capital. ",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Articles of Association (AOA) and any necessary amendments to accommodate the change. ",
+          "data": []
+        },
+        {
+          "title": "",
+          "description": "Board resolution and shareholder approval to authorize the capital alteration. ",
+          "data": []
+        }
+      ]
+    },
+    "registration_process": {
+      "isEmpty": false,
+      "name": "Process  ",
+      "heading": "The process for altering share capital in a company is outlined below",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Board Meeting ",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Convene a board meeting to discuss and approve the proposal to increase or decrease the company’s share capital. "
+            },
+            {
+              "title": "",
+              "description": "Pass a board resolution to hold an Extraordinary General Meeting (EGM) if shareholder approval is required. "
+            }
+          ]
+        },
+        {
+          "title": "Shareholder Approval",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Send out a notice to all shareholders for the EGM, including the agenda to discuss the capital change. "
+            },
+            {
+              "title": "",
+              "description": "Hold the EGM and pass a special resolution to approve the alteration of share capital. "
+            }
+          ]
+        },
+        {
+          "title": "Alteration of Articles of Association (If Necessary) ",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "If the company’s AOA does not authorize changes in share capital, amend the AOA by passing another special resolution at the EGM. "
+            }
+          ]
+        },
+        {
+          "title": "Filing with Registrar of Companies (ROC) ",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "File the necessary forms with the Registrar of Companies (ROC) within 30 days of passing the special resolution. "
+            },
+            {
+              "title": "",
+              "description": "For increasing share capital, file Form SH-7 along with the special resolution and amended AOA, if applicable. "
+            }
+          ]
+        },
+        {
+          "title": " Stamp Duty Payment ",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Pay any applicable stamp duty on the increased share capital based on the state’s rates."
+            }
+          ]
+        },
+        {
+          "title": " Issue New Share Certificates (For Capital Increase) ",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": "Issue new share certificates to the shareholders after the increase in capital is registered with the ROC. "
+            }
+          ]
+        }
+      ]
+    },
+    "compliances": {
+      "isEmpty": false,
+      "name": "Compliance  ",
+      "heading": "Once the share capital is altered, certain post-change compliance steps are crucial",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "Updating Company Records",
+          "description": "Update the company’s statutory registers, including the Register of Members, to reflect the new capital structure. ",
+          "data": []
+        },
+        {
+          "title": "Corporate Filings",
+          "description": "Ensure that the necessary filings have been made with the ROC, particularly Form SH-7 for share capital alterations. Any failure to file the form within the stipulated timeline can result in penalties.",
+          "data": []
+        },
+        {
+          "title": "Amend Financial Statements",
+          "description": "Ensure that the financial statements are updated to reflect the change in capital, including necessary disclosures in the notes to the accounts. ",
+          "data": []
+        },
+        {
+          "title": "Communication with Stakeholders",
+          "description": "Notify shareholders and any relevant stakeholders (banks, creditors, etc.) about the change in share capital. ",
+          "data": []
+        },
+        {
+          "title": "SEBI/Stock Exchange (If Applicable)",
+          "description": "In case of publicly traded companies, ensure compliance with SEBI regulations and notify the stock exchanges where the company is listed. ",
+          "data": []
+        }
+      ]
+    },
+    "why_us": {
+      "isEmpty": false,
+      "name": "Why Registrationseva.com?",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "Choosing Registrationseva.com for changing your company’s share capital ensures a seamless and hassle-free experience, backed by expert guidance at every step of the process. With a deep understanding of regulatory requirements and compliance, Registrationseva.com simplifies the complexities of capital alteration by offering tailored solutions, quick documentation, and timely filing with the Registrar of Companies. Their team of professionals ensures that all legal formalities, such as board resolutions, shareholder approvals, and filings, are completed accurately, saving businesses time and reducing the risk of penalties. Whether it's increasing or decreasing share capital, Registrationseva.com ensures compliance with all corporate laws, allowing you to focus on business growth without worrying about administrative hurdles. ",
+          "data": []
+        }
+      ]
+    },
+    "faq": {
+      "isEmpty": true,
+      "name": "",
+      "heading": "",
+      "conclusion": "",
+      "data": [
+        {
+          "title": "",
+          "description": "",
+          "data": [
+            {
+              "title": "",
+              "description": ""
+            }
+          ]
         }
       ]
     }
