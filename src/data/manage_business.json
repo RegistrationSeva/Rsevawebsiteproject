@@ -313,24 +313,27 @@
         {
           "title": "Enhanced Funding Opportunities",
           "description": "Increasing share capital allows the company to raise more funds by issuing additional shares.",
-          "data": [
-            {
-              "title": "Expansion Flexibility",
-              "description": "Companies planning for expansion or diversification can benefit from an increase in share capital to accommodate future investments and projects."
-            },
-            {
-              "title": "Debt Reduction",
-              "description": "Raising additional capital through equity issuance can help reduce reliance on debt, improving the company's financial health. "
-            },
-            {
-              "title": "Attracting Investors",
-              "description": "Modifying share capital can attract new investors by offering a higher stake in the company."
-            },
-            {
-              "title": "Improved Financial Structure",
-              "description": "By changing the capital structure, companies can balance equity and debt, optimizing their financial strategy. "
-            }
-          ]
+          "data": []
+        },
+        {
+          "title": "Expansion Flexibility",
+          "description": "Companies planning for expansion or diversification can benefit from an increase in share capital to accommodate future investments and projects.",
+          "data": []
+        },
+        {
+          "title": "Debt Reduction",
+          "description": "Raising additional capital through equity issuance can help reduce reliance on debt, improving the company's financial health. ",
+          "data": []
+        },
+        {
+          "title": "Attracting Investors",
+          "description": "Modifying share capital can attract new investors by offering a higher stake in the company.",
+          "data": []
+        },
+        {
+          "title": "Improved Financial Structure",
+          "description": "By changing the capital structure, companies can balance equity and debt, optimizing their financial strategy. ",
+          "data": []
         }
       ]
     },
@@ -494,20 +497,85 @@
       ]
     },
     "faq": {
-      "isEmpty": true,
-      "name": "",
+      "isEmpty": false,
+      "name": "FAQs",
       "heading": "",
       "conclusion": "",
       "data": [
         {
-          "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
+          "title": "What is share capital?",
+          "description": "Share capital is the amount of money that a company raises by issuing shares to shareholders. It can be divided into authorized share capital (the maximum amount of shares a company can issue) and paid-up share capital (the actual amount shareholders have paid for shares). ",
+          "data": []
+        },
+        {
+          "title": "What are the types of changes in share capital? ",
+          "description": "The two primary changes in share capital are increasing and decreasing. An increase in share capital allows a company to issue more shares, while a decrease may involve cancelling or consolidating shares. ",
+          "data": []
+        },
+        {
+          "title": "When should a company consider changing its share capital? ",
+          "description": "A company should consider changing its share capital when it needs additional funding for expansion, to attract new investors, or to improve its financial structure. A reduction may be considered when the company wants to optimize its shareholding structure or return capital to shareholders.",
+          "data": []
+        },
+        {
+          "title": "How can a company increase its share capital? ",
+          "description": "To increase share capital, a company must first hold a board meeting, pass a resolution, get shareholder approval in a general meeting, amend its Articles of Association if required, and file Form SH-7 with the Registrar of Companies (ROC). ",
+          "data": []
+        },
+        {
+          "title": "What documents are required for changing share capital? ",
+          "description": "The required documents include the company's current Articles of Association (AOA), resolutions passed by the board and shareholders, and forms to be filed with the ROC, such as Form SH-7 for an increase in capital. ",
+          "data": []
+        },
+        {
+          "title": "Is shareholder approval necessary for changing share capital? ",
+          "description": "Yes, shareholders must approve any change in share capital during an Extraordinary General Meeting (EGM) by passing a special resolution. ",
+          "data": []
+        },
+        {
+          "title": "Can share capital be reduced? ",
+          "description": "Yes, a company can reduce its share capital by cancelling shares, consolidating them, or using capital reserves to write off losses. This process requires court approval and compliance with the relevant legal provisions. ",
+          "data": []
+        },
+        {
+          "title": "What is the cost involved in changing share capital? ",
+          "description": "The cost may include government filing fees, stamp duty based on the increased share capital, and professional fees for legal and compliance assistance. The exact cost varies depending on the state and the extent of the capital change. ",
+          "data": []
+        },
+        {
+          "title": "What happens if a company doesn’t comply with the rules after changing its share capital? ",
+          "description": "Non-compliance with the procedures or filing requirements can result in penalties, including fines on the company and its directors. It may also cause legal and financial complications for the business.",
+          "data": []
+        },
+        {
+          "title": "How long does the process of changing share capital take?",
+          "description": "The timeline varies depending on the complexity of the change and the speed at which approvals and filings are processed. Generally, it can take anywhere from a few weeks to a couple of months to complete. ",
+          "data": []
+        },
+        {
+          "title": "What compliance requirements must be followed after changing share capital? ",
+          "description": "After changing the share capital, the company must update its statutory records, issue new share certificates (if applicable), file necessary forms with the ROC, amend its financial statements, and notify shareholders, creditors, and any other relevant stakeholders. ",
+          "data": []
+        },
+        {
+          "title": "Can a public company change its share capital easily? ",
+          "description": "Public companies can change their share capital, but they must follow additional regulations, such as notifying SEBI and the stock exchanges, in addition to the regular company law requirements. ",
+          "data": []
+        },
+        {
+          "title": "What is Form SH-7? ",
+          "description": "Form SH-7 is a mandatory form that must be filed with the Registrar of Companies (ROC) when a company increases its authorized share capital. It includes details of the new capital structure and the resolutions passed for the change. ",
+          "data": []
+        },
+        {
+          "title": "Do I need to amend the Articles of Association (AOA) for a capital change? ",
+          "description": "Yes, if the current AOA does not allow the change in share capital, it must be amended by passing a special resolution during a general meeting. ",
+          "data": []
+        },
+        {
+          "title": "Can Registrationseva.com help with the share capital change process? ",
+          "description": "Yes, Registrationseva.com provides expert assistance in managing the entire process of changing share capital, from drafting resolutions to filing necessary forms and ensuring compliance with all legal requirements. ",
+          "data": []
         }
       ]
     }
