@@ -428,10 +428,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
                               return (
                                 <div className="space-y-4" key={index}>
                                   {item?.title && (
-                                    <p className="title">{item?.title}</p>
+                                    <p className="title ">{item?.title}</p>
                                   )}
 
                                   <ul className="list-disc px-7">
+                                    {item?.title && (
+                                      <p className="paragraph underline">
+                                        {item?.title}
+                                      </p>
+                                    )}
                                     {item?.description && (
                                       <li className="paragraph text-sm">
                                         {item?.description}

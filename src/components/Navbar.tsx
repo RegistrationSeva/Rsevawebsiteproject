@@ -158,8 +158,8 @@ function Navbar() {
 
                       <CustomMenuItem
                         title="Response to GST Notices"
-                        navigation="response-to-gst-notices"
-                        disabled={true}
+                        navigation="response-to-gst-notice"
+                        disabled={false}
                       />
                     </MenubarSubContent>
                   </MenubarSub>
