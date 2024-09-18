@@ -158,9 +158,15 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
         <div className="grid grid-cols-1 md:grid-cols-[70%_30%] bg-[#F5F5F5] p-4">
           <div className="flex flex-col justify-center p-6 md:p-10 space-y-7 md:items-start px-7 items-center">
             <div>
-              <h1 className="text-2xl md:text-3xl font-semibold mb-2 text-primary">
-                {serviceItem.title}
-              </h1>
+              <div>
+                <h1 className="text-2xl md:text-3xl font-semibold mb-1 text-primary">
+                  Get expert assistance for ({serviceItem.title})
+                </h1>
+                <h1 className="text-lg md:text-xl font-semibold mb-2 text-primary">
+                  Our skilled experts will assist you in the
+                  registration process
+                </h1>
+              </div>
               <p className="text-sm md:text-md text-gray-700 rounded-lg text-justify">
                 {serviceItem.description}
               </p>
