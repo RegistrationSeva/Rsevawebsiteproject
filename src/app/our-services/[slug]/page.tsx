@@ -160,9 +160,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ params }) => {
             <div>
               <div>
                 <h1 className="text-2xl md:text-3xl font-semibold mb-1 text-primary">
-                  Get expert assistance for {"("}
-                  {serviceItem.title}
-                  {")"}
+                  Get expert assistance for {serviceItem.title}
                 </h1>
                 <h1 className="text-lg md:text-xl font-semibold mb-2 text-primary">
                   Our skilled experts will assist you in the
