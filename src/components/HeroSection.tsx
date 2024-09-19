@@ -21,14 +21,14 @@ function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl max-w-3xl mb-8 text-justify md:text-center">
-              {`Your Trusted Consultancy for All Business Needs. Whether you're
+              Your Trusted Consultancy for All Business Needs. Whether you're
               starting a new venture or growing an existing business, our team
               of experts provides specialized guidance to ensure your success.
               From company incorporation and trademark assistance to compliance
               and legal advice, we support you through each phase of the
               registration process. Our role is to provide expert consultancy
               and assistance to help you navigate the necessary steps and
-              procedures for your business.`}
+              procedures for your business.
             </p>
           </div>
           <button
