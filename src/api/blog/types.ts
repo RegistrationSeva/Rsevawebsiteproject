@@ -20,6 +20,9 @@ type Blog = {
   views: number;
   coverImage: string;
   featured: boolean;
+  content?: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 type Author = {
@@ -47,5 +50,13 @@ export type CategoryResponse = {
     limit: number;
     totalPages: number;
     totalResults: number;
+  };
+};
+
+export type SingleBlogResponse = {
+  success: boolean;
+  message: string;
+  data: {
+    blog: Blog;
   };
 };

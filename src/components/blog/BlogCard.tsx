@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar } from "lucide-react";
+import { Calendar, Eye } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 
 interface BlogCardProps {
@@ -12,14 +12,6 @@ export function BlogCard({ post }: BlogCardProps) {
   const [imageError, setImageError] = React.useState(false);
   const [isImageLoading, setIsImageLoading] = React.useState(true);
 
-  // Log image URL for debugging
-  React.useEffect(() => {
-    if (post.image) {
-      console.log("Image URL:", post.image);
-    }
-  }, [post.image]);
-
-  // Handle image error
   const handleImageError = (e: any) => {
     console.error("Image failed to load:", post.image);
     console.error("Error event:", e);
@@ -31,8 +23,7 @@ export function BlogCard({ post }: BlogCardProps) {
       <div className="relative h-48 mb-4 rounded-2xl overflow-hidden bg-card transition-transform duration-300 group-hover:scale-[1.02]">
         {post.image && !imageError ? (
           <>
-            <div className="absolute inset-0 bg-gray-200" />{" "}
-            {/* Base background */}
+            <div className="absolute inset-0 bg-gray-200" />
             <Image
               src={post.image}
               alt={post.title}
@@ -42,28 +33,32 @@ export function BlogCard({ post }: BlogCardProps) {
               }`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={handleImageError}
-              onLoad={() => {
-                console.log("Image loaded successfully:", post.image);
-                setIsImageLoading(false);
-              }}
-              unoptimized // Try without Next.js image optimization
+              onLoad={() => setIsImageLoading(false)}
+              unoptimized
             />
           </>
         ) : (
-          // Fallback gradient background when image fails or doesn't exist
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10" />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
         {isImageLoading && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
         )}
-        <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white">
-            {post.category}
-          </div>
-          <div className="flex items-center gap-1 text-xs text-white/80">
-            <Calendar className="h-3 w-3" />
-            {post.date}
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="flex flex-col gap-2">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white w-fit">
+              {post.category}
+            </div>
+            <div className="flex items-center gap-3 text-xs text-white/80">
+              <div className="flex items-center gap-1">
+                <Calendar className="h-3 w-3" />
+                {post.date}
+              </div>
+              <div className="flex items-center gap-1">
+                <Eye className="h-3 w-3" />
+                {post.readTime}
+              </div>
+            </div>
           </div>
         </div>
       </div>
