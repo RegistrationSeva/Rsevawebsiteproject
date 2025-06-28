@@ -1,38 +1,95 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { SearchHeader } from "@/components/blog/SearchHeader";
 import { Pagination } from "@/components/blog/Pagination";
-import { blogPosts, categories } from "@/data/blogData";
+import { useBlogs } from "@/api/blog/use-get-blogs";
+import { useDebounce } from "@/lib/utils";
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 10;
+
+// Define categories based on API structure
+const categories = [
+  { value: "all", label: "All Categories" },
+  { value: "international-destinations", label: "International Destinations" },
+  { value: "family", label: "Family" },
+  { value: "europe", label: "Europe" },
+  { value: "honeymoon", label: "Honeymoon" },
+];
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = React.useState("");
   const [selectedCategory, setSelectedCategory] = React.useState("all");
   const [currentPage, setCurrentPage] = React.useState(1);
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesSearch = post.title
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "all" ||
-      post.category.toLowerCase().replace(" ", "-") === selectedCategory;
-    return matchesSearch && matchesCategory;
+  // Debounce search query to avoid too many API calls
+  const debouncedSearch = useDebounce(searchQuery, 500);
+
+  const { data, isLoading, error } = useBlogs({
+    variables: {
+      limit: 9,
+      page: currentPage,
+      search: debouncedSearch || undefined,
+      categoryId: selectedCategory === "all" ? undefined : selectedCategory,
+      status: "published",
+    },
   });
 
-  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-  const paginatedPosts = filteredPosts.slice(
-    (currentPage - 1) * POSTS_PER_PAGE,
-    currentPage * POSTS_PER_PAGE
-  );
+  const blogs = data?.data?.blogs || [];
+  const totalPages = data?.data?.totalPages || 1;
 
   // Reset to first page when filters change
   React.useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, selectedCategory]);
+  }, [debouncedSearch, selectedCategory]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <SearchHeader
+          searchQuery={searchQuery}
+          selectedCategory={selectedCategory}
+          categories={categories}
+          onSearchChange={setSearchQuery}
+          onCategoryChange={setSelectedCategory}
+        />
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="animate-pulse">
+                <div className="h-48 bg-gray-200 rounded-2xl mb-4" />
+                <div className="space-y-2">
+                  <div className="h-6 bg-gray-200 rounded w-3/4" />
+                  <div className="h-4 bg-gray-200 rounded w-full" />
+                  <div className="h-4 bg-gray-200 rounded w-2/3" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background">
+        <SearchHeader
+          searchQuery={searchQuery}
+          selectedCategory={selectedCategory}
+          categories={categories}
+          onSearchChange={setSearchQuery}
+          onCategoryChange={setSelectedCategory}
+        />
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center text-red-500">
+            Error loading blogs. Please try again later.
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,12 +103,23 @@ export default function Blog() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {paginatedPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
+          {blogs.map((post) => (
+            <BlogCard
+              key={post.id}
+              post={{
+                id: post.id,
+                title: post.title,
+                category: post.category.name,
+                date: new Date(post.date).toLocaleDateString(),
+                image: post.coverImage,
+                excerpt: `By ${post.author.name}`, // Using author name as excerpt
+                readTime: `${post.views} views`, // Using views instead of read time
+              }}
+            />
           ))}
         </div>
 
-        {filteredPosts.length === 0 && (
+        {blogs.length === 0 && (
           <div className="text-center py-12">
             <p className="text-lg text-muted-foreground">
               No articles found matching your criteria.

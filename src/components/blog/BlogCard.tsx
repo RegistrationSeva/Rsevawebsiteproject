@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 
@@ -8,12 +9,54 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post }: BlogCardProps) {
+  const [imageError, setImageError] = React.useState(false);
+  const [isImageLoading, setIsImageLoading] = React.useState(true);
+
+  // Log image URL for debugging
+  React.useEffect(() => {
+    if (post.image) {
+      console.log("Image URL:", post.image);
+    }
+  }, [post.image]);
+
+  // Handle image error
+  const handleImageError = (e: any) => {
+    console.error("Image failed to load:", post.image);
+    console.error("Error event:", e);
+    setImageError(true);
+  };
+
   return (
     <Link href={`/blog/${post.id}`} className="group block">
       <div className="relative h-48 mb-4 rounded-2xl overflow-hidden bg-card transition-transform duration-300 group-hover:scale-[1.02]">
+        {post.image && !imageError ? (
+          <>
+            <div className="absolute inset-0 bg-gray-200" />{" "}
+            {/* Base background */}
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className={`object-cover transition-opacity duration-300 ${
+                isImageLoading ? "opacity-0" : "opacity-100"
+              }`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={handleImageError}
+              onLoad={() => {
+                console.log("Image loaded successfully:", post.image);
+                setIsImageLoading(false);
+              }}
+              unoptimized // Try without Next.js image optimization
+            />
+          </>
+        ) : (
+          // Fallback gradient background when image fails or doesn't exist
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-        {/* Add actual image when available */}
+        {isImageLoading && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        )}
         <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white">
             {post.category}
