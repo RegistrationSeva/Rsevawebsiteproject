@@ -5,6 +5,7 @@ import { useBlog } from "@/api/blog/use-get-blog";
 import { format } from "date-fns";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Eye, Share2 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function BlogDetail({ params }: { params: { id: string } }) {
   const {
@@ -18,6 +19,28 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
   });
 
   const blog = blogData?.data?.blog;
+
+  const handleShare = async () => {
+    if (!blog) return;
+
+    const shareData = {
+      title: blog.title,
+      text: `Check out this article: ${blog.title}`,
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.success("Link copied to clipboard!");
+      }
+    } catch (error) {
+      console.error("Error sharing:", error);
+      toast.error("Failed to share article");
+    }
+  };
 
   if (isLoading) {
     return (
@@ -136,7 +159,10 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <span className="text-gray-500">Share:</span>
-                  <button className="p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors">
+                  <button
+                    onClick={handleShare}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors"
+                  >
                     <Share2 className="w-4 h-4" />
                   </button>
                 </div>
