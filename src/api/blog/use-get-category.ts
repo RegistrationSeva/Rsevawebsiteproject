@@ -2,30 +2,29 @@ import type { AxiosError } from "axios";
 import { createQuery } from "react-query-kit";
 
 import { client } from "../common/client";
-import { BlogResponse } from "./types";
+import { CategoryResponse } from "./types";
 
-type Response = BlogResponse;
 type Variables = {
   page?: number;
   search?: string;
-  category?: string;
-  status?: string;
-  categoryId?: string;
   limit?: number;
+  sortBy?: string;
 };
 
-export const useBlogs = createQuery<Response, Variables, AxiosError>({
-  queryKey: ["blogs"],
+export const useCategories = createQuery<
+  CategoryResponse,
+  Variables,
+  AxiosError
+>({
+  queryKey: ["categories"],
   fetcher: async (variables) => {
     const params = new URLSearchParams();
     if (variables.page) params.append("page", variables.page.toString());
     if (variables.search) params.append("search", variables.search);
-    if (variables.category) params.append("category", variables.category);
-    if (variables.status) params.append("status", variables.status);
-    if (variables.categoryId) params.append("categoryId", variables.categoryId);
     if (variables.limit) params.append("limit", variables.limit.toString());
+    if (variables.sortBy) params.append("sortBy", variables.sortBy);
 
-    const response = await client.get(`blogs?${params.toString()}`);
+    const response = await client.get(`categories?${params.toString()}`);
     return response.data;
   },
 });

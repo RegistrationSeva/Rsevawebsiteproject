@@ -28,8 +28,24 @@ type Author = {
   email: string;
 };
 
-type Category = {
+export type Category = {
   id: string;
   name: string;
   slug: string;
+  description?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  postCount?: number;
+};
+
+export type CategoryResponse = {
+  success: boolean;
+  message: string;
+  data: {
+    categories: Category[];
+    page: number;
+    limit: number;
+    totalPages: number;
+    totalResults: number;
+  };
 };

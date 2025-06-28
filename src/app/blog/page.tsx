@@ -5,18 +5,11 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { SearchHeader } from "@/components/blog/SearchHeader";
 import { Pagination } from "@/components/blog/Pagination";
 import { useBlogs } from "@/api/blog/use-get-blogs";
+import { useCategories } from "@/api/blog/use-get-category";
 import { useDebounce } from "@/lib/utils";
+import type { Category } from "@/api/blog/types";
 
 const POSTS_PER_PAGE = 10;
-
-// Define categories based on API structure
-const categories = [
-  { value: "all", label: "All Categories" },
-  { value: "international-destinations", label: "International Destinations" },
-  { value: "family", label: "Family" },
-  { value: "europe", label: "Europe" },
-  { value: "honeymoon", label: "Honeymoon" },
-];
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -25,6 +18,28 @@ export default function Blog() {
 
   // Debounce search query to avoid too many API calls
   const debouncedSearch = useDebounce(searchQuery, 500);
+
+  // Fetch categories
+  const { data: categoriesData } = useCategories({
+    variables: {
+      limit: 100, // Fetch all categories
+      sortBy: "name", // Sort by name
+    },
+  });
+
+  console.log("Categories Response:", categoriesData); // Debug log
+
+  // Transform categories for dropdown
+  const categories = React.useMemo(() => {
+    const apiCategories = categoriesData?.data?.categories || [];
+    return [
+      { value: "all", label: "All Categories" },
+      ...apiCategories.map((cat: Category) => ({
+        value: cat.id, // Use id as the value
+        label: cat.name,
+      })),
+    ];
+  }, [categoriesData]);
 
   const { data, isLoading, error } = useBlogs({
     variables: {
