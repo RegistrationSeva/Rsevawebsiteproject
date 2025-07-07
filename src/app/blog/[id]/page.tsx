@@ -4,6 +4,7 @@ import React from "react";
 import { useBlog } from "@/api/blog/use-get-blog";
 import { format } from "date-fns";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, Eye, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -80,10 +81,13 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
         <div className="absolute inset-0 bg-black/50"></div>
         {blog.coverImage && (
           <div className="absolute inset-0">
-            <img
+            <Image
               src={blog.coverImage}
               alt={blog.title}
-              className="object-cover w-full h-full"
+              className="object-cover"
+              fill
+              sizes="100vw"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
           </div>
@@ -118,10 +122,12 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
                 {/* Meta Info */}
                 <div className="flex flex-wrap items-center gap-6 text-white/90">
                   <div className="flex items-center gap-3">
-                    <img
+                    <Image
                       src={`https://api.dicebear.com/7.x/initials/svg?seed=${blog.author.name}&backgroundColor=ffffff`}
                       alt={blog.author.name}
-                      className="w-8 h-8 rounded-full bg-white/20 p-0.5"
+                      width={32}
+                      height={32}
+                      className="rounded-full bg-white/20 p-0.5"
                     />
                     <span className="font-medium">{blog.author.name}</span>
                   </div>
