@@ -19,7 +19,7 @@ export function BlogCard({ post }: BlogCardProps) {
   };
 
   return (
-    <Link href={`/blog/${post.id}`} className="group block">
+    <Link href={`/blog/${post.slug}`} className="group block">
       <div className="relative h-48 mb-4 rounded-2xl overflow-hidden bg-card transition-transform duration-300 group-hover:scale-[1.02]">
         {post.image && !imageError ? (
           <>

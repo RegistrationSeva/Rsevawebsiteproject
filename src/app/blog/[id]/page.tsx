@@ -88,6 +88,7 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
               fill
               sizes="100vw"
               priority
+              unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
           </div>
@@ -128,6 +129,7 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
                       width={32}
                       height={32}
                       className="rounded-full bg-white/20 p-0.5"
+                      unoptimized
                     />
                     <span className="font-medium">{blog.author.name}</span>
                   </div>

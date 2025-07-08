@@ -6,6 +6,7 @@ export interface BlogPost {
   image?: string;
   excerpt?: string;
   readTime?: string;
+  slug?: string;
 }
 
 export interface BlogCategory {

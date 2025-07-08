@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { SearchHeader } from "@/components/blog/SearchHeader";
 import { Pagination } from "@/components/blog/Pagination";
@@ -9,8 +9,6 @@ import { useBlogs } from "@/api/blog/use-get-blogs";
 import { useCategories } from "@/api/blog/use-get-category";
 import { useDebounce } from "@/lib/utils";
 import type { Category } from "@/api/blog/types";
-
-const POSTS_PER_PAGE = 10;
 
 export default function Blog() {
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -120,6 +118,7 @@ export default function Blog() {
                     image: post.coverImage,
                     excerpt: `By ${post.author.name}`,
                     readTime: `${post.views} views`,
+                    slug: post?.slug,
                   }}
                 />
               ))}

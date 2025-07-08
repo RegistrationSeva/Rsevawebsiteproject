@@ -23,6 +23,7 @@ type Blog = {
   content?: string;
   createdAt: string;
   updatedAt: string;
+  slug?: string;
 };
 
 type Author = {

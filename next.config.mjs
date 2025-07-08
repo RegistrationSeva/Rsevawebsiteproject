@@ -4,9 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "api.yatriyatra.com",
+        hostname: "api.registrationseva.com",
         port: "",
         pathname: "/api/v1/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.dicebear.com",
+        port: "",
+        pathname: "/**",
       },
     ],
   },
