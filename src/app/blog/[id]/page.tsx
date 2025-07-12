@@ -84,7 +84,7 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
             <Image
               src={blog.coverImage}
               alt={blog.title}
-              className="object-cover"
+              className="object-fill"
               fill
               sizes="100vw"
               priority

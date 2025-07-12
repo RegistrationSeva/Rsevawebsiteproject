@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/menubar";
 import { TfiEmail } from "react-icons/tfi";
 import { BiPhoneCall } from "react-icons/bi";
+import Image from "next/image";
+import images from "@/assets/images";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,9 +72,10 @@ function Navbar() {
       <nav className="bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center h-[70px] px-4">
           <Link href={"/"}>
-            <span className="font-extrabold text-lg text-primary select-none">
+            {/* <span className="font-extrabold text-lg text-primary select-none">
               REGISTRATION <span className="text-secondary"> SEVA </span>
-            </span>
+            </span> */}
+            <Image src={images.logo} alt="Logo" className="w-40" />
           </Link>
           <div className="lg:hidden" onClick={toggleMenu}>
             {isOpen ? (

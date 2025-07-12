@@ -28,7 +28,7 @@ export function BlogCard({ post }: BlogCardProps) {
               src={post.image}
               alt={post.title}
               fill
-              className={`object-cover transition-opacity duration-300 ${
+              className={`object-fill transition-opacity duration-300 ${
                 isImageLoading ? "opacity-0" : "opacity-100"
               }`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
