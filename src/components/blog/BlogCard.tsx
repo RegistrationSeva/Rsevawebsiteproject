@@ -49,7 +49,7 @@ export function BlogCard({ post }: BlogCardProps) {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-medium text-white w-fit">
               {post.category}
             </div>
-            <div className="flex items-center gap-3 text-xs text-white/80">
+            {/* <div className="flex items-center gap-3 text-xs text-white/80">
               <div className="flex items-center gap-1">
                 <Calendar className="h-3 w-3" />
                 {post.date}
@@ -58,7 +58,7 @@ export function BlogCard({ post }: BlogCardProps) {
                 <Eye className="h-3 w-3" />
                 {post.readTime}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

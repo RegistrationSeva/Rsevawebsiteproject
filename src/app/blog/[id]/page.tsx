@@ -133,7 +133,7 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
                     />
                     <span className="font-medium">{blog.author.name}</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <Calendar className="w-5 h-5" />
                     <span>
                       {format(new Date(blog.createdAt), "MMMM d, yyyy")}
@@ -142,7 +142,7 @@ export default function BlogDetail({ params }: { params: { id: string } }) {
                   <div className="flex items-center gap-2">
                     <Eye className="w-5 h-5" />
                     <span>{blog.views} views</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
