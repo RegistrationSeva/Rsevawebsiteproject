@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Registration SEVA",
+  description:
+    "Read the Privacy Policy of Registration Seva to understand how we collect, use, and protect your personal information while providing business registration, trademark, GST, and compliance services.",
+  keywords:
+    "registration seva privacy policy, data protection, user privacy, business registration privacy, compliance privacy policy, trademark services privacy",
+  openGraph: {
+    title: "Privacy Policy - Registration SEVA",
+    description:
+      "Learn how Registration Seva ensures data security and protects your privacy while delivering business registration, trademark, GST, and compliance solutions across India.",
+    type: "website",
+  },
+};
 
 function PrivacyPolicy() {
   return (

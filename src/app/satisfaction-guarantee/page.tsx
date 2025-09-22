@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Satisfaction Guarantee - Registration SEVA",
+  description:
+    "At Registration Seva, we stand by our commitment to delivering reliable business registration, trademark, GST, and compliance services. Learn about our satisfaction guarantee and how we ensure quality for every client.",
+  keywords:
+    "registration seva satisfaction guarantee, business registration guarantee, trusted consultancy india, trademark service assurance, GST compliance guarantee, customer satisfaction policy",
+  openGraph: {
+    title: "Satisfaction Guarantee - Registration SEVA",
+    description:
+      "Discover Registration Seva’s satisfaction guarantee. We ensure trustworthy, professional, and high-quality services in business registration, trademark, GST, and compliance across India.",
+    type: "website",
+  },
+};
 
 function SatisfactionGuarantee() {
   return (

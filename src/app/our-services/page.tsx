@@ -1,6 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import { services } from "./servicesData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services - Registration SEVA",
+  description:
+    "Discover Registration Seva’s wide range of services including company registration, trademark protection, GST registration, compliance management, and business consultancy across India.",
+  keywords:
+    "registration seva services, company registration india, trademark services, GST registration, business compliance, startup consultancy, business registration solutions",
+  openGraph: {
+    title: "Our Services - Registration SEVA",
+    description:
+      "Explore Registration Seva’s professional services for entrepreneurs and businesses, covering company registration, trademark, GST, and compliance solutions.",
+    type: "website",
+  },
+};
 
 const Services = () => {
   return (

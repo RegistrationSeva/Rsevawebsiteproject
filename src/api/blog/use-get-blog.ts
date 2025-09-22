@@ -16,3 +16,14 @@ export const useBlog = createQuery<Response, Variables, AxiosError>({
     return response.data;
   },
 });
+
+// Server-side function for metadata generation
+export async function getBlog({ id }: { id: string }): Promise<Response> {
+  try {
+    const response = await client.get(`blogs/slug/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    throw error;
+  }
+}

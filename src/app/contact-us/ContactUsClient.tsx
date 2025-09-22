@@ -1,31 +1,23 @@
 "use client";
+
 import { services } from "@/app/our-services/servicesData";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useForm, ValidationError } from "@formspree/react";
-import { toast } from "sonner";
 import images from "@/assets/images";
+import { useForm, ValidationError } from "@formspree/react";
 
-interface Service {
-  slug: string;
-  image: string;
-  title: string;
-  subtitle: string; // Added this property
-  description: string;
-  longDescription: string[];
-  conclusion: string; // Added this property
-}
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { toast } from "sonner";
 
-interface ContactUsProps {
-  params: {
-    slug: string;
-  };
-}
-
-const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
-  const [serviceItem, setServiceItem] = useState<Service | null | any>(null);
+export default function ContactUsClient() {
   const [state, handleSubmit] = useForm("manwjalw");
   const formRef = useRef<HTMLFormElement>(null);
   const [inputItem, setInputItem] = useState({
@@ -37,42 +29,26 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
   });
 
   useEffect(() => {
-    if (params && services) {
-      const item =
-        services.find((service) => service.slug === params.slug) ?? null;
-      setServiceItem(item);
-      if (item) {
-        setInputItem((prev) => ({ ...prev, subject: item.title }));
-      }
+    if (state.succeeded) {
+      toast("Message Send Successfully", {
+        description:
+          "Thank you for your message. We'll get back to you shortly.",
+        action: {
+          label: "Close",
+          onClick: () => console.log("Close"),
+        },
+      });
+      formRef.current?.reset();
     }
-  }, [params]);
-
-  if (!serviceItem) {
-    return (
-      <div className="flex justify-center items-center h-[80vh]">
-        <p className="text-4xl">Loading...</p>
-      </div>
-    );
-  }
-
-  if (state.succeeded) {
-    toast("Message Sent Successfully", {
-      description: "Thank you for your message. We'll get back to you shortly.",
-      action: {
-        label: "Close",
-        onClick: () => console.log("Close"),
-      },
-    });
-    formRef.current?.reset();
-  }
+  }, [state.succeeded]);
 
   return (
     <div className="container py-14">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <Image
           src={images.contactUs}
-          alt={serviceItem.title}
-          className="w-full h-[500px] object-cover transition-transform duration-500 ease-in-out transform rounded-lg"
+          alt={"Contact Us Image"}
+          className="w-full h-[500px] object-contain md:object-cover  transition-transform duration-500 ease-in-out transform rounded-lg"
         />
         <div className="flex flex-col justify-center p-6 md:p-10">
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-800 mb-4">
@@ -80,20 +56,20 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
           </h1>
           <form
             className="flex flex-col gap-5"
-            onSubmit={handleSubmit}
             ref={formRef}
+            onSubmit={handleSubmit}
           >
             <Input
               name="name"
-              placeholder="Enter Your Full Name"
               id="name"
+              placeholder="Enter Your Full Name"
               required
             />
             <ValidationError prefix="Name" field="name" errors={state.errors} />
             <Input
               name="email"
-              placeholder="Enter Your Email"
               id="email"
+              placeholder="Enter Your Email"
               required
             />
             <ValidationError
@@ -107,13 +83,26 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
               field="phone"
               errors={state.errors}
             />
-            <Input
+            <Select
               name="service"
-              placeholder="Service"
-              id="services"
-              value={serviceItem?.title}
-              className="hidden"
-            />
+              onValueChange={(e) =>
+                setInputItem((prev) => ({ ...prev, subject: e || "" }))
+              }
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select Service" />
+              </SelectTrigger>
+              <SelectContent>
+                {services.map((item, index) => {
+                  return (
+                    <SelectItem key={index} value={item?.title}>
+                      {item?.title}
+                    </SelectItem>
+                  );
+                })}
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
             <ValidationError
               prefix="Service"
               field="service"
@@ -122,8 +111,8 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
             <Textarea
               name="message"
               placeholder="Enter Your Message"
-              id="message"
               rows={7}
+              id="message"
             />
             <ValidationError
               prefix="Message"
@@ -142,6 +131,4 @@ const ContactUs: React.FC<ContactUsProps> = ({ params }) => {
       </div>
     </div>
   );
-};
-
-export default ContactUs;
+}
