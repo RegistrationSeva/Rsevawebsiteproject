@@ -5,6 +5,9 @@ import React, { useEffect, useRef } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import ReCAPTCHA from "react-google-recaptcha";
+
+// Type assertion to fix ReCAPTCHA component typing issue
+const TypedReCAPTCHA = ReCAPTCHA as unknown as React.ComponentType<any>;
 import { useForm, ValidationError } from "@formspree/react";
 import { toast } from "sonner";
 import { services } from "@/app/our-services/servicesData";
@@ -146,9 +149,10 @@ const Footer = () => {
             field="message"
             errors={state.errors}
           />
-          <ReCAPTCHA
+          <TypedReCAPTCHA
             sitekey="6LdhlTAqAAAAAOqiHsftET4aURk1e3kRZuGqBREW"
             theme="light"
+            onChange={() => {}}
           />
           <button
             type="submit"
