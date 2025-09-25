@@ -7,6 +7,12 @@ type Props = {
   params: { slug: string };
 };
 
+function truncateTitle(title: string, maxLength = 60): string {
+  if (title.length <= maxLength) return title;
+  const truncated = title.slice(0, maxLength);
+  return truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((s) => s.slug === params.slug);
 
@@ -17,8 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const safeTitle = truncateTitle(service.title, 60);
+
   return {
-    title: `${service.title} - Registration SEVA`,
+    title: `${safeTitle} | Registration SEVA – Business Registration & Compliance Experts`,
     description: service.description,
     keywords: [
       "registration seva services",
@@ -31,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       service.title.toLowerCase(),
     ].join(", "),
     openGraph: {
-      title: service.title,
+      title: `${safeTitle} | Registration SEVA`,
       description: service.description,
       type: "website",
     },

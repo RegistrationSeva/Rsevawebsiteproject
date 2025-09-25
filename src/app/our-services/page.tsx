@@ -30,9 +30,9 @@ const Services = () => {
             >
               <div className="p-6 flex flex-1 flex-col justify-between gap-7">
                 <div className="md:h-[222px] overflow-hidden">
-                  <h2 className="text-2xl font-semibold mb-1 text-primary">
+                  <h1 className="text-2xl font-semibold mb-1 text-primary">
                     {service?.title}
-                  </h2>
+                  </h1>
                   <p className="text-gray-700 mb-4 text-justify">
                     {service?.description}
                   </p>

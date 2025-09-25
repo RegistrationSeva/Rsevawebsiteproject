@@ -2,13 +2,15 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - Registration SEVA",
+  title:
+    "About Us | Registration SEVA – Business Registration, Trademark & Compliance Experts in India",
   description:
     "Learn about Registration Seva, a leading consultancy firm providing comprehensive business registration, trademark, and compliance solutions since 2016. Simplifying regulatory requirements for entrepreneurs across India.",
   keywords:
     "about registration seva, business consultancy, company registration, trademark services, compliance solutions, business registration india",
   openGraph: {
-    title: "About Us - Registration SEVA",
+    title:
+      "About Us | Registration SEVA – Business Registration, Trademark & Compliance Experts in India",
     description:
       "Learn about Registration Seva, a leading consultancy firm providing comprehensive business registration, trademark, and compliance solutions since 2016.",
     type: "website",

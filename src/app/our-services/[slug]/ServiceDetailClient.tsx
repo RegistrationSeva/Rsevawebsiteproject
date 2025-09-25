@@ -91,9 +91,9 @@ export default function ServiceDetailClient({
   const ContactForm = () => {
     return (
       <div className="px-4 py-7 shadow-lg hover:shadow-xl transition-shadow rounded-lg bg-white">
-        <h2 className="text-2xl font-bold text-black mb-6 text-center">
+        <h1 className="text-2xl font-bold text-black mb-6 text-center">
           Get In Touch With Us
-        </h2>
+        </h1>
         <form
           className="flex flex-col gap-4"
           ref={formRef}
