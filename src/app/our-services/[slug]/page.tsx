@@ -7,10 +7,16 @@ type Props = {
   params: { slug: string };
 };
 
-function truncateTitle(title: string, maxLength = 60): string {
-  if (title.length <= maxLength) return title;
-  const truncated = title.slice(0, maxLength);
-  return truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+function truncateTitleWithSuffix(
+  title: string,
+  suffix: string,
+  maxLength = 60
+): string {
+  const availableLength = maxLength - suffix.length - 3; // 3 for " | "
+  if (availableLength <= 0) return suffix; // fallback if suffix is too long
+  if (title.length <= availableLength) return `${title} | ${suffix}`;
+  const truncated = title.slice(0, availableLength);
+  return `${truncated.slice(0, truncated.lastIndexOf(" "))}... | ${suffix}`;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -27,10 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const safeTitle = truncateTitle(service.title, 60);
+  const suffix =
+    "Registration SEVA – Business Registration & Compliance Experts";
+  const fullTitle = truncateTitleWithSuffix(service.title, suffix, 60);
 
   return {
-    title: `${safeTitle} | Registration SEVA – Business Registration & Compliance Experts`,
+    title: fullTitle,
     description: service.description,
     keywords: [
       "registration seva services",
@@ -43,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       service.title.toLowerCase(),
     ].join(", "),
     openGraph: {
-      title: `${safeTitle} | Registration SEVA`,
+      title: fullTitle,
       description: service.description,
       type: "website",
     },
