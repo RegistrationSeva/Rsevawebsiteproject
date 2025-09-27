@@ -174,6 +174,16 @@ export default function ServiceDetailClient({
                 <h1 className="text-2xl md:text-3xl font-semibold mb-1 text-primary">
                   Get expert assistance for {serviceItem.title}
                 </h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid officiis nisi modi eveniet alias accusantium possimus
+                  dolorum quibusdam, a ducimus est sapiente tempore quisquam
+                  aspernatur? Pariatur dignissimos incidunt harum accusamus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  facere consequatur delectus ducimus quibusdam labore nulla
+                  eveniet, quasi sapiente a! Eligendi repellendus atque quia in
+                  eum, esse distinctio dicta quasi?
+                </p>
                 <h1 className="text-lg md:text-xl font-semibold mb-2 text-primary">
                   Our skilled experts will assist you in the registration
                   process
