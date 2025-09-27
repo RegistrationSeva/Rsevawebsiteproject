@@ -3,19 +3,23 @@ import React from "react";
 function Page() {
   return (
     <div>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam non ipsa
-      ducimus eligendi quia repudiandae rem corrupti quaerat! Tempora provident,
-      odit sit, culpa suscipit nostrum delectus asperiores quis consequatur
-      corporis officiis, assumenda aspernatur pariatur voluptas! Libero,
-      repellendus. Deleniti ullam impedit, nam et aliquam soluta a sed omnis
-      dolorem quisquam cumque tempora, nemo nostrum odit? Consectetur non
-      commodi vel suscipit repudiandae quasi voluptatibus quam reiciendis
-      recusandae, repellat magnam mollitia fugiat impedit ex! Dolor, amet quos
-      ex, deleniti id sequi laudantium ullam inventore nulla deserunt, provident
-      aut at a fugiat autem earum magni. Error magni id ipsam iure sapiente
-      neque? Est provident, consectetur ex necessitatibus delectus pariatur,
-      explicabo distinctio inventore impedit dignissimos recusandae blanditiis
-      eum quas eos cupiditate minus nulla, quasi laboriosam!
+      <h1>About Our Services</h1>
+      <p>
+        Welcome to our dummy SEO test page. This content is written to help you
+        analyze how search engines read and calculate word counts on a web page.
+        Unlike placeholder text such as “Lorem ipsum,” these sentences contain
+        real words that can be properly indexed and counted. Here we are
+        including a clear structure with headings, descriptive sentences, and
+        multiple variations of keywords that improve readability.
+      </p>
+      <p>
+        By using meaningful sentences, the overall word count increases and the
+        page becomes more relevant for testing SEO tools. This approach allows
+        you to measure keyword density, page length, and readability more
+        accurately. In a real project, this text could be replaced with
+        high-quality descriptions about your services, business, or products to
+        attract both users and search engines.
+      </p>
     </div>
   );
 }
