@@ -44,12 +44,6 @@ const Services = () => {
                   >
                     See Details
                   </Link>
-                  <Link
-                    href="/contact-us"
-                    className="inline-block px-2 py-1 md:px-3 md:py-1 rounded-lg font-semibold text-[12px] leading-5 md:text-[17] md:leading-7  transition duration-300 ease-in-out transform hover:scale-110 shadow-lg border-2 border-blue-700 text-blue-700"
-                  >
-                    Get Quote
-                  </Link>
                 </div>
               </div>
             </div>
