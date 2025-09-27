@@ -23,16 +23,18 @@ function GoogleTagManager() {
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=AW-16686633951";
-    
+
     // Add error handling for blocked scripts
     script.onerror = () => {
-      console.warn("Google Tag Manager script blocked by ad blocker or failed to load");
+      console.warn(
+        "Google Tag Manager script blocked by ad blocker or failed to load"
+      );
     };
-    
+
     script.onload = () => {
       console.log("Google Tag Manager script loaded successfully");
     };
-    
+
     document.head.appendChild(script);
   }, []);
 
