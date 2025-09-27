@@ -16,6 +16,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Handle common 4xx redirects
+      {
+        source: "/contact-us/:slug",
+        destination: "/contact-us",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

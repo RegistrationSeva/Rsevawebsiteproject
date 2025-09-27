@@ -16,6 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       return {
         title: "Blog Post Not Found - Registration SEVA",
         description: "The requested blog post could not be found.",
+        robots: {
+          index: false,
+          follow: false,
+        },
       };
     }
 
@@ -56,9 +60,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } catch (error) {
     console.error("Error generating metadata:", error);
     return {
-      title: "Blog Post - Registration SEVA",
-      description:
-        "Read expert insights on business registration, compliance, and entrepreneurship in India.",
+      title: "Blog Post Not Found - Registration SEVA",
+      description: "The requested blog post could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 }

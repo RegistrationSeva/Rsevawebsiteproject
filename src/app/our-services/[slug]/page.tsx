@@ -20,6 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: "Service Not Found - Registration SEVA",
       description: "The requested service could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
