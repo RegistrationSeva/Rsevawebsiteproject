@@ -18,12 +18,21 @@ export const useBlog = createQuery<Response, Variables, AxiosError>({
 });
 
 // Server-side function for metadata generation
-export async function getBlog({ id }: { id: string }): Promise<Response> {
+export async function getBlog({ id }: { id: string }): Promise<Response | null> {
   try {
-    const response = await client.get(`blogs/slug/${id}`);
+    // Add timeout to prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
+    const response = await client.get(`blogs/slug/${id}`, {
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
     return response.data;
   } catch (error) {
     console.error("Error fetching blog:", error);
-    throw error;
+    // Return null instead of throwing error to allow graceful fallback
+    return null;
   }
 }

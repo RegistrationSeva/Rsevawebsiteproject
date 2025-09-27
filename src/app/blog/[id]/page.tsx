@@ -13,12 +13,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const blog = blogData?.data?.blog;
 
     if (!blog) {
+      // Provide better fallback metadata instead of "Blog Post Not Found"
       return {
-        title: "Blog Post Not Found - Registration SEVA",
-        description: "The requested blog post could not be found.",
-        robots: {
-          index: false,
-          follow: false,
+        title: `Business Blog - Registration SEVA`,
+        description: "Read expert insights on business registration, compliance, and entrepreneurship in India. Stay updated with the latest business trends and legal requirements.",
+        keywords: [
+          "registration seva blog",
+          "business registration",
+          "compliance",
+          "entrepreneurship",
+          "business tips",
+          "legal advice",
+        ].join(", "),
+        openGraph: {
+          title: "Business Blog - Registration SEVA",
+          description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
+          type: "website",
+          images: [
+            {
+              url: "/logo.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Registration SEVA - Business Blog",
+            },
+          ],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: "Business Blog - Registration SEVA",
+          description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
+          images: ["/logo.jpg"],
         },
       };
     }
@@ -31,14 +55,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "business registration",
         "compliance",
         "entrepreneurship",
-        blog.category.name.toLowerCase(),
+        blog.category?.name?.toLowerCase() || "business tips",
       ].join(", "),
       openGraph: {
         title: blog.title,
         description: `Read ${blog.title} on Registration SEVA blog.`,
         type: "article",
         publishedTime: blog.createdAt,
-        authors: [blog.author.name],
+        authors: [blog.author?.name || "Registration SEVA"],
         images: blog.coverImage
           ? [
               {
@@ -48,23 +72,54 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 alt: blog.title,
               },
             ]
-          : [],
+          : [
+              {
+                url: "/logo.jpg",
+                width: 1200,
+                height: 630,
+                alt: blog.title,
+              },
+            ],
       },
       twitter: {
         card: "summary_large_image",
         title: blog.title,
         description: `Read ${blog.title} on Registration SEVA blog.`,
-        images: blog.coverImage ? [blog.coverImage] : [],
+        images: blog.coverImage ? [blog.coverImage] : ["/logo.jpg"],
       },
     };
   } catch (error) {
     console.error("Error generating metadata:", error);
+    // Provide better fallback metadata instead of "Blog Post Not Found"
     return {
-      title: "Blog Post Not Found - Registration SEVA",
-      description: "The requested blog post could not be found.",
-      robots: {
-        index: false,
-        follow: false,
+      title: `Business Blog - Registration SEVA`,
+      description: "Read expert insights on business registration, compliance, and entrepreneurship in India. Stay updated with the latest business trends and legal requirements.",
+      keywords: [
+        "registration seva blog",
+        "business registration",
+        "compliance",
+        "entrepreneurship",
+        "business tips",
+        "legal advice",
+      ].join(", "),
+      openGraph: {
+        title: "Business Blog - Registration SEVA",
+        description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
+        type: "website",
+        images: [
+          {
+            url: "/logo.jpg",
+            width: 1200,
+            height: 630,
+            alt: "Registration SEVA - Business Blog",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Business Blog - Registration SEVA",
+        description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
+        images: ["/logo.jpg"],
       },
     };
   }
