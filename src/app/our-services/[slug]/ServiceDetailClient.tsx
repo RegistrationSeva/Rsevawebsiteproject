@@ -647,10 +647,10 @@ export const metadata = {
   description: "SEO test page with enough content for word count checking.",
 };
 
-function Page() {
+function Page({ slug }: { slug: string }) {
   return (
     <div>
-      <h1>Dummy SEO Test Page</h1>
+      <h1>Dummy SEO Test Page {slug}</h1>
       <p>
         This page is created to test SEO word count and readability. Unlike
         simple Lorem Ipsum text, this content is meaningful and contains more
