@@ -107,12 +107,12 @@ function HeroSection() {
             <div className="max-w-5xl mx-auto mb-20">
               <div className="bg-white/10 backdrop-blur-sm border-l-4 border-secondary rounded-r-3xl p-12 shadow-lg">
                 <p className="text-white/90 text-center leading-relaxed text-lg">
-                  Registration Seva is India's leading business registration
-                  consultancy, specializing in comprehensive company formation
-                  and compliance solutions. Our experienced team of legal
-                  experts and certified business consultants provides end-to-end
-                  support ensuring seamless compliance with Indian regulatory
-                  requirements.
+                  Registration Seva is India&apos;s leading business
+                  registration consultancy, specializing in comprehensive
+                  company formation and compliance solutions. Our experienced
+                  team of legal experts and certified business consultants
+                  provides end-to-end support ensuring seamless compliance with
+                  Indian regulatory requirements.
                 </p>
               </div>
             </div>
