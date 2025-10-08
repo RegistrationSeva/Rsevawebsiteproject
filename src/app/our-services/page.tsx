@@ -4,7 +4,7 @@ import { services } from "./servicesData";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services - Registration SEVA | Business Registration & Compliance",
+  title: "Our Services - Registration SEVA | Business Support",
   description:
     "Discover Registration Seva's wide range of services including company registration, trademark protection, GST registration, compliance management, and business consultancy across India. Expert assistance for Private Limited, LLP, OPC, Partnership Firm, and more.",
   keywords:
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://registrationseva.com/our-services",
   },
   openGraph: {
-    title: "Our Services - Registration SEVA | Business Registration & Compliance",
+    title: "Our Services - Registration SEVA | Business Support",
     description:
       "Explore Registration Seva's professional services for entrepreneurs and businesses, covering company registration, trademark, GST, and compliance solutions.",
     type: "website",

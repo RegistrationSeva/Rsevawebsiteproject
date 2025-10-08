@@ -10,51 +10,29 @@ type Props = {
 
 function generateDynamicTitle(service: any): string {
   const title = service.title;
-  const slug = service.slug;
-  
-  // Determine service category and create appropriate suffix
-  let category = "";
-  
-  if (slug.includes("company") || slug.includes("llp") || slug.includes("partnership") || slug.includes("proprietorship")) {
-    category = "Registration";
-  } else if (slug.includes("gst") || slug.includes("tax") || slug.includes("income-tax")) {
-    category = "Services";
-  } else if (slug.includes("trademark") || slug.includes("copyright") || slug.includes("patent")) {
-    category = "Registration";
-  } else if (slug.includes("fssai") || slug.includes("license") || slug.includes("import-export")) {
-    category = "License";
-  } else if (slug.includes("compliance") || slug.includes("annual") || slug.includes("filing")) {
-    category = "Services";
-  } else if (slug.includes("change") || slug.includes("increase") || slug.includes("add")) {
-    category = "Services";
-  } else {
-    category = "Registration";
-  }
-  
-  // Create SEO-friendly title
-  // Format: "Service Title | Category | Registration SEVA"
   const brandName = "Registration SEVA";
   const separator = " | ";
+  const maxLength = 65; // SEO best practice: keep titles under 65 characters
   
-  // Option 1: Full title with category and brand (if fits in 70 chars for better SEO)
-  const fullTitle = `${title}${separator}${category}${separator}${brandName}`;
-  if (fullTitle.length <= 70) {
-    return fullTitle;
-  }
-  
-  // Option 2: Title with brand only (if fits)
+  // Option 1: Title with brand (if fits under 65 chars)
   const simpleTitleWithBrand = `${title}${separator}${brandName}`;
-  if (simpleTitleWithBrand.length <= 70) {
+  if (simpleTitleWithBrand.length <= maxLength) {
     return simpleTitleWithBrand;
   }
   
-  // Option 3: Shortened title with brand
-  const maxTitleLength = 70 - brandName.length - separator.length;
-  const truncatedTitle = title.slice(0, maxTitleLength).trim();
-  const lastSpace = truncatedTitle.lastIndexOf(" ");
-  const finalTitle = lastSpace > 0 ? truncatedTitle.slice(0, lastSpace) : truncatedTitle;
+  // Option 2: Shorten title to fit with brand
+  const maxTitleLength = maxLength - brandName.length - separator.length - 3; // Reserve 3 chars for "..."
   
-  return `${finalTitle}${separator}${brandName}`;
+  if (title.length > maxTitleLength) {
+    // Find the last complete word that fits
+    const truncatedTitle = title.slice(0, maxTitleLength).trim();
+    const lastSpace = truncatedTitle.lastIndexOf(" ");
+    const finalTitle = lastSpace > 0 ? truncatedTitle.slice(0, lastSpace) : truncatedTitle;
+    
+    return `${finalTitle}${separator}${brandName}`;
+  }
+  
+  return simpleTitleWithBrand;
 }
 
 function generateServiceKeywords(service: any): string {
