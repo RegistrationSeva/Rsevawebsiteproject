@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Share2 } from "lucide-react";
 import { toast } from "sonner";
+import images from "@/assets/images";
 
 type BlogDetailClientProps = {
   id: string;
@@ -127,7 +128,7 @@ export default function BlogDetailClient({ id }: BlogDetailClientProps) {
                 <div className="flex flex-wrap items-center gap-6 text-white/90">
                   <div className="flex items-center gap-3">
                     <Image
-                      src={`https://api.dicebear.com/7.x/initials/svg?seed=${blog.author.name}&backgroundColor=ffffff`}
+                      src={images.logo_icon}
                       alt={blog.author.name}
                       width={32}
                       height={32}
