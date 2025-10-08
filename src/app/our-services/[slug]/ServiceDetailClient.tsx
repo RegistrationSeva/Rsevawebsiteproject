@@ -137,18 +137,51 @@ export default function ServiceDetailClient({
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Schema.org JSON-LD for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": serviceItem.title,
+            "description": serviceItem.description,
+            "provider": {
+              "@type": "Organization",
+              "name": "Registration SEVA",
+              "url": "https://registrationseva.com"
+            },
+            "areaServed": "IN",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": `https://registrationseva.com/our-services/${serviceItem.slug}`
+            }
+          })
+        }}
+      />
+      
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        {/* SEO-optimized header with H1 */}
+        <header className="bg-gradient-to-r from-primary to-blue-600 text-white p-6 md:p-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">
+            {serviceItem.title}
+          </h1>
+          <p className="text-lg md:text-xl opacity-90">
+            Professional {serviceItem.title.toLowerCase()} services in India | Registration SEVA
+          </p>
+        </header>
+
         <div className="grid grid-cols-1 md:grid-cols-[70%_30%] bg-[#F5F5F5] p-4">
           <div className="flex flex-col justify-center p-6 md:p-10 space-y-7 md:items-start px-7 items-center">
             <div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-semibold mb-1 text-primary">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-1 text-primary">
                   Get expert assistance for {serviceItem.title}
-                </h1>
-                <h1 className="text-lg md:text-xl font-semibold mb-2 text-primary">
+                </h2>
+                <p className="text-lg md:text-xl font-semibold mb-2 text-primary">
                   Our skilled experts will assist you in the registration
                   process
-                </h1>
+                </p>
               </div>
               <p className="text-sm md:text-md text-gray-700 rounded-lg text-justify">
                 {serviceItem.description}
@@ -163,9 +196,9 @@ export default function ServiceDetailClient({
           {!serviceItem?.overview?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.overview?.name && (
-                <h1 className="name text-primary" style={{ color: "#0F4A89" }}>
+                <h2 className="name text-primary text-3xl font-bold" style={{ color: "#0F4A89" }}>
                   {serviceItem?.overview?.name}
-                </h1>
+                </h2>
               )}
               {serviceItem?.overview?.heading && (
                 <p className="heading">{serviceItem?.overview?.heading}</p>
@@ -213,7 +246,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.eligibility?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.eligibility?.name && (
-                <h1 className="name">{serviceItem?.eligibility?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.eligibility?.name}</h2>
               )}
               {serviceItem?.eligibility?.heading && (
                 <p className="heading">{serviceItem?.eligibility?.heading}</p>
@@ -273,7 +306,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.benefits?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.benefits?.name && (
-                <h1 className="name">{serviceItem?.benefits?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.benefits?.name}</h2>
               )}
               {serviceItem?.benefits?.heading && (
                 <p className="heading">{serviceItem?.benefits?.heading}</p>
@@ -326,7 +359,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.requirement?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.requirement?.name && (
-                <h1 className="name">{serviceItem?.requirement?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.requirement?.name}</h2>
               )}
               {serviceItem?.requirement?.heading && (
                 <p className="heading">{serviceItem?.requirement?.heading}</p>
@@ -385,9 +418,9 @@ export default function ServiceDetailClient({
           {!serviceItem?.registration_process?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.registration_process?.name && (
-                <h1 className="name">
+                <h2 className="name text-3xl font-bold text-primary">
                   {serviceItem?.registration_process?.name}
-                </h1>
+                </h2>
               )}
               {serviceItem?.registration_process?.heading && (
                 <p className="heading">
@@ -454,7 +487,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.compliances?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.compliances?.name && (
-                <h1 className="name">{serviceItem?.compliances?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.compliances?.name}</h2>
               )}
               {serviceItem?.compliances?.heading && (
                 <p className="heading">{serviceItem?.compliances?.heading}</p>
@@ -515,7 +548,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.why_us?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.why_us?.name && (
-                <h1 className="name">{serviceItem?.why_us?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.why_us?.name}</h2>
               )}
               {serviceItem?.why_us?.heading && (
                 <p className="heading">{serviceItem?.why_us?.heading}</p>
@@ -558,7 +591,7 @@ export default function ServiceDetailClient({
           {!serviceItem?.faq?.isEmpty && (
             <div className="space-y-4">
               {serviceItem?.faq?.name && (
-                <h1 className="name">{serviceItem?.faq?.name}</h1>
+                <h2 className="name text-3xl font-bold text-primary">{serviceItem?.faq?.name}</h2>
               )}
               {serviceItem?.faq?.heading && (
                 <p className="heading">{serviceItem?.faq?.heading}</p>
