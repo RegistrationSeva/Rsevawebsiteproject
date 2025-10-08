@@ -8,16 +8,89 @@ type Props = {
   params: { slug: string };
 };
 
-function truncateTitleWithSuffix(
-  title: string,
-  suffix: string,
-  maxLength = 60
-): string {
-  const availableLength = maxLength - suffix.length - 3; // 3 for " | "
-  if (availableLength <= 0) return suffix; // fallback if suffix is too long
-  if (title.length <= availableLength) return `${title} | ${suffix}`;
-  const truncated = title.slice(0, availableLength);
-  return `${truncated.slice(0, truncated.lastIndexOf(" "))}... | ${suffix}`;
+function generateDynamicTitle(service: any): string {
+  const title = service.title;
+  const slug = service.slug;
+  
+  // Determine service category and create appropriate suffix
+  let category = "";
+  
+  if (slug.includes("company") || slug.includes("llp") || slug.includes("partnership") || slug.includes("proprietorship")) {
+    category = "Registration";
+  } else if (slug.includes("gst") || slug.includes("tax") || slug.includes("income-tax")) {
+    category = "Services";
+  } else if (slug.includes("trademark") || slug.includes("copyright") || slug.includes("patent")) {
+    category = "Registration";
+  } else if (slug.includes("fssai") || slug.includes("license") || slug.includes("import-export")) {
+    category = "License";
+  } else if (slug.includes("compliance") || slug.includes("annual") || slug.includes("filing")) {
+    category = "Services";
+  } else if (slug.includes("change") || slug.includes("increase") || slug.includes("add")) {
+    category = "Services";
+  } else {
+    category = "Registration";
+  }
+  
+  // Create SEO-friendly title
+  // Format: "Service Title | Category | Registration SEVA"
+  const brandName = "Registration SEVA";
+  const separator = " | ";
+  
+  // Option 1: Full title with category and brand (if fits in 70 chars for better SEO)
+  const fullTitle = `${title}${separator}${category}${separator}${brandName}`;
+  if (fullTitle.length <= 70) {
+    return fullTitle;
+  }
+  
+  // Option 2: Title with brand only (if fits)
+  const simpleTitleWithBrand = `${title}${separator}${brandName}`;
+  if (simpleTitleWithBrand.length <= 70) {
+    return simpleTitleWithBrand;
+  }
+  
+  // Option 3: Shortened title with brand
+  const maxTitleLength = 70 - brandName.length - separator.length;
+  const truncatedTitle = title.slice(0, maxTitleLength).trim();
+  const lastSpace = truncatedTitle.lastIndexOf(" ");
+  const finalTitle = lastSpace > 0 ? truncatedTitle.slice(0, lastSpace) : truncatedTitle;
+  
+  return `${finalTitle}${separator}${brandName}`;
+}
+
+function generateServiceKeywords(service: any): string {
+  // Convert slug to keywords (replace dashes with spaces)
+  const slugKeywords = service.slug
+    .split("-")
+    .filter((word: string) => word.length > 2)
+    .join(" ");
+
+  // Extract important words from title (remove common words)
+  const commonWords = ["in", "of", "for", "and", "the", "a", "an", "with", "to"];
+  const titleWords = service.title
+    .toLowerCase()
+    .split(" ")
+    .filter((word: string) => !commonWords.includes(word) && word.length > 2)
+    .slice(0, 5);
+
+  // Base keywords that apply to most services
+  const baseKeywords = [
+    "registration seva",
+    "online registration",
+    "india",
+  ];
+
+  // Service-specific keywords
+  const serviceKeywords = [
+    service.title.toLowerCase(),
+    slugKeywords,
+    ...titleWords,
+  ];
+
+  // Combine all keywords and remove duplicates
+  const combinedKeywords = [...serviceKeywords, ...baseKeywords];
+  const allKeywords = Array.from(new Set(combinedKeywords));
+
+  return allKeywords.filter(Boolean).join(", ");
 }
 
 export function generateStaticParams() {
@@ -40,27 +113,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const suffix =
-    "Registration SEVA – Business Registration & Compliance Experts";
-  const fullTitle = truncateTitleWithSuffix(service.title, suffix, 60);
+  // Generate dynamic title based on service category
+  const dynamicTitle = generateDynamicTitle(service);
+
+  // Generate dynamic keywords based on service content
+  const serviceKeywords = generateServiceKeywords(service);
+
+  // Create canonical URL
+  const canonicalUrl = `https://registrationseva.com/our-services/${params.slug}`;
 
   return {
-    title: fullTitle,
+    title: dynamicTitle,
     description: service.description,
-    keywords: [
-      "registration seva services",
-      "company registration india",
-      "trademark services",
-      "GST registration",
-      "business compliance",
-      "startup consultancy",
-      "business registration solutions",
-      service.title.toLowerCase(),
-    ].join(", "),
+    keywords: serviceKeywords,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: fullTitle,
+      title: dynamicTitle,
       description: service.description,
       type: "website",
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dynamicTitle,
+      description: service.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

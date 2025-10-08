@@ -4,16 +4,37 @@ import { services } from "./servicesData";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services - Registration SEVA",
+  title: "Our Services - Registration SEVA | Business Registration & Compliance",
   description:
-    "Discover Registration Seva’s wide range of services including company registration, trademark protection, GST registration, compliance management, and business consultancy across India.",
+    "Discover Registration Seva's wide range of services including company registration, trademark protection, GST registration, compliance management, and business consultancy across India. Expert assistance for Private Limited, LLP, OPC, Partnership Firm, and more.",
   keywords:
-    "registration seva services, company registration india, trademark services, GST registration, business compliance, startup consultancy, business registration solutions",
+    "registration seva services, company registration india, trademark services, GST registration, business compliance, startup consultancy, business registration solutions, private limited company, llp registration, partnership firm, sole proprietorship, section 8 company, nidhi company, producer company, msme registration, gst filing, annual compliance, change in directors, share capital, registered office, trademark registration, copyright registration, patent registration, fssai license, import export code, udyam registration, tax filing, business licenses india",
+  alternates: {
+    canonical: "https://registrationseva.com/our-services",
+  },
   openGraph: {
+    title: "Our Services - Registration SEVA | Business Registration & Compliance",
+    description:
+      "Explore Registration Seva's professional services for entrepreneurs and businesses, covering company registration, trademark, GST, and compliance solutions.",
+    type: "website",
+    url: "https://registrationseva.com/our-services",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Our Services - Registration SEVA",
     description:
-      "Explore Registration Seva’s professional services for entrepreneurs and businesses, covering company registration, trademark, GST, and compliance solutions.",
-    type: "website",
+      "Explore Registration Seva's professional services for entrepreneurs and businesses.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
