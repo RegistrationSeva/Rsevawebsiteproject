@@ -2,6 +2,7 @@ import React from "react";
 import { services } from "../servicesData";
 import { Metadata } from "next";
 import ServiceDetailClient from "./ServiceDetailClient";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: { slug: string };
@@ -17,6 +18,12 @@ function truncateTitleWithSuffix(
   if (title.length <= availableLength) return `${title} | ${suffix}`;
   const truncated = title.slice(0, availableLength);
   return `${truncated.slice(0, truncated.lastIndexOf(" "))}... | ${suffix}`;
+}
+
+export function generateStaticParams() {
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -59,5 +66,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ServiceDetail({ params }: Props) {
-  return <ServiceDetailClient slug={params.slug} />;
+  const service = services.find((s) => s.slug === params.slug);
+  
+  if (!service) {
+    notFound();
+  }
+
+  return <ServiceDetailClient serviceData={service} />;
 }

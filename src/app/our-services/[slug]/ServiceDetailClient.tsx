@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { services } from "../servicesData";
+import React, { useEffect, useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,19 +9,18 @@ import {
 } from "@radix-ui/react-accordion";
 import { FaPlus } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
 import ServiceBannerCard from "@/components/ServiceBannerCard";
 
 interface Data {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 interface NestedData {
   title: string;
   description: string;
-  data: Data[];
+  data?: Data[];
 }
 
 interface Section {
@@ -37,7 +35,7 @@ interface Service {
   title: string;
   slug: string;
   description: string;
-  image: string;
+  image?: string;
   overview: Section;
   eligibility: Section;
   benefits: Section;
@@ -49,13 +47,13 @@ interface Service {
 }
 
 interface ServiceDetailClientProps {
-  slug: string;
+  serviceData: Service;
 }
 
 export default function ServiceDetailClient({
-  slug,
+  serviceData,
 }: ServiceDetailClientProps) {
-  const [serviceItem, setServiceItem] = useState<Service | null>(null);
+  const serviceItem = serviceData;
   const [state, handleSubmit] = useForm("manwjalw");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -72,33 +70,6 @@ export default function ServiceDetailClient({
       formRef.current?.reset();
     }
   }, [state.succeeded]);
-
-  useEffect(() => {
-    if (slug && services) {
-      const item: any = services.find((service) => service.slug === slug);
-      setServiceItem(item ?? null);
-    }
-  }, [slug]);
-
-  if (!serviceItem) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">404</h1>
-          <p className="text-lg text-gray-600 mb-6">Service not found</p>
-          <p className="text-sm text-gray-500 mb-8">
-            The requested service could not be found.
-          </p>
-          <a
-            href="/our-services"
-            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            View All Services
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   const ContactForm = () => {
     return (
@@ -209,8 +180,8 @@ export default function ServiceDetailClient({
                         <p className="description">{item?.description}</p>
                       )}
                       <div className="mt-4">
-                        {item?.data?.length > 0 &&
-                          item?.data?.map((item: Data, index: number) => {
+                        {item?.data && item.data.length > 0 &&
+                          item.data.map((item: Data, index: number) => {
                             return (
                               <ul className="list-disc px-7" key={index}>
                                 {item?.title && (
@@ -264,8 +235,8 @@ export default function ServiceDetailClient({
                         </p>
                       )}
                       <div className="mt-4">
-                        {item?.data?.length > 0 &&
-                          item?.data?.map((item: Data, index: number) => {
+                        {item?.data && item.data.length > 0 &&
+                          item.data.map((item: Data, index: number) => {
                             return (
                               <ul className="list-disc px-7" key={index}>
                                 {item?.title && (
@@ -324,8 +295,8 @@ export default function ServiceDetailClient({
                           </p>
                         )}
                         <div className="mt-4 ">
-                          {item?.data?.length > 0 &&
-                            item?.data?.map((item: Data, index: number) => {
+                          {item?.data && item.data.length > 0 &&
+                            item.data.map((item: Data, index: number) => {
                               return (
                                 <ul className="list-disc px-7" key={index}>
                                   {item?.title && (
@@ -377,8 +348,8 @@ export default function ServiceDetailClient({
                           </p>
                         )}
                         <div className="mt-4 ">
-                          {item?.data?.length > 0 &&
-                            item?.data?.map((item: Data, index: number) => {
+                          {item?.data && item.data.length > 0 &&
+                            item.data.map((item: Data, index: number) => {
                               return (
                                 <div className="space-y-4" key={index}>
                                   {item?.title && (
@@ -441,8 +412,8 @@ export default function ServiceDetailClient({
                           </p>
                         )}
                         <div className="mt-4 ">
-                          {item?.data?.length > 0 &&
-                            item?.data?.map((item: Data, index: number) => {
+                          {item?.data && item.data.length > 0 &&
+                            item.data.map((item: Data, index: number) => {
                               return (
                                 <div className="space-y-4" key={index}>
                                   {item?.title && (
@@ -488,7 +459,7 @@ export default function ServiceDetailClient({
               {serviceItem?.compliances?.heading && (
                 <p className="heading">{serviceItem?.compliances?.heading}</p>
               )}
-              {serviceItem?.compliances?.data?.length > 0 && (
+              {serviceItem?.compliances?.data && serviceItem.compliances.data.length > 0 && (
                 <div className="grid md:grid-cols-2 gap-4 mt-5">
                   {serviceItem?.compliances?.data?.map(
                     (item: NestedData, index: number) => {
@@ -506,8 +477,8 @@ export default function ServiceDetailClient({
                             </p>
                           )}
                           <div className="mt-4 ">
-                            {item?.data?.length > 0 &&
-                              item?.data?.map((item: Data, index: number) => {
+                            {item?.data && item.data.length > 0 &&
+                              item.data.map((item: Data, index: number) => {
                                 return (
                                   <div className="space-y-4" key={index}>
                                     {item?.title && (
@@ -559,8 +530,8 @@ export default function ServiceDetailClient({
                         <p className="description">{item?.description}</p>
                       )}
                       <div className="mt-4">
-                        {item?.data?.length > 0 &&
-                          item?.data?.map((item: Data, index: number) => {
+                        {item?.data && item.data.length > 0 &&
+                          item.data.map((item: Data, index: number) => {
                             return (
                               <ul className="list-disc px-7" key={index}>
                                 {item?.title && (
@@ -592,7 +563,7 @@ export default function ServiceDetailClient({
               {serviceItem?.faq?.heading && (
                 <p className="heading">{serviceItem?.faq?.heading}</p>
               )}
-              {serviceItem.faq?.data?.length > 0 && (
+              {serviceItem.faq?.data && serviceItem.faq.data.length > 0 && (
                 <Accordion type="single" collapsible className="w-ful">
                   {serviceItem.faq?.data.map(
                     ({ title, description, data }, index: number) => (
@@ -608,9 +579,9 @@ export default function ServiceDetailClient({
                         <AccordionContent className="p-4">
                           {description}
 
-                          {data?.length > 0 && (
+                          {data && data.length > 0 && (
                             <ul className="list-disc px-7 py-4">
-                              {data?.map((item: any, index: number) => (
+                              {data.map((item: any, index: number) => (
                                 <div key={index}>
                                   <p className="paragraph text-sm text-black font-bold">
                                     {item?.title}
