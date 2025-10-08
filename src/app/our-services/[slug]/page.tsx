@@ -58,39 +58,38 @@ function generateDynamicTitle(service: any): string {
 }
 
 function generateServiceKeywords(service: any): string {
-  // Convert slug to keywords (replace dashes with spaces)
-  const slugKeywords = service.slug
+  // Extract individual words from URL slug (these MUST appear in keywords)
+  const slugWords = service.slug
     .split("-")
-    .filter((word: string) => word.length > 2)
-    .join(" ");
+    .filter((word: string) => word.length > 2); // Keep words longer than 2 chars
+
+  // Convert slug to readable phrase
+  const slugPhrase = slugWords.join(" ");
 
   // Extract important words from title (remove common words)
-  const commonWords = ["in", "of", "for", "and", "the", "a", "an", "with", "to"];
+  const commonWords = ["in", "of", "for", "and", "the", "a", "an", "with", "to", "or"];
   const titleWords = service.title
     .toLowerCase()
     .split(" ")
-    .filter((word: string) => !commonWords.includes(word) && word.length > 2)
-    .slice(0, 5);
+    .filter((word: string) => !commonWords.includes(word) && word.length > 2);
 
-  // Base keywords that apply to most services
-  const baseKeywords = [
+  // Combine title words and slug words, remove duplicates
+  const allServiceWords = Array.from(new Set([...slugWords, ...titleWords]));
+
+  // Build keyword string with URL keywords FIRST (most important for SEO check)
+  const keywordList = [
+    slugPhrase, // Full slug phrase: "private limited company"
+    service.title.toLowerCase(), // Full title
+    ...allServiceWords, // Individual words from both slug and title
     "registration seva",
-    "online registration",
     "india",
+    "online",
   ];
 
-  // Service-specific keywords
-  const serviceKeywords = [
-    service.title.toLowerCase(),
-    slugKeywords,
-    ...titleWords,
-  ];
+  // Remove duplicates and empty values
+  const uniqueKeywords = Array.from(new Set(keywordList)).filter(Boolean);
 
-  // Combine all keywords and remove duplicates
-  const combinedKeywords = [...serviceKeywords, ...baseKeywords];
-  const allKeywords = Array.from(new Set(combinedKeywords));
-
-  return allKeywords.filter(Boolean).join(", ");
+  return uniqueKeywords.join(", ");
 }
 
 export function generateStaticParams() {
