@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions - Registration SEVA",
+  description:
+    "Read the Terms and Conditions of Registration Seva to understand the rules, obligations, and legal agreements governing the use of our business registration, trademark, GST, and compliance services.",
+  keywords:
+    "registration seva terms and conditions, service terms, legal policy, business registration terms, trademark service terms, GST compliance terms, consultancy terms india",
+  openGraph: {
+    title: "Terms & Conditions - Registration SEVA",
+    description:
+      "Review Registration Seva’s Terms and Conditions outlining user responsibilities, service usage, and legal agreements for business registration, trademark, GST, and compliance services in India.",
+    type: "website",
+  },
+};
 
 function TermsOfService() {
   return (

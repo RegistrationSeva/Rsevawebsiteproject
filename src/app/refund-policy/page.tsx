@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Refund Policy - Registration SEVA",
+  description:
+    "Read the Refund Policy of Registration Seva to understand our terms and conditions regarding cancellations, refunds, and service-related payments for business registration, trademark, GST, and compliance services.",
+  keywords:
+    "registration seva refund policy, cancellation policy, service refunds, payment terms, business registration refund, trademark refund policy, GST service refunds",
+  openGraph: {
+    title: "Refund Policy - Registration SEVA",
+    description:
+      "Understand Registration Seva’s refund and cancellation policy, including terms for business registration, trademark, GST, and compliance-related services across India.",
+    type: "website",
+  },
+};
 
 function RefundPolicy() {
   return (
