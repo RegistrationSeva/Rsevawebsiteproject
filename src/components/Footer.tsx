@@ -172,7 +172,7 @@ const rSevaServices = [
   { name: "Privacy Policy", link: "/privacy-policy" },
   { name: "Refund Policy", link: "/refund-policy" },
   { name: "Satisfaction Guarantee", link: "/satisfaction-guarantee" },
-  { name: "Terms & Conditions", link: "/terms-condition" },
+  { name: "Terms & Conditions", link: "/terms-and-conditions" },
   { name: "Contact Us", link: "/contact-us" },
 ];
 
