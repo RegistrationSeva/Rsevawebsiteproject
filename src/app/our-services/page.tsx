@@ -10,14 +10,15 @@ export const metadata: Metadata = {
   keywords:
     "registration seva services, company registration india, trademark services, GST registration, business compliance, startup consultancy, business registration solutions, private limited company, llp registration, partnership firm, sole proprietorship, section 8 company, nidhi company, producer company, msme registration, gst filing, annual compliance, change in directors, share capital, registered office, trademark registration, copyright registration, patent registration, fssai license, import export code, udyam registration, tax filing, business licenses india",
   alternates: {
-    canonical: "https://registrationseva.com/our-services",
+    canonical: "https://www.registrationseva.com/our-services",
   },
   openGraph: {
     title: "Our Services - Registration SEVA | Business Support",
     description:
       "Explore Registration Seva's professional services for entrepreneurs and businesses, covering company registration, trademark, GST, and compliance solutions.",
     type: "website",
-    url: "https://registrationseva.com/our-services",
+    url: "https://www.registrationseva.com/our-services",
+    images: [{ url: "/logo.jpg", width: 1024, height: 321, alt: "Registration Seva Services" }],
   },
   twitter: {
     card: "summary_large_image",

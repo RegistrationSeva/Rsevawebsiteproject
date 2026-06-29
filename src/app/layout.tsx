@@ -8,9 +8,9 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://registrationseva.com"),
+  metadataBase: new URL("https://www.registrationseva.com"),
   title: "Registration SEVA",
-  description: "",
+  description: "Expert business registration, trademark, GST, and compliance services across India. Registration Seva simplifies every regulatory requirement for entrepreneurs and businesses.",
 };
 
 // Conditional Analytics component to handle Vercel Analytics errors

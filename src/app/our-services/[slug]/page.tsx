@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import ServiceDetailClient from "./ServiceDetailClient";
 import { notFound } from "next/navigation";
 
+const BASE_URL = "https://www.registrationseva.com";
+
 type Props = {
   params: { slug: string };
 };
@@ -96,26 +98,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Generate dynamic keywords based on service content
   const serviceKeywords = generateServiceKeywords(service);
 
-  // Create canonical URL
-  const canonicalUrl = `https://registrationseva.com/our-services/${params.slug}`;
+  const canonicalUrl = `${BASE_URL}/our-services/${params.slug}`;
 
   return {
     title: dynamicTitle,
     description: service.description,
     keywords: serviceKeywords,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: dynamicTitle,
       description: service.description,
       type: "website",
       url: canonicalUrl,
+      images: [
+        {
+          url: "/logo.jpg",
+          width: 1024,
+          height: 321,
+          alt: `${service.title} - Registration SEVA`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: dynamicTitle,
       description: service.description,
+      images: ["/logo.jpg"],
     },
     robots: {
       index: true,
@@ -133,10 +141,68 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ServiceDetail({ params }: Props) {
   const service = services.find((s) => s.slug === params.slug);
-  
+
   if (!service) {
     notFound();
   }
 
-  return <ServiceDetailClient serviceData={service} />;
+  const pageUrl = `${BASE_URL}/our-services/${service.slug}`;
+
+  // Service JSON-LD — server-rendered so AI crawlers (GPTBot, CCBot, Anthropic) can parse it
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    url: pageUrl,
+    provider: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Registration Seva",
+      url: BASE_URL,
+    },
+    areaServed: { "@type": "Country", name: "India" },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Our Services", item: `${BASE_URL}/our-services` },
+      { "@type": "ListItem", position: 3, name: service.title, item: pageUrl },
+    ],
+  };
+
+  // FAQPage schema — only if service has FAQ entries
+  const faqItems = (service as any)?.faq?.data?.filter(
+    (f: any) => f?.title && f?.description && !(service as any)?.faq?.isEmpty
+  );
+  const faqSchema =
+    faqItems && faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((f: any) => ({
+            "@type": "Question",
+            name: f.title,
+            acceptedAnswer: { "@type": "Answer", text: f.description },
+          })),
+        }
+      : null;
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
+      <ServiceDetailClient serviceData={service} />
+    </>
+  );
 }

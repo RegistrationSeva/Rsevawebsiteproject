@@ -137,28 +137,6 @@ export default function ServiceDetailClient({
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Schema.org JSON-LD for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": serviceItem.title,
-            "description": serviceItem.description,
-            "provider": {
-              "@type": "Organization",
-              "name": "Registration SEVA",
-              "url": "https://registrationseva.com"
-            },
-            "areaServed": "IN",
-            "availableChannel": {
-              "@type": "ServiceChannel",
-              "serviceUrl": `https://registrationseva.com/our-services/${serviceItem.slug}`
-            }
-          })
-        }}
-      />
       
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
         {/* SEO-optimized header with H1 */}

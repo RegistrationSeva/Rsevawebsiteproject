@@ -2,16 +2,25 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Registration SEVA – Business, Trademark & Compliance",
+  title: "About Registration SEVA | Business & Compliance Experts",
   description:
     "Learn about Registration Seva, a leading consultancy firm providing comprehensive business registration, trademark, and compliance solutions since 2016. Simplifying regulatory requirements for entrepreneurs across India.",
   keywords:
     "about registration seva, business consultancy, company registration, trademark services, compliance solutions, business registration india",
+  alternates: { canonical: "https://www.registrationseva.com/about-us" },
   openGraph: {
-    title: "About Us | Registration SEVA – Business, Trademark & Compliance",
+    title: "About Registration SEVA | Business & Compliance Experts",
     description:
       "Learn about Registration Seva, a leading consultancy firm providing comprehensive business registration, trademark, and compliance solutions since 2016.",
     type: "website",
+    url: "https://www.registrationseva.com/about-us",
+    images: [{ url: "/logo.jpg", width: 1024, height: 321, alt: "Registration Seva - About Us" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Registration SEVA | Business & Compliance Experts",
+    description: "Leading business registration and compliance consultancy in India since 2016.",
+    images: ["/logo.jpg"],
   },
 };
 

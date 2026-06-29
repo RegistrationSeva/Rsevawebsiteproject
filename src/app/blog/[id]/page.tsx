@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { getBlog } from "@/api/blog/use-get-blog";
 import BlogDetailClient from "./BlogDetailClient";
 
+const BASE_URL = "https://www.registrationseva.com";
+
 type Props = {
   params: { id: string };
 };
@@ -13,7 +15,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const blog = blogData?.data?.blog;
 
     if (!blog) {
-      // Provide better fallback metadata instead of "Blog Post Not Found"
       return {
         title: `Business Blog - Registration SEVA`,
         description: "Read expert insights on business registration, compliance, and entrepreneurship in India. Stay updated with the latest business trends and legal requirements.",
@@ -25,18 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "business tips",
           "legal advice",
         ].join(", "),
+        alternates: { canonical: `${BASE_URL}/blog` },
         openGraph: {
           title: "Business Blog - Registration SEVA",
           description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
           type: "website",
-          images: [
-            {
-              url: "/logo.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Registration SEVA - Business Blog",
-            },
-          ],
+          images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "Registration SEVA - Business Blog" }],
         },
         twitter: {
           card: "summary_large_image",
@@ -57,29 +52,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "entrepreneurship",
         blog.category?.name?.toLowerCase() || "business tips",
       ].join(", "),
+      alternates: { canonical: `${BASE_URL}/blog/${params.id}` },
       openGraph: {
         title: blog.title,
         description: `Read ${blog.title} on Registration SEVA blog.`,
         type: "article",
+        url: `${BASE_URL}/blog/${params.id}`,
         publishedTime: blog.createdAt,
+        modifiedTime: blog.updatedAt,
         authors: [blog.author?.name || "Registration SEVA"],
         images: blog.coverImage
-          ? [
-              {
-                url: blog.coverImage,
-                width: 1200,
-                height: 630,
-                alt: blog.title,
-              },
-            ]
-          : [
-              {
-                url: "/logo.jpg",
-                width: 1200,
-                height: 630,
-                alt: blog.title,
-              },
-            ],
+          ? [{ url: blog.coverImage, width: 1200, height: 630, alt: blog.title }]
+          : [{ url: "/logo.jpg", width: 1200, height: 630, alt: blog.title }],
       },
       twitter: {
         card: "summary_large_image",
@@ -90,30 +74,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   } catch (error) {
     console.error("Error generating metadata:", error);
-    // Provide better fallback metadata instead of "Blog Post Not Found"
     return {
       title: `Business Blog - Registration SEVA`,
-      description: "Read expert insights on business registration, compliance, and entrepreneurship in India. Stay updated with the latest business trends and legal requirements.",
-      keywords: [
-        "registration seva blog",
-        "business registration",
-        "compliance",
-        "entrepreneurship",
-        "business tips",
-        "legal advice",
-      ].join(", "),
+      description: "Read expert insights on business registration, compliance, and entrepreneurship in India.",
+      alternates: { canonical: `${BASE_URL}/blog` },
       openGraph: {
         title: "Business Blog - Registration SEVA",
         description: "Expert insights on business registration, compliance, and entrepreneurship in India.",
         type: "website",
-        images: [
-          {
-            url: "/logo.jpg",
-            width: 1200,
-            height: 630,
-            alt: "Registration SEVA - Business Blog",
-          },
-        ],
+        images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "Registration SEVA - Business Blog" }],
       },
       twitter: {
         card: "summary_large_image",
@@ -125,6 +94,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function BlogDetail({ params }: Props) {
-  return <BlogDetailClient id={params.id} />;
+export default async function BlogDetail({ params }: Props) {
+  // Fetch blog server-side to render JSON-LD — AI crawlers don't execute JS so this must be SSR
+  const blogData = await getBlog({ id: params.id });
+  const blog = blogData?.data?.blog;
+
+  const jsonLd = blog
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: blog.title,
+        description: `Read ${blog.title} on Registration SEVA blog.`,
+        image: blog.coverImage || `${BASE_URL}/logo.jpg`,
+        url: `${BASE_URL}/blog/${params.id}`,
+        datePublished: blog.createdAt,
+        dateModified: blog.updatedAt || blog.createdAt,
+        author: {
+          "@type": "Person",
+          name: blog.author?.name || "Registration SEVA",
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": `${BASE_URL}/#organization`,
+          name: "Registration Seva",
+          logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.jpg` },
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${BASE_URL}/blog/${params.id}` },
+        articleSection: blog.category?.name || "Business",
+        inLanguage: "en-IN",
+      }
+    : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <BlogDetailClient id={params.id} />
+    </>
+  );
 }

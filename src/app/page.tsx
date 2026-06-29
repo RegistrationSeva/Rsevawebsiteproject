@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://registrationseva.com",
+    locale: "en_IN",
+    url: "https://www.registrationseva.com",
     siteName: "Registration Seva",
     title: "Registration Seva - Your Trusted Business Consultancy Partner",
     description:
@@ -58,15 +58,141 @@ export const metadata: Metadata = {
     creator: "@registrationseva",
   },
   alternates: {
-    canonical: "https://registrationseva.com",
+    canonical: "https://www.registrationseva.com",
   },
   category: "Business Services",
   classification: "Business Consultancy",
 };
 
+// JSON-LD structured data — rendered server-side so AI crawlers can parse them
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://www.registrationseva.com/#organization",
+  name: "Registration Seva",
+  legalName: "Registration Seva",
+  url: "https://www.registrationseva.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.registrationseva.com/logo.jpg",
+    width: 1024,
+    height: 321,
+  },
+  image: "https://www.registrationseva.com/logo.jpg",
+  description:
+    "Registration Seva is a leading business consultancy firm in India providing company registration, trademark, GST, MSME, and compliance services since 2016.",
+  foundingDate: "2016-10-06",
+  areaServed: {
+    "@type": "Country",
+    name: "India",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "East Delhi",
+    addressRegion: "Delhi",
+    addressCountry: "IN",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/registration-seva",
+  ],
+  serviceArea: {
+    "@type": "Country",
+    name: "India",
+  },
+  knowsAbout: [
+    "Company Registration",
+    "Trademark Registration",
+    "GST Registration",
+    "MSME Registration",
+    "Business Compliance",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.registrationseva.com/#website",
+  url: "https://www.registrationseva.com",
+  name: "Registration Seva",
+  description:
+    "Expert business registration and compliance services across India.",
+  publisher: {
+    "@id": "https://www.registrationseva.com/#organization",
+  },
+  inLanguage: "en-IN",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How long does company registration take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Private Limited Companies typically take 7-15 days, while LLPs may take 10-20 days. We ensure the fastest possible processing by preparing accurate documentation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What documents are required for company registration?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Required documents include identity proof, address proof, and photographs of directors, along with business address proof and PAN cards. We provide a comprehensive checklist tailored to your specific situation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide ongoing compliance support?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, we offer comprehensive compliance support including annual filings, GST returns, tax compliance, and regulatory updates to ensure your business remains compliant.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you help with trademark registration?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Absolutely! We provide complete trademark registration services including trademark search, application filing, and registration process management across India.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What makes Registration Seva different?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our combination of legal expertise, industry knowledge, and customer-centric approach sets us apart. We provide personalized service, transparent pricing, and comprehensive support throughout your business journey.",
+      },
+    },
+  ],
+};
+
 function Home() {
   return (
     <div>
+      {/* JSON-LD structured data — native <script> tags, NOT next/script, so AI crawlers see them */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <HeroSection />
       <WhyChooseUs />
 
