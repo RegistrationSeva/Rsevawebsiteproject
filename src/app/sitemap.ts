@@ -1,15 +1,13 @@
 import { MetadataRoute } from 'next'
-import axios from 'axios'
 
 const BASE_URL = 'https://www.registrationseva.com'
 
-// Revalidate every hour — new blogs appear in sitemap within 1 hour
-export const revalidate = 3600
+// Hardcoded as fallback — NEXT_PUBLIC_API_URL may not be available at runtime on self-hosted servers
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.registrationseva.com'
 
 // NOTE: Google ignores changeFrequency and priority entirely.
-// lastModified is only acted on when verifiably accurate — use real dates, not new Date() for static pages.
+// lastModified is only acted on when verifiably accurate — use real dates, not new Date() on static pages.
 
-// Approximate last-content-change dates for static pages
 const staticPages: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/`, lastModified: new Date('2025-10-01') },
   { url: `${BASE_URL}/about-us`, lastModified: new Date('2025-10-01') },
@@ -53,30 +51,50 @@ type BlogEntry = {
   createdAt?: string
 }
 
+async function fetchBlogs(): Promise<BlogEntry[]> {
+  // Manual timeout with AbortController — compatible with Node.js 14+
+  // (AbortSignal.timeout() requires Node.js 17.3+ and crashes silently on older versions)
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 10000)
+
+  try {
+    const res = await fetch(`${API_URL}/api/v1/blogs?status=published&limit=500`, {
+      signal: controller.signal,
+      next: { revalidate: 3600 },
+    })
+
+    if (!res.ok) {
+      console.error(`Sitemap: API returned ${res.status} ${res.statusText}`)
+      return []
+    }
+
+    const data = await res.json()
+    const blogs: BlogEntry[] = data?.data?.blogs || []
+    console.log(`Sitemap: fetched ${blogs.length} blog(s) from API`)
+    return blogs
+  } catch (error) {
+    if ((error as Error)?.name === 'AbortError') {
+      console.error('Sitemap: API request timed out after 10s')
+    } else {
+      console.error('Sitemap: failed to fetch blogs:', error)
+    }
+    return []
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
     url: `${BASE_URL}/our-services/${slug}`,
     lastModified: new Date('2025-10-01'),
   }))
 
-  let blogPages: MetadataRoute.Sitemap = []
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL
-    if (apiUrl) {
-      const response = await axios.get(
-        `${apiUrl}/api/v1/blogs?status=published&limit=500`,
-        { timeout: 10000 }
-      )
-      const blogs: BlogEntry[] = response.data?.data?.blogs || []
-      // Blog updatedAt is accurate — Google will use this to detect content freshness
-      blogPages = blogs.map((blog) => ({
-        url: `${BASE_URL}/blog/${blog.slug || blog.id}`,
-        lastModified: blog.updatedAt ? new Date(blog.updatedAt) : undefined,
-      }))
-    }
-  } catch (error) {
-    console.error('Sitemap: failed to fetch blogs from API:', error)
-  }
+  const blogs = await fetchBlogs()
+  const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
+    url: `${BASE_URL}/blog/${blog.slug || blog.id}`,
+    lastModified: blog.updatedAt ? new Date(blog.updatedAt) : undefined,
+  }))
 
   return [...staticPages, ...servicePages, ...blogPages]
 }
