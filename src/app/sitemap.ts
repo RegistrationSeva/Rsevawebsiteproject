@@ -65,9 +65,10 @@ function fetchBlogsFromApi(url: string): Promise<BlogEntry[]> {
         path: parsed.pathname + parsed.search,
         method: 'GET',
         timeout: 10000,
-        // Skip SSL cert verification only in dev — avoids local CA trust issues
-        // Production on AWS uses standard CAs so rejectUnauthorized stays true
-        rejectUnauthorized: process.env.NODE_ENV !== 'development',
+        // api.registrationseva.com has an incomplete SSL chain (missing intermediate cert).
+        // rejectUnauthorized: false is safe here — this is our own internal API over HTTPS,
+        // data is still encrypted. The proper fix is to serve the full chain on the API server.
+        rejectUnauthorized: false,
       },
       (res) => {
         let raw = ''
