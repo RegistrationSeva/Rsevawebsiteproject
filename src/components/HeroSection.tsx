@@ -2,129 +2,101 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { BiCheckShield } from "react-icons/bi";
+import {
+  FaBuilding,
+  FaPercent,
+  FaBalanceScale,
+  FaFileAlt,
+  FaStore,
+  FaArrowRight,
+} from "react-icons/fa";
 
-const popularServices = [
-  { tag: "Pvt Ltd", label: "Private Limited Company",    slug: "private-limited-company" },
-  { tag: "GST",    label: "GST Registration",             slug: "gst-registration-india" },
-  { tag: "TM",     label: "Trademark Registration",       slug: "trademark-registration" },
-  { tag: "ITR",    label: "Income Tax Return",             slug: "income-tax-return" },
-  { tag: "MSME",   label: "MSME / Udyam Registration",    slug: "msme-or-udyam-registration" },
-];
-
-const quickActions = [
-  { label: "Register a Company",  slug: "private-limited-company" },
-  { label: "GST Registration",    slug: "gst-registration-india" },
-  { label: "Trademark Filing",    slug: "trademark-registration" },
-  { label: "ITR Filing",          slug: "income-tax-return" },
-];
-
-// Navbar: 48px top bar + 70px nav = 118px total
+// Navbar: 48px top bar + 70px nav
 const NAVBAR_H = 118;
 
-function HeroSection() {
+const popularServices = [
+  { tag: "Pvt Ltd", label: "Private Limited Company",   slug: "private-limited-company"    },
+  { tag: "GST",    label: "GST Registration",            slug: "gst-registration-india"     },
+  { tag: "TM",     label: "Trademark Registration",      slug: "trademark-registration"     },
+  { tag: "ITR",    label: "Income Tax Return",            slug: "income-tax-return"          },
+  { tag: "MSME",   label: "MSME / Udyam Registration",   slug: "msme-or-udyam-registration" },
+];
+
+const stats = [
+  { number: "1000+", label: "Businesses Registered" },
+  { number: "10+",   label: "Years of Experience"   },
+  { number: "99%",   label: "Success Rate"          },
+  { number: "24/7",  label: "Customer Support"      },
+];
+
+export default function HeroSection() {
   const router = useRouter();
 
   return (
     <div
       className="flex flex-col"
-      style={{
-        minHeight: `calc(100dvh - ${NAVBAR_H}px)`,
-        background:
-          "radial-gradient(circle at 92% 8%, rgba(15,74,137,0.07), transparent 36rem), linear-gradient(180deg, #F6F9FF 0%, #FFFFFF 55%, #F4F8FF 100%)",
-      }}
+      style={{ minHeight: `calc(100dvh - ${NAVBAR_H}px)` }}
     >
-      {/* ── Main Hero ── */}
-      <section className="flex-1 flex items-center relative overflow-hidden">
-        <div className="container mx-auto px-4 py-6 lg:py-8 w-full">
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
+      {/* ── Hero: same gradient the page already uses in the Process section ── */}
+      <section className="flex-1 flex items-center bg-gradient-to-br from-primary to-blue-800 relative overflow-hidden">
+
+        {/* Decorative blobs — consistent with the circular decorations on the site */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" />
+
+        <div className="container mx-auto px-4 py-8 relative z-10 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
 
             {/* ── Left: Copy ── */}
-            <div className="flex-1 min-w-0 text-center lg:text-left">
+            <div className="flex-1 min-w-0 text-center lg:text-left text-white">
 
               {/* Badge */}
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-4 text-[11px] font-bold uppercase tracking-widest"
-                style={{ background: "#EBF2FF", borderColor: "#C8DEFF", color: "#0F4A89" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary inline-block flex-shrink-0" />
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
                 India&apos;s Trusted Business Registration Platform
               </div>
 
               {/* H1 */}
-              <h1
-                className="font-bold mb-4 leading-none"
-                style={{
-                  fontSize: "clamp(32px, 4.5vw, 58px)",
-                  letterSpacing: "-0.03em",
-                  color: "#0F4A89",
-                  lineHeight: "1.08",
-                }}
-              >
-                Register Your Business,{" "}
-                <span style={{ color: "#F3A404" }}>the Right Way.</span>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
+                Register Your Business,
+                <br />
+                <span className="text-secondary">the Right Way.</span>
               </h1>
 
               {/* Lead */}
-              <p
-                className="mb-6 font-light leading-relaxed"
-                style={{
-                  fontSize: "clamp(14px, 1.6vw, 17px)",
-                  color: "#4A607D",
-                  maxWidth: "500px",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                End-to-end company formation, GST registration, trademark
-                protection, and compliance management — handled by certified
-                experts so you can focus on your business.
+              <p className="text-white/80 text-base lg:text-lg mb-7 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                Company registration, GST, trademark, and compliance — all
+                handled by certified professionals so you can focus on growing.
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-5">
+              {/* CTAs — matching existing button patterns on the site */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-7">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center justify-center gap-2 font-bold transition-all duration-200 hover:-translate-y-0.5"
-                  style={{
-                    background: "linear-gradient(135deg, #0F4A89, #0a3a6e)",
-                    color: "#fff",
-                    borderRadius: "999px",
-                    padding: "11px 24px",
-                    fontSize: "14px",
-                    boxShadow: "0 10px 24px rgba(15,74,137,0.26)",
-                  }}
+                  className="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold rounded-lg px-6 py-3 hover:-translate-y-0.5 transition-transform shadow-lg text-sm"
                 >
                   Get Free Consultation
                   <FaArrowRight className="text-xs" />
                 </Link>
                 <Link
                   href="/our-services"
-                  className="inline-flex items-center justify-center gap-2 font-bold transition-all duration-200 hover:-translate-y-0.5"
-                  style={{
-                    background: "#fff",
-                    color: "#0F4A89",
-                    border: "1.5px solid #C8DEFF",
-                    borderRadius: "999px",
-                    padding: "11px 24px",
-                    fontSize: "14px",
-                    boxShadow: "0 4px 12px rgba(15,74,137,0.08)",
-                  }}
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-bold rounded-lg px-6 py-3 hover:-translate-y-0.5 hover:border-white transition-all text-sm"
                 >
                   Explore Services
                 </Link>
               </div>
 
-              {/* Trust line */}
-              <div className="flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                {["1000+ Companies Registered", "Since 2016", "Pan India Service"].map((item) => (
+              {/* Trust — green dots matching ServiceBannerCard's green theme */}
+              <div className="flex flex-wrap items-center gap-5 justify-center lg:justify-start">
+                {[
+                  "1000+ Companies Registered",
+                  "Since 2016",
+                  "Pan India Service",
+                ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
-                    <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ background: "#16a34a", boxShadow: "0 0 0 3px rgba(22,163,74,0.12)" }}
-                    />
-                    <span className="text-xs font-semibold" style={{ color: "#4A607D" }}>
+                    <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
+                    <span className="text-sm font-semibold text-white/90">
                       {item}
                     </span>
                   </div>
@@ -132,85 +104,46 @@ function HeroSection() {
               </div>
             </div>
 
-            {/* ── Right: Popular Services Card ── */}
-            <div
-              className="w-full lg:w-[360px] flex-shrink-0 rounded-3xl overflow-hidden"
-              style={{
-                background: "rgba(255,255,255,0.97)",
-                border: "1px solid #D5E6FF",
-                boxShadow: "0 16px 48px rgba(15,74,137,0.11)",
-              }}
-            >
-              {/* Gradient top accent bar */}
-              <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, #0F4A89, #F3A404)" }} />
+            {/* ── Right: Glass card — bg-white/10 matches the process section's bg-white/20 circles ── */}
+            <div className="w-full lg:w-[360px] flex-shrink-0 rounded-xl overflow-hidden border border-white/20 bg-white/10 backdrop-blur-sm">
+
+              {/* Amber accent bar — using secondary color token */}
+              <div className="h-1 w-full bg-secondary" />
 
               <div className="p-5">
-                {/* Card header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: "#F3A404" }}>
-                      Most Popular
-                    </p>
-                    <h2 className="text-base font-extrabold" style={{ color: "#0F4A89" }}>
-                      Quick Start Services
-                    </h2>
-                  </div>
-                  <div
-                    className="flex items-center justify-center w-9 h-9 rounded-xl"
-                    style={{ background: "#EBF2FF" }}
-                  >
-                    <BiCheckShield className="text-lg" style={{ color: "#0F4A89" }} />
-                  </div>
-                </div>
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-1">
+                  Most Popular
+                </p>
+                <h2 className="text-white text-lg font-bold mb-4">
+                  Quick Start Services
+                </h2>
 
-                {/* Service list */}
-                <div className="flex flex-col gap-1.5">
-                  {popularServices.map((service) => (
+                {/* Service rows */}
+                <div className="flex flex-col gap-2">
+                  {popularServices.map((s) => (
                     <button
-                      key={service.slug}
-                      onClick={() => router.push(`/our-services/${service.slug}`)}
-                      className="flex items-center gap-3 px-3 py-2 rounded-xl text-left w-full group transition-all duration-150"
-                      style={{ background: "#F5F9FF", border: "1px solid #E2EDFF" }}
-                      onMouseEnter={(e) => {
-                        const el = e.currentTarget as HTMLButtonElement;
-                        el.style.background = "#FFFFFF";
-                        el.style.borderColor = "#C8DEFF";
-                        el.style.transform = "translateY(-1px)";
-                        el.style.boxShadow = "0 4px 12px rgba(15,74,137,0.10)";
-                      }}
-                      onMouseLeave={(e) => {
-                        const el = e.currentTarget as HTMLButtonElement;
-                        el.style.background = "#F5F9FF";
-                        el.style.borderColor = "#E2EDFF";
-                        el.style.transform = "translateY(0)";
-                        el.style.boxShadow = "none";
-                      }}
+                      key={s.slug}
+                      onClick={() => router.push(`/our-services/${s.slug}`)}
+                      className="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-lg px-3 py-2.5 text-left w-full group transition-colors duration-150"
                     >
-                      <span
-                        className="flex-shrink-0 text-[11px] font-extrabold flex items-center justify-center rounded-lg"
-                        style={{ background: "#EBF2FF", color: "#0F4A89", minWidth: "44px", height: "30px", padding: "0 6px" }}
-                      >
-                        {service.tag}
+                      <span className="flex-shrink-0 text-xs font-extrabold bg-white/20 text-white rounded-md text-center"
+                        style={{ minWidth: "44px", padding: "4px 6px" }}>
+                        {s.tag}
                       </span>
-                      <span className="flex-1 text-xs font-semibold" style={{ color: "#1E3A5F" }}>
-                        {service.label}
+                      <span className="flex-1 text-sm font-medium text-white/90">
+                        {s.label}
                       </span>
-                      <FaArrowRight
-                        className="text-[10px] flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                        style={{ color: "#0F4A89" }}
-                      />
+                      <FaArrowRight className="text-[10px] text-white/40 group-hover:text-white/80 transition-colors flex-shrink-0" />
                     </button>
                   ))}
                 </div>
 
-                {/* Footer link */}
                 <Link
                   href="/our-services"
-                  className="flex items-center justify-center gap-2 mt-4 text-xs font-bold transition-all duration-150 hover:gap-3"
-                  style={{ color: "#0F4A89" }}
+                  className="flex items-center justify-center gap-2 mt-4 text-secondary text-sm font-bold hover:gap-3 transition-all duration-150"
                 >
                   View all services
-                  <FaArrowRight className="text-[10px]" />
+                  <FaArrowRight className="text-xs" />
                 </Link>
               </div>
             </div>
@@ -218,80 +151,24 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* ── Quick Actions Bar ── */}
-      <div className="container mx-auto px-4 pb-4">
-        <div
-          className="rounded-2xl px-4 py-3 flex flex-col md:flex-row items-start md:items-center gap-3"
-          style={{
-            background: "#FFFFFF",
-            border: "1px solid #DDE9FF",
-            boxShadow: "0 4px 16px rgba(15,74,137,0.06)",
-          }}
-        >
-          {/* Label */}
-          <div
-            className="flex-shrink-0 md:border-r md:pr-4"
-            style={{ borderColor: "#E2EDFF" }}
-          >
-            <p className="text-[10px] font-semibold mb-0.5" style={{ color: "#7A93B5" }}>
-              What do you need today?
-            </p>
-            <p className="text-xs font-extrabold whitespace-nowrap" style={{ color: "#0F4A89" }}>
-              Choose a service
-            </p>
-          </div>
-
-          {/* Action pills */}
-          <div className="flex flex-wrap gap-2 flex-1">
-            {quickActions.map((action) => (
-              <button
-                key={action.slug}
-                onClick={() => router.push(`/our-services/${action.slug}`)}
-                className="text-xs font-bold transition-all duration-150 hover:-translate-y-0.5"
-                style={{
-                  background: "#F5F9FF",
-                  border: "1px solid #DDE9FF",
-                  borderRadius: "999px",
-                  padding: "7px 14px",
-                  color: "#1E3A5F",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLButtonElement;
-                  el.style.color = "#0F4A89";
-                  el.style.background = "#FFFFFF";
-                  el.style.borderColor = "#C8DEFF";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLButtonElement;
-                  el.style.color = "#1E3A5F";
-                  el.style.background = "#F5F9FF";
-                  el.style.borderColor = "#DDE9FF";
-                }}
+      {/* ── Stats bar — bg-gray-50 + text-primary matching the track record section on page.tsx ── */}
+      <div className="bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-4 py-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="flex flex-col items-center justify-center text-center py-3 lg:py-0 lg:px-6"
               >
-                {action.label}
-              </button>
+                <span className="text-3xl font-bold text-primary mb-1">
+                  {s.number}
+                </span>
+                <span className="text-sm text-gray-600">{s.label}</span>
+              </div>
             ))}
           </div>
-
-          {/* CTA */}
-          <Link
-            href="/contact-us"
-            className="flex-shrink-0 flex items-center gap-2 text-xs font-bold transition-all duration-150 hover:-translate-y-0.5 whitespace-nowrap"
-            style={{
-              background: "linear-gradient(135deg, #0F4A89, #0a3a6e)",
-              color: "#fff",
-              borderRadius: "999px",
-              padding: "8px 18px",
-              boxShadow: "0 6px 14px rgba(15,74,137,0.22)",
-            }}
-          >
-            Talk to an Expert
-            <FaArrowRight className="text-[10px]" />
-          </Link>
         </div>
       </div>
     </div>
   );
 }
-
-export default HeroSection;
