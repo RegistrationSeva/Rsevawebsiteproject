@@ -585,20 +585,15 @@
     "slug": "change-in-registered-office-address",
     "description": "The registered office address of a company is the official address where all communications and notices are sent. It is crucial for legal and administrative purposes and is often listed in public records. Changing this address can occur for various reasons such as expansion, relocation, or operational efficiency. It is important to follow a structured process to update the address properly.",
     "overview": {
-      "isEmpty": true,
-      "name": "",
+      "isEmpty": false,
+      "name": "Overview",
       "heading": "",
       "conclusion": "",
       "data": [
         {
           "title": "",
-          "description": "",
-          "data": [
-            {
-              "title": "",
-              "description": ""
-            }
-          ]
+          "description": "The registered office address of a company is the official address where all communications and notices are sent. It is crucial for legal and administrative purposes and is often listed in public records. Changing this address can occur for various reasons such as expansion, relocation, or operational efficiency. Any company registered under the Companies Act, 2013, in India can change its registered office address by following the proper legal process, including passing a board resolution and filing the necessary forms with the Registrar of Companies (ROC).",
+          "data": []
         }
       ]
     },

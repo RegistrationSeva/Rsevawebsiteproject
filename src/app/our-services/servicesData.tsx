@@ -3,6 +3,7 @@ import TAXATION from "@/data/taxation.json";
 import REGISTRATION from "@/data/registration.json";
 import TRADEMARK from "@/data/trademark.json";
 import MANAGE_BUSINESS from "@/data/manage_business.json";
+import NEW_SERVICES from "@/data/new_services.json";
 
 export const services = [
   ...START_A_BUSINESS,
@@ -10,4 +11,5 @@ export const services = [
   ...REGISTRATION,
   ...TRADEMARK,
   ...MANAGE_BUSINESS,
+  ...NEW_SERVICES,
 ];

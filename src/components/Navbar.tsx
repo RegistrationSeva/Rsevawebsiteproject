@@ -156,7 +156,7 @@ function Navbar() {
                       <CustomMenuItem
                         title="GST Cancellation"
                         navigation="gst-cancellation"
-                        disabled={true}
+                        disabled={false}
                       />
 
                       <CustomMenuItem
@@ -171,9 +171,9 @@ function Navbar() {
                     <MenubarSubTrigger>Income Tax</MenubarSubTrigger>
                     <MenubarSubContent>
                       <CustomMenuItem
-                        title="IT Return"
-                        navigation="it-return"
-                        disabled={true}
+                        title="IT Return Filing"
+                        navigation="income-tax-return"
+                        disabled={false}
                       />
                       <CustomMenuItem
                         title="Response to Income Tax Notices"
@@ -298,7 +298,11 @@ function Navbar() {
                   >
                     Trademark Renewal
                   </MenubarItem>
-                  <MenubarItem disabled>Trademark Hearing</MenubarItem>
+                  <CustomMenuItem
+                    title="Trademark Hearing"
+                    navigation="trademark-hearing"
+                    disabled={false}
+                  />
 
                   <MenubarItem disabled>Trademark Rectification</MenubarItem>
                 </MenubarContent>
@@ -338,7 +342,7 @@ function Navbar() {
                       <CustomMenuItem
                         title="Change in Director"
                         navigation="change-in-director"
-                        disabled={true}
+                        disabled={false}
                       />
                       <CustomMenuItem
                         title="Change in Share Capital"
@@ -346,19 +350,19 @@ function Navbar() {
                         disabled={false}
                       />
                       <CustomMenuItem
-                        title="Change in Name"
-                        navigation="change-in-name"
-                        disabled={true}
+                        title="Change in Name of Company"
+                        navigation="change-in-name-of-company"
+                        disabled={false}
                       />
                       <CustomMenuItem
                         title="Change in Registered Office Address"
                         navigation="change-in-registered-office-address"
-                        disabled={true}
+                        disabled={false}
                       />
                       <CustomMenuItem
                         title="Alteration in Objects of Company"
                         navigation="alteration-in-objects-of-company"
-                        disabled={true}
+                        disabled={false}
                       />
                     </MenubarSubContent>
                   </MenubarSub>

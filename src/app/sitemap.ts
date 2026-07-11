@@ -44,6 +44,12 @@ const serviceSlugs = [
   'annual-compliance-private-limited-company',
   'change-in-share-capital',
   'change-in-registered-office-address',
+  'alteration-in-objects-of-company',
+  'change-in-director',
+  'change-in-name-of-company',
+  'gst-cancellation',
+  'income-tax-return',
+  'trademark-hearing',
 ]
 
 type BlogEntry = {
