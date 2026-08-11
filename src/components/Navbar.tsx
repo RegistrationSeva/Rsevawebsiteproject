@@ -386,16 +386,6 @@ function Navbar() {
                 </MenubarTrigger>
               </MenubarMenu>
             </Menubar>
-
-            <li>
-              <Link
-                href={"https://pages.razorpay.com/registrationsevacom"}
-                target="_blank"
-                className="bg-secondary px-4 py-2 rounded-lg hover:bg-secondary/80 text-[#202020]"
-              >
-                Pay Now
-              </Link>
-            </li>
           </ul>
 
           {/* Mobile View */}
@@ -454,16 +444,6 @@ function Navbar() {
                   onClick={toggleMenu}
                 >
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"https://pages.razorpay.com/registrationsevacom"}
-                  target="_blank"
-                  className="bg-secondary hover:bg-primary text-white px-4 py-2 rounded-md transition-all duration-300 ease-in-out inline-block"
-                  onClick={toggleMenu}
-                >
-                  Pay Now
                 </Link>
               </li>
             </ul>
