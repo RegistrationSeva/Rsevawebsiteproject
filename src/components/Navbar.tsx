@@ -381,6 +381,11 @@ function Navbar() {
                 </MenubarTrigger>
               </MenubarMenu>
               <MenubarMenu>
+                <MenubarTrigger onClick={() => route.push("/tools")}>
+                  Free Tools
+                </MenubarTrigger>
+              </MenubarMenu>
+              <MenubarMenu>
                 <MenubarTrigger onClick={() => route.push("/blog")}>
                   Blog
                 </MenubarTrigger>
@@ -435,6 +440,15 @@ function Navbar() {
                   onClick={toggleMenu}
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools"
+                  className="hover:text-secondary"
+                  onClick={toggleMenu}
+                >
+                  Free Tools
                 </Link>
               </li>
               <li>

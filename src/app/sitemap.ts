@@ -22,6 +22,32 @@ const staticPages: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/terms-and-conditions`, lastModified: new Date('2025-10-01') },
 ]
 
+const toolSlugs = [
+  'salary-slip-generator',
+  'new-joiner-salary-calculator',
+  'invoice-generator',
+  'gst-calculator',
+  'pf-esic-calculator',
+  'offer-letter-generator',
+  'appointment-letter-generator',
+  'experience-letter-generator',
+  'relieving-letter-generator',
+  'quotation-generator',
+  'tds-calculator',
+  'full-and-final-settlement-calculator',
+  'receipt-generator',
+  'purchase-order-generator',
+  'delivery-challan-generator',
+  'credit-note-debit-note-generator',
+  'rent-agreement-draft-generator',
+  'board-resolution-generator',
+  'nda-generator',
+  'client-proposal-generator',
+  'hra-calculator',
+  'pdf-compressor',
+  'income-tax-calculator',
+]
+
 const serviceSlugs = [
   'private-limited-company',
   'section-8-company',
@@ -114,6 +140,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date('2025-10-01'),
   }))
 
+  const toolPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/tools`, lastModified: new Date('2026-08-12') },
+    ...toolSlugs.map((slug) => ({
+      url: `${BASE_URL}/tools/${slug}`,
+      lastModified: new Date('2026-08-12'),
+    })),
+  ]
+
   const blogs = await fetchBlogsFromApi(
     `${API_URL}/api/v1/blogs?status=published&limit=500`
   )
@@ -123,5 +157,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: blog.updatedAt ? new Date(blog.updatedAt) : undefined,
   }))
 
-  return [...staticPages, ...servicePages, ...blogPages]
+  return [...staticPages, ...servicePages, ...toolPages, ...blogPages]
 }
