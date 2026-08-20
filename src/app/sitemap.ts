@@ -4,6 +4,11 @@ import http from 'http'
 
 const BASE_URL = 'https://www.registrationseva.com'
 
+// Regenerate the sitemap on the server at most hourly so newly published
+// blogs appear without a rebuild, and a failed API fetch at build time
+// self-heals at runtime instead of freezing an empty blog list.
+export const revalidate = 3600
+
 // Hardcoded fallback — NEXT_PUBLIC_API_URL may not be available at runtime on self-hosted servers
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.registrationseva.com'
 
